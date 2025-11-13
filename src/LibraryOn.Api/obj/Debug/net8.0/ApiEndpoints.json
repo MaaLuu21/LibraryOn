@@ -1,0 +1,18 @@
+[
+  {
+    "ContainingType": "LibraryOn.Api.Controllers.GenresController",
+    "Method": "Register",
+    "RelativePath": "api/Genres",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "LibraryOn.Communication.Requests.Genres.RequestRegisterGenreJson",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

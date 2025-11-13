@@ -88,6 +88,29 @@
         "frameworkReferences": [
           "Microsoft.AspNetCore.App"
         ]
+      },
+      "LibraryOn.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "LibraryOn.Communication": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/LibraryOn.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/LibraryOn.Application.dll": {}
+        }
+      },
+      "LibraryOn.Communication/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/LibraryOn.Communication.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/LibraryOn.Communication.dll": {}
+        }
       }
     }
   },
@@ -439,31 +462,42 @@
         "swashbuckle.aspnetcore.swaggerui.6.6.2.nupkg.sha512",
         "swashbuckle.aspnetcore.swaggerui.nuspec"
       ]
+    },
+    "LibraryOn.Application/1.0.0": {
+      "type": "project",
+      "path": "../LibraryOn.Application/LibraryOn.Application.csproj",
+      "msbuildProject": "../LibraryOn.Application/LibraryOn.Application.csproj"
+    },
+    "LibraryOn.Communication/1.0.0": {
+      "type": "project",
+      "path": "../LibraryOn.Communication/LibraryOn.Communication.csproj",
+      "msbuildProject": "../LibraryOn.Communication/LibraryOn.Communication.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net8.0": [
+      "LibraryOn.Application >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.6.2"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\maria\\.nuget\\packages\\": {},
+    "C:\\Users\\Magal do R6\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\ESTUDOS\\C#\\PORTIFOLIO\\LibraryOn\\src\\LibraryOn.Api\\LibraryOn.Api.csproj",
+      "projectUniqueName": "C:\\desenvolvimento\\dotnet\\LibraryOn\\src\\LibraryOn.Api\\LibraryOn.Api.csproj",
       "projectName": "LibraryOn.Api",
-      "projectPath": "F:\\ESTUDOS\\C#\\PORTIFOLIO\\LibraryOn\\src\\LibraryOn.Api\\LibraryOn.Api.csproj",
-      "packagesPath": "C:\\Users\\maria\\.nuget\\packages\\",
-      "outputPath": "F:\\ESTUDOS\\C#\\PORTIFOLIO\\LibraryOn\\src\\LibraryOn.Api\\obj\\",
+      "projectPath": "C:\\desenvolvimento\\dotnet\\LibraryOn\\src\\LibraryOn.Api\\LibraryOn.Api.csproj",
+      "packagesPath": "C:\\Users\\Magal do R6\\.nuget\\packages\\",
+      "outputPath": "C:\\desenvolvimento\\dotnet\\LibraryOn\\src\\LibraryOn.Api\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\maria\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Magal do R6\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -472,13 +506,16 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\desenvolvimento\\dotnet\\LibraryOn\\src\\LibraryOn.Application\\LibraryOn.Application.csproj": {
+              "projectPath": "C:\\desenvolvimento\\dotnet\\LibraryOn\\src\\LibraryOn.Application\\LibraryOn.Application.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -521,7 +558,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

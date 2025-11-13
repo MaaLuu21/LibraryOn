@@ -1,0 +1,16 @@
+C:\desenvolvimento\dotnet\LibraryOn\src\LibraryOn.Application\bin\Debug\net8.0\LibraryOn.Application.deps.json
+C:\desenvolvimento\dotnet\LibraryOn\src\LibraryOn.Application\bin\Debug\net8.0\LibraryOn.Application.dll
+C:\desenvolvimento\dotnet\LibraryOn\src\LibraryOn.Application\bin\Debug\net8.0\LibraryOn.Application.pdb
+C:\desenvolvimento\dotnet\LibraryOn\src\LibraryOn.Application\bin\Debug\net8.0\LibraryOn.Communication.dll
+C:\desenvolvimento\dotnet\LibraryOn\src\LibraryOn.Application\bin\Debug\net8.0\LibraryOn.Communication.pdb
+C:\desenvolvimento\dotnet\LibraryOn\src\LibraryOn.Application\obj\Debug\net8.0\LibraryOn.Application.csproj.AssemblyReference.cache
+C:\desenvolvimento\dotnet\LibraryOn\src\LibraryOn.Application\obj\Debug\net8.0\LibraryOn.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\desenvolvimento\dotnet\LibraryOn\src\LibraryOn.Application\obj\Debug\net8.0\LibraryOn.Application.AssemblyInfoInputs.cache
+C:\desenvolvimento\dotnet\LibraryOn\src\LibraryOn.Application\obj\Debug\net8.0\LibraryOn.Application.AssemblyInfo.cs
+C:\desenvolvimento\dotnet\LibraryOn\src\LibraryOn.Application\obj\Debug\net8.0\LibraryOn.Application.csproj.CoreCompileInputs.cache
+C:\desenvolvimento\dotnet\LibraryOn\src\LibraryOn.Application\obj\Debug\net8.0\LibraryOn.Application.sourcelink.json
+C:\desenvolvimento\dotnet\LibraryOn\src\LibraryOn.Application\obj\Debug\net8.0\LibraryO.B2379168.Up2Date
+C:\desenvolvimento\dotnet\LibraryOn\src\LibraryOn.Application\obj\Debug\net8.0\LibraryOn.Application.dll
+C:\desenvolvimento\dotnet\LibraryOn\src\LibraryOn.Application\obj\Debug\net8.0\refint\LibraryOn.Application.dll
+C:\desenvolvimento\dotnet\LibraryOn\src\LibraryOn.Application\obj\Debug\net8.0\LibraryOn.Application.pdb
+C:\desenvolvimento\dotnet\LibraryOn\src\LibraryOn.Application\obj\Debug\net8.0\ref\LibraryOn.Application.dll

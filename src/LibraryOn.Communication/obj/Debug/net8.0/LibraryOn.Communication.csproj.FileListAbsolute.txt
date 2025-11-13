@@ -1,0 +1,12 @@
+C:\desenvolvimento\dotnet\LibraryOn\src\LibraryOn.Communication\bin\Debug\net8.0\LibraryOn.Communication.deps.json
+C:\desenvolvimento\dotnet\LibraryOn\src\LibraryOn.Communication\bin\Debug\net8.0\LibraryOn.Communication.dll
+C:\desenvolvimento\dotnet\LibraryOn\src\LibraryOn.Communication\bin\Debug\net8.0\LibraryOn.Communication.pdb
+C:\desenvolvimento\dotnet\LibraryOn\src\LibraryOn.Communication\obj\Debug\net8.0\LibraryOn.Communication.GeneratedMSBuildEditorConfig.editorconfig
+C:\desenvolvimento\dotnet\LibraryOn\src\LibraryOn.Communication\obj\Debug\net8.0\LibraryOn.Communication.AssemblyInfoInputs.cache
+C:\desenvolvimento\dotnet\LibraryOn\src\LibraryOn.Communication\obj\Debug\net8.0\LibraryOn.Communication.AssemblyInfo.cs
+C:\desenvolvimento\dotnet\LibraryOn\src\LibraryOn.Communication\obj\Debug\net8.0\LibraryOn.Communication.csproj.CoreCompileInputs.cache
+C:\desenvolvimento\dotnet\LibraryOn\src\LibraryOn.Communication\obj\Debug\net8.0\LibraryOn.Communication.sourcelink.json
+C:\desenvolvimento\dotnet\LibraryOn\src\LibraryOn.Communication\obj\Debug\net8.0\LibraryOn.Communication.dll
+C:\desenvolvimento\dotnet\LibraryOn\src\LibraryOn.Communication\obj\Debug\net8.0\refint\LibraryOn.Communication.dll
+C:\desenvolvimento\dotnet\LibraryOn\src\LibraryOn.Communication\obj\Debug\net8.0\LibraryOn.Communication.pdb
+C:\desenvolvimento\dotnet\LibraryOn\src\LibraryOn.Communication\obj\Debug\net8.0\ref\LibraryOn.Communication.dll
