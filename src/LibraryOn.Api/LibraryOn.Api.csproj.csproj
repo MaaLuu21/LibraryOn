@@ -12,6 +12,9 @@
 
   <ItemGroup>
     <ProjectReference Include="..\LibraryOn.Application\LibraryOn.Application.csproj" />
+    <ProjectReference Include="..\LibraryOn.Communication\LibraryOn.Communication.csproj" />
+    <ProjectReference Include="..\LibraryOn.Exception\LibraryOn.Exception.csproj" />
+    <ProjectReference Include="..\LibraryOn.Infrastructure\LibraryOn.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

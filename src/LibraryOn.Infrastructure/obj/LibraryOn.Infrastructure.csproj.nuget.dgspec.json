@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\desenvolvimento\\dotnet\\LibraryOn\\src\\LibraryOn.Infrastructure\\LibraryOn.Infrastructure.csproj": {}
+    "F:\\ESTUDOS\\C#\\PORTIFOLIO\\LibraryOn\\src\\LibraryOn.Infrastructure\\LibraryOn.Infrastructure.csproj": {}
   },
   "projects": {
-    "C:\\desenvolvimento\\dotnet\\LibraryOn\\src\\LibraryOn.Infrastructure\\LibraryOn.Infrastructure.csproj": {
+    "F:\\ESTUDOS\\C#\\PORTIFOLIO\\LibraryOn\\src\\LibraryOn.Infrastructure\\LibraryOn.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\desenvolvimento\\dotnet\\LibraryOn\\src\\LibraryOn.Infrastructure\\LibraryOn.Infrastructure.csproj",
+        "projectUniqueName": "F:\\ESTUDOS\\C#\\PORTIFOLIO\\LibraryOn\\src\\LibraryOn.Infrastructure\\LibraryOn.Infrastructure.csproj",
         "projectName": "LibraryOn.Infrastructure",
-        "projectPath": "C:\\desenvolvimento\\dotnet\\LibraryOn\\src\\LibraryOn.Infrastructure\\LibraryOn.Infrastructure.csproj",
-        "packagesPath": "C:\\Users\\Magal do R6\\.nuget\\packages\\",
-        "outputPath": "C:\\desenvolvimento\\dotnet\\LibraryOn\\src\\LibraryOn.Infrastructure\\obj\\",
+        "projectPath": "F:\\ESTUDOS\\C#\\PORTIFOLIO\\LibraryOn\\src\\LibraryOn.Infrastructure\\LibraryOn.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\maria\\.nuget\\packages\\",
+        "outputPath": "F:\\ESTUDOS\\C#\\PORTIFOLIO\\LibraryOn\\src\\LibraryOn.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Magal do R6\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\maria\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,6 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -65,7 +66,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

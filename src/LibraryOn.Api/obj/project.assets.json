@@ -2,6 +2,19 @@
   "version": 3,
   "targets": {
     "net8.0": {
+      "FluentValidation/12.1.0": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/FluentValidation.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/FluentValidation.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Microsoft.Extensions.ApiDescription.Server/6.0.5": {
         "type": "package",
         "build": {
@@ -93,7 +106,10 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
-          "LibraryOn.Communication": "1.0.0"
+          "FluentValidation": "12.1.0",
+          "LibraryOn.Communication": "1.0.0",
+          "LibraryOn.Domain": "1.0.0",
+          "LibraryOn.Exception": "1.0.0"
         },
         "compile": {
           "bin/placeholder/LibraryOn.Application.dll": {}
@@ -111,10 +127,55 @@
         "runtime": {
           "bin/placeholder/LibraryOn.Communication.dll": {}
         }
+      },
+      "LibraryOn.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/LibraryOn.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/LibraryOn.Domain.dll": {}
+        }
+      },
+      "LibraryOn.Exception/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/LibraryOn.Exception.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/LibraryOn.Exception.dll": {}
+        }
+      },
+      "LibraryOn.Infrastructure/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/LibraryOn.Infrastructure.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/LibraryOn.Infrastructure.dll": {}
+        }
       }
     }
   },
   "libraries": {
+    "FluentValidation/12.1.0": {
+      "sha512": "FqWEn8BdbbFEHGanj9K8SVo+LyBeFWy2rolaE+e1TNUbifr8M7Iss+I1AqTSc8kjKtvjl/WN4XIHiRpslh42bA==",
+      "type": "package",
+      "path": "fluentvalidation/12.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "fluent-validation-icon.png",
+        "fluentvalidation.12.1.0.nupkg.sha512",
+        "fluentvalidation.nuspec",
+        "lib/net8.0/FluentValidation.dll",
+        "lib/net8.0/FluentValidation.xml"
+      ]
+    },
     "Microsoft.Extensions.ApiDescription.Server/6.0.5": {
       "sha512": "Ckb5EDBUNJdFWyajfXzUIMRkhf52fHZOQuuZg/oiu8y7zDCVwD0iHhew6MnThjHmevanpxL3f5ci2TtHQEN6bw==",
       "type": "package",
@@ -472,32 +533,50 @@
       "type": "project",
       "path": "../LibraryOn.Communication/LibraryOn.Communication.csproj",
       "msbuildProject": "../LibraryOn.Communication/LibraryOn.Communication.csproj"
+    },
+    "LibraryOn.Domain/1.0.0": {
+      "type": "project",
+      "path": "../LibraryOn.Domain/LibraryOn.Domain.csproj",
+      "msbuildProject": "../LibraryOn.Domain/LibraryOn.Domain.csproj"
+    },
+    "LibraryOn.Exception/1.0.0": {
+      "type": "project",
+      "path": "../LibraryOn.Exception/LibraryOn.Exception.csproj",
+      "msbuildProject": "../LibraryOn.Exception/LibraryOn.Exception.csproj"
+    },
+    "LibraryOn.Infrastructure/1.0.0": {
+      "type": "project",
+      "path": "../LibraryOn.Infrastructure/LibraryOn.Infrastructure.csproj",
+      "msbuildProject": "../LibraryOn.Infrastructure/LibraryOn.Infrastructure.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net8.0": [
       "LibraryOn.Application >= 1.0.0",
+      "LibraryOn.Communication >= 1.0.0",
+      "LibraryOn.Exception >= 1.0.0",
+      "LibraryOn.Infrastructure >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.6.2"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Magal do R6\\.nuget\\packages\\": {},
+    "C:\\Users\\maria\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\desenvolvimento\\dotnet\\LibraryOn\\src\\LibraryOn.Api\\LibraryOn.Api.csproj",
-      "projectName": "LibraryOn.Api",
-      "projectPath": "C:\\desenvolvimento\\dotnet\\LibraryOn\\src\\LibraryOn.Api\\LibraryOn.Api.csproj",
-      "packagesPath": "C:\\Users\\Magal do R6\\.nuget\\packages\\",
-      "outputPath": "C:\\desenvolvimento\\dotnet\\LibraryOn\\src\\LibraryOn.Api\\obj\\",
+      "projectUniqueName": "F:\\ESTUDOS\\C#\\PORTIFOLIO\\LibraryOn\\src\\LibraryOn.Api\\LibraryOn.Api.csproj.csproj",
+      "projectName": "LibraryOn.Api.csproj",
+      "projectPath": "F:\\ESTUDOS\\C#\\PORTIFOLIO\\LibraryOn\\src\\LibraryOn.Api\\LibraryOn.Api.csproj.csproj",
+      "packagesPath": "C:\\Users\\maria\\.nuget\\packages\\",
+      "outputPath": "F:\\ESTUDOS\\C#\\PORTIFOLIO\\LibraryOn\\src\\LibraryOn.Api\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Magal do R6\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\maria\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -506,14 +585,24 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\desenvolvimento\\dotnet\\LibraryOn\\src\\LibraryOn.Application\\LibraryOn.Application.csproj": {
-              "projectPath": "C:\\desenvolvimento\\dotnet\\LibraryOn\\src\\LibraryOn.Application\\LibraryOn.Application.csproj"
+            "F:\\ESTUDOS\\C#\\PORTIFOLIO\\LibraryOn\\src\\LibraryOn.Application\\LibraryOn.Application.csproj": {
+              "projectPath": "F:\\ESTUDOS\\C#\\PORTIFOLIO\\LibraryOn\\src\\LibraryOn.Application\\LibraryOn.Application.csproj"
+            },
+            "F:\\ESTUDOS\\C#\\PORTIFOLIO\\LibraryOn\\src\\LibraryOn.Communication\\LibraryOn.Communication.csproj": {
+              "projectPath": "F:\\ESTUDOS\\C#\\PORTIFOLIO\\LibraryOn\\src\\LibraryOn.Communication\\LibraryOn.Communication.csproj"
+            },
+            "F:\\ESTUDOS\\C#\\PORTIFOLIO\\LibraryOn\\src\\LibraryOn.Exception\\LibraryOn.Exception.csproj": {
+              "projectPath": "F:\\ESTUDOS\\C#\\PORTIFOLIO\\LibraryOn\\src\\LibraryOn.Exception\\LibraryOn.Exception.csproj"
+            },
+            "F:\\ESTUDOS\\C#\\PORTIFOLIO\\LibraryOn\\src\\LibraryOn.Infrastructure\\LibraryOn.Infrastructure.csproj": {
+              "projectPath": "F:\\ESTUDOS\\C#\\PORTIFOLIO\\LibraryOn\\src\\LibraryOn.Infrastructure\\LibraryOn.Infrastructure.csproj"
             }
           }
         }
@@ -558,7 +647,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

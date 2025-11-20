@@ -1,0 +1,12 @@
+F:\ESTUDOS\C#\PORTIFOLIO\LibraryOn\src\LibraryOn.Infrastructure\bin\Debug\net8.0\LibraryOn.Infrastructure.deps.json
+F:\ESTUDOS\C#\PORTIFOLIO\LibraryOn\src\LibraryOn.Infrastructure\bin\Debug\net8.0\LibraryOn.Infrastructure.dll
+F:\ESTUDOS\C#\PORTIFOLIO\LibraryOn\src\LibraryOn.Infrastructure\bin\Debug\net8.0\LibraryOn.Infrastructure.pdb
+F:\ESTUDOS\C#\PORTIFOLIO\LibraryOn\src\LibraryOn.Infrastructure\obj\Debug\net8.0\LibraryOn.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+F:\ESTUDOS\C#\PORTIFOLIO\LibraryOn\src\LibraryOn.Infrastructure\obj\Debug\net8.0\LibraryOn.Infrastructure.AssemblyInfoInputs.cache
+F:\ESTUDOS\C#\PORTIFOLIO\LibraryOn\src\LibraryOn.Infrastructure\obj\Debug\net8.0\LibraryOn.Infrastructure.AssemblyInfo.cs
+F:\ESTUDOS\C#\PORTIFOLIO\LibraryOn\src\LibraryOn.Infrastructure\obj\Debug\net8.0\LibraryOn.Infrastructure.csproj.CoreCompileInputs.cache
+F:\ESTUDOS\C#\PORTIFOLIO\LibraryOn\src\LibraryOn.Infrastructure\obj\Debug\net8.0\LibraryOn.Infrastructure.sourcelink.json
+F:\ESTUDOS\C#\PORTIFOLIO\LibraryOn\src\LibraryOn.Infrastructure\obj\Debug\net8.0\LibraryOn.Infrastructure.dll
+F:\ESTUDOS\C#\PORTIFOLIO\LibraryOn\src\LibraryOn.Infrastructure\obj\Debug\net8.0\refint\LibraryOn.Infrastructure.dll
+F:\ESTUDOS\C#\PORTIFOLIO\LibraryOn\src\LibraryOn.Infrastructure\obj\Debug\net8.0\LibraryOn.Infrastructure.pdb
+F:\ESTUDOS\C#\PORTIFOLIO\LibraryOn\src\LibraryOn.Infrastructure\obj\Debug\net8.0\ref\LibraryOn.Infrastructure.dll
