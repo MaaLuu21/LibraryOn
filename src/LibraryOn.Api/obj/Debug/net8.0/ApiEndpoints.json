@@ -9,7 +9,7 @@
     "Parameters": [
       {
         "Name": "request",
-        "Type": "LibraryOn.Communication.Requests.Genres.RequestRegisterGenreJson",
+        "Type": "LibraryOn.Communication.Requests.Genres.RequestGenreJson",
         "IsRequired": true
       }
     ],
@@ -22,6 +22,15 @@
           "text/json"
         ],
         "StatusCode": 201
+      },
+      {
+        "Type": "LibraryOn.Communication.Responses.ResponseErrorJson",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 400
       }
     ]
   }

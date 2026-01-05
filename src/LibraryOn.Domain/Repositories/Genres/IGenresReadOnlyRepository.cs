@@ -1,0 +1,7 @@
+﻿using LibraryOn.Domain.Entities;
+
+namespace LibraryOn.Domain.Repositories.Genres;
+public interface IGenresReadOnlyRepository
+{
+    Task<List<Genre>> GetAll();
+}

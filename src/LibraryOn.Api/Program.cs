@@ -1,4 +1,6 @@
+using LibraryOn.Api.csproj.Filters;
 using LibraryOn.Api.csproj.Middleware;
+using LibraryOn.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,6 +10,12 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+//filtro excecoes
+builder.Services.AddMvc(options => options.Filters.Add(typeof(ExceptionFilter)));
+
+//injeção de dependencia
+builder.Services.AddInfrastructure(builder.Configuration);
 
 var app = builder.Build();
 

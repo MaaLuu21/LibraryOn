@@ -46,3 +46,14 @@ F:\ESTUDOS\C#\PORTIFOLIO\LibraryOn\src\LibraryOn.Api\obj\Debug\net8.0\staticweba
 F:\ESTUDOS\C#\PORTIFOLIO\LibraryOn\src\LibraryOn.Api\obj\Debug\net8.0\LibraryO.7DF98042.Up2Date
 F:\ESTUDOS\C#\PORTIFOLIO\LibraryOn\src\LibraryOn.Api\obj\Debug\net8.0\LibraryOn.Api.csproj.genruntimeconfig.cache
 F:\ESTUDOS\C#\PORTIFOLIO\LibraryOn\src\LibraryOn.Api\obj\Debug\net8.0\ref\LibraryOn.Api.csproj.dll
+F:\ESTUDOS\C#\PORTIFOLIO\LibraryOn\src\LibraryOn.Api\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
+F:\ESTUDOS\C#\PORTIFOLIO\LibraryOn\src\LibraryOn.Api\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+F:\ESTUDOS\C#\PORTIFOLIO\LibraryOn\src\LibraryOn.Api\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
+F:\ESTUDOS\C#\PORTIFOLIO\LibraryOn\src\LibraryOn.Api\bin\Debug\net8.0\Microsoft.Extensions.Caching.Memory.dll
+F:\ESTUDOS\C#\PORTIFOLIO\LibraryOn\src\LibraryOn.Api\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
+F:\ESTUDOS\C#\PORTIFOLIO\LibraryOn\src\LibraryOn.Api\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+F:\ESTUDOS\C#\PORTIFOLIO\LibraryOn\src\LibraryOn.Api\bin\Debug\net8.0\Microsoft.Extensions.Logging.dll
+F:\ESTUDOS\C#\PORTIFOLIO\LibraryOn\src\LibraryOn.Api\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+F:\ESTUDOS\C#\PORTIFOLIO\LibraryOn\src\LibraryOn.Api\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+F:\ESTUDOS\C#\PORTIFOLIO\LibraryOn\src\LibraryOn.Api\bin\Debug\net8.0\MySqlConnector.dll
+F:\ESTUDOS\C#\PORTIFOLIO\LibraryOn\src\LibraryOn.Api\bin\Debug\net8.0\Pomelo.EntityFrameworkCore.MySql.dll

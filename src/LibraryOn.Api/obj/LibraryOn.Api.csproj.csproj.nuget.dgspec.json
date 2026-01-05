@@ -64,6 +64,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.22, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.6.2, )"
@@ -400,7 +404,11 @@
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "F:\\ESTUDOS\\C#\\PORTIFOLIO\\LibraryOn\\src\\LibraryOn.Domain\\LibraryOn.Domain.csproj": {
+                "projectPath": "F:\\ESTUDOS\\C#\\PORTIFOLIO\\LibraryOn\\src\\LibraryOn.Domain\\LibraryOn.Domain.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -418,6 +426,16 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.22, )"
+            },
+            "Pomelo.EntityFrameworkCore.MySql": {
+              "target": "Package",
+              "version": "[8.0.3, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
