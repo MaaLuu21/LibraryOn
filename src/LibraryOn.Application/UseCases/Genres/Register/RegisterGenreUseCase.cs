@@ -1,4 +1,5 @@
-﻿using LibraryOn.Communication.Requests.Genres;
+﻿using AutoMapper;
+using LibraryOn.Communication.Requests.Genres;
 using LibraryOn.Communication.Responses.Genres;
 using LibraryOn.Domain.Entities;
 using LibraryOn.Domain.Repositories;
@@ -10,30 +11,26 @@ internal class RegisterGenreUseCase : IRegisterGenreUseCase
 {
     private readonly IGenresWriteOnlyRepository _repository;
     private readonly IUnityOfWork _unityOfWork;
+    private readonly IMapper _mapper;
 
     public RegisterGenreUseCase(IGenresWriteOnlyRepository repository,
-        IUnityOfWork unityOfWork)
+        IUnityOfWork unityOfWork, IMapper mapper)
     {
         _repository = repository;
         _unityOfWork = unityOfWork;
+        _mapper = mapper;
     }
 
     public async Task<ResponseRegisteredGenreJson> Execute(RequestGenreJson request)
     {
         Validate(request);
 
-        var entity = new Genre
-        {
-            Name = request.Name
-        };
+         var entity = _mapper.Map<Genre>(request);
 
         await _repository.Add(entity);
         await _unityOfWork.Commit();
 
-        return new ResponseRegisteredGenreJson
-        {
-            Name = entity.Name
-        };
+        return _mapper.Map<ResponseRegisteredGenreJson>(entity);
     }
 
     private void Validate (RequestGenreJson request)

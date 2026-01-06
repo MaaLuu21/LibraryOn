@@ -1,6 +1,7 @@
 using LibraryOn.Api.csproj.Filters;
 using LibraryOn.Api.csproj.Middleware;
 using LibraryOn.Infrastructure;
+using LibraryOn.Application;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,6 +17,7 @@ builder.Services.AddMvc(options => options.Filters.Add(typeof(ExceptionFilter)))
 
 //injeção de dependencia
 builder.Services.AddInfrastructure(builder.Configuration);
+builder.Services.AddApplication();
 
 var app = builder.Build();
 

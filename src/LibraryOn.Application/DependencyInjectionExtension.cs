@@ -1,5 +1,26 @@
-﻿namespace LibraryOn.Application;
-public class DependencyInjectionExtension
+﻿using LibraryOn.Application.AutoMapper;
+using LibraryOn.Application.UseCases.Genres.Register;
+using Microsoft.Extensions.DependencyInjection;
+using System.Runtime.CompilerServices;
+
+namespace LibraryOn.Application;
+public static class DependencyInjectionExtension
 {
     //adicionar injeção de dependencia
+    public static void AddApplication(this IServiceCollection services)
+    {
+        AddAutoMapper(services);
+        AddUseCases(services);
+
+    }
+
+    private static void AddAutoMapper(IServiceCollection services)
+    {
+        services.AddAutoMapper(typeof(AutoMapping));
+    }
+
+    private static void AddUseCases(IServiceCollection services)
+    {
+        services.AddScoped<IRegisterGenreUseCase, RegisterGenreUseCase>();
+    }
 }

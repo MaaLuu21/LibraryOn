@@ -1,4 +1,5 @@
-﻿using LibraryOn.Domain.Repositories.Genres;
+﻿using LibraryOn.Domain.Repositories;
+using LibraryOn.Domain.Repositories.Genres;
 using LibraryOn.Infrastructure.DataAcess;
 using LibraryOn.Infrastructure.DataAcess.Repositories;
 using Microsoft.EntityFrameworkCore;
@@ -16,6 +17,7 @@ public static class DependencyInjectionExtension
 
     private static void AddRepositories (IServiceCollection services)
     {
+        services.AddScoped<IUnityOfWork, UnityOfWork>();
         services.AddScoped<IGenresWriteOnlyRepository, GenresRepository>();
         services.AddScoped<IGenresReadOnlyRepository, GenresRepository>();
 
