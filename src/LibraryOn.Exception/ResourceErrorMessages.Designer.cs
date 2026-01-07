@@ -61,6 +61,15 @@ namespace LibraryOn.Exception {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Genre not found..
+        /// </summary>
+        public static string GENRE_NOT_FOUND {
+            get {
+                return ResourceManager.GetString("GENRE_NOT_FOUND", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The genre name is required..
         /// </summary>
         public static string GENRE_REQUIRED {

@@ -1,5 +1,7 @@
 ﻿using LibraryOn.Domain.Entities;
 using LibraryOn.Domain.Repositories.Genres;
+using Microsoft.EntityFrameworkCore;
+using System.Threading.Tasks;
 
 namespace LibraryOn.Infrastructure.DataAcess.Repositories;
 internal class GenresRepository : IGenresReadOnlyRepository, IGenresWriteOnlyRepository
@@ -18,13 +20,17 @@ internal class GenresRepository : IGenresReadOnlyRepository, IGenresWriteOnlyRep
 
     public void Delete(Genre genre)
     {
-        //implementar
-        throw new NotImplementedException();
+        _dbContext.Genres.Remove(genre);
     }
 
     public Task<List<Genre>> GetAll()
     {
         //implementar
         throw new NotImplementedException();
+    }
+
+    public async Task<Genre?> GetById(long id)
+    {
+        return await _dbContext.Genres.FirstOrDefaultAsync(g => g.Id == id);
     }
 }

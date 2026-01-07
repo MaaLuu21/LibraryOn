@@ -1,4 +1,6 @@
 ﻿using LibraryOn.Application.AutoMapper;
+using LibraryOn.Application.UseCases.Genres.Delete;
+using LibraryOn.Application.UseCases.Genres.GetById;
 using LibraryOn.Application.UseCases.Genres.Register;
 using Microsoft.Extensions.DependencyInjection;
 using System.Runtime.CompilerServices;
@@ -22,5 +24,7 @@ public static class DependencyInjectionExtension
     private static void AddUseCases(IServiceCollection services)
     {
         services.AddScoped<IRegisterGenreUseCase, RegisterGenreUseCase>();
+        services.AddScoped<IGetGenreByIdUseCase, GetGenreByIdUseCase>();
+        services.AddScoped<IDeleteGenreUseCase, DeleteGenreUseCase>();
     }
 }
