@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
 
 namespace LibraryOn.Infrastructure.DataAcess.Repositories;
-internal class GenresRepository : IGenresReadOnlyRepository, IGenresWriteOnlyRepository
+internal class GenresRepository : IGenresReadOnlyRepository, IGenresWriteOnlyRepository, IGenresUpdateOnlyRepository
 {
     private readonly LibraryOnDbContext _dbContext;
 
@@ -29,8 +29,18 @@ internal class GenresRepository : IGenresReadOnlyRepository, IGenresWriteOnlyRep
         throw new NotImplementedException();
     }
 
-    public async Task<Genre?> GetById(long id)
+    async Task<Genre?> IGenresReadOnlyRepository.GetById(long id)
+    {
+        return await _dbContext.Genres.AsNoTracking().FirstOrDefaultAsync(g => g.Id == id);
+    }
+
+    async Task<Genre?> IGenresUpdateOnlyRepository.GetById(long id)
     {
         return await _dbContext.Genres.FirstOrDefaultAsync(g => g.Id == id);
+    }
+
+    public void Update(Genre genre)
+    {
+        _dbContext.Genres.Update(genre);
     }
 }

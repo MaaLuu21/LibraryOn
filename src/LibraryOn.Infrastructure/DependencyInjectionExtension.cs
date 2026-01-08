@@ -20,6 +20,7 @@ public static class DependencyInjectionExtension
         services.AddScoped<IUnityOfWork, UnityOfWork>();
         services.AddScoped<IGenresWriteOnlyRepository, GenresRepository>();
         services.AddScoped<IGenresReadOnlyRepository, GenresRepository>();
+        services.AddScoped<IGenresUpdateOnlyRepository, GenresRepository>();
 
     }
 

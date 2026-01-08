@@ -1,6 +1,7 @@
 ﻿using LibraryOn.Application.UseCases.Genres.Delete;
 using LibraryOn.Application.UseCases.Genres.GetById;
 using LibraryOn.Application.UseCases.Genres.Register;
+using LibraryOn.Application.UseCases.Genres.Update;
 using LibraryOn.Communication.Requests.Genres;
 using LibraryOn.Communication.Responses;
 using LibraryOn.Communication.Responses.Genres;
@@ -46,5 +47,22 @@ namespace LibraryOn.Api.Controllers
 
             return NoContent();
         }
+
+        [HttpPut]
+        [Route("{id}")]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(typeof(ResponseErrorJson), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(ResponseErrorJson), StatusCodes.Status404NotFound)]
+        public async Task<IActionResult> Update([FromServices] IUpdateGenreUseCase useCase,
+                                                [FromRoute] long id,
+                                                [FromBody] RequestGenreJson request)
+        {
+            await useCase.Execute(id, request);
+
+
+            return NoContent();
+        }
+
+
     }
 }
