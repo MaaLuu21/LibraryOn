@@ -23,10 +23,9 @@ internal class GenresRepository : IGenresReadOnlyRepository, IGenresWriteOnlyRep
         _dbContext.Genres.Remove(genre);
     }
 
-    public Task<List<Genre>> GetAll()
+    public async Task<List<Genre>> GetAll()
     {
-        //implementar
-        throw new NotImplementedException();
+        return await _dbContext.Genres.AsNoTracking().ToListAsync();
     }
 
     async Task<Genre?> IGenresReadOnlyRepository.GetById(long id)

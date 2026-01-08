@@ -9,6 +9,7 @@ public class Book
     public string Author { get; set; } = string.Empty;
     public string? Description { get; set; }
     public ICollection<Genre> Genres { get; set; } = new List<Genre>();
-
     public DateTime PublishYear { get; set; }
+
+
 }

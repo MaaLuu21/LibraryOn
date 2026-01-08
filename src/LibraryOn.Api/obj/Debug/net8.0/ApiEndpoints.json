@@ -1,7 +1,23 @@
 [
   {
+    "ContainingType": "LibraryOn.Api.Controllers.BooksController",
+    "Method": "RegisterBook",
+    "RelativePath": "api/Books",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "LibraryOn.Communication.Requests.Books.RequestBookJson",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "LibraryOn.Api.Controllers.GenresController",
-    "Method": "Register",
+    "Method": "RegisterGenre",
     "RelativePath": "api/Genres",
     "HttpMethod": "POST",
     "IsController": true,
@@ -36,7 +52,32 @@
   },
   {
     "ContainingType": "LibraryOn.Api.Controllers.GenresController",
-    "Method": "GetById",
+    "Method": "GetAllGenre",
+    "RelativePath": "api/Genres",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      },
+      {
+        "Type": "LibraryOn.Communication.Responses.ResponseErrorJson",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 404
+      }
+    ]
+  },
+  {
+    "ContainingType": "LibraryOn.Api.Controllers.GenresController",
+    "Method": "GetByIdGenre",
     "RelativePath": "api/Genres/{id}",
     "HttpMethod": "GET",
     "IsController": true,
@@ -67,7 +108,7 @@
   },
   {
     "ContainingType": "LibraryOn.Api.Controllers.GenresController",
-    "Method": "Delete",
+    "Method": "DeleteGenre",
     "RelativePath": "api/Genres/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
@@ -98,7 +139,7 @@
   },
   {
     "ContainingType": "LibraryOn.Api.Controllers.GenresController",
-    "Method": "Update",
+    "Method": "UpdateGenre",
     "RelativePath": "api/Genres/{id}",
     "HttpMethod": "PUT",
     "IsController": true,

@@ -61,6 +61,15 @@ namespace LibraryOn.Exception {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Author required..
+        /// </summary>
+        public static string AUTHOR_REQUIRED {
+            get {
+                return ResourceManager.GetString("AUTHOR_REQUIRED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Genre not found..
         /// </summary>
         public static string GENRE_NOT_FOUND {
@@ -75,6 +84,33 @@ namespace LibraryOn.Exception {
         public static string GENRE_REQUIRED {
             get {
                 return ResourceManager.GetString("GENRE_REQUIRED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invalid ID..
+        /// </summary>
+        public static string INVALID_ID {
+            get {
+                return ResourceManager.GetString("INVALID_ID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Publish year can&apos;t be for the future..
+        /// </summary>
+        public static string PUBLISH_YEAR_CANT_BE_FOR_THE_FUTURE {
+            get {
+                return ResourceManager.GetString("PUBLISH_YEAR_CANT_BE_FOR_THE_FUTURE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Title required..
+        /// </summary>
+        public static string TITLE_REQUIRED {
+            get {
+                return ResourceManager.GetString("TITLE_REQUIRED", resourceCulture);
             }
         }
         

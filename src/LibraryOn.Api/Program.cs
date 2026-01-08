@@ -1,7 +1,8 @@
 using LibraryOn.Api.csproj.Filters;
 using LibraryOn.Api.csproj.Middleware;
-using LibraryOn.Infrastructure;
 using LibraryOn.Application;
+using LibraryOn.Infrastructure;
+using LibraryOn.Infrastructure.Migrations;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -36,4 +37,14 @@ app.UseAuthorization();
 
 app.MapControllers();
 
+await MigrateDataBase();
+
 app.Run();
+
+async Task MigrateDataBase()
+{
+    //update migrations automatico
+    await using var scope = app.Services.CreateAsyncScope();
+
+    await DataBaseMigartion.MigrateDataBse(scope.ServiceProvider);
+}

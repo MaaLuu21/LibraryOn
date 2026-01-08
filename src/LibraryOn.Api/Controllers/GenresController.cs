@@ -1,4 +1,5 @@
 ﻿using LibraryOn.Application.UseCases.Genres.Delete;
+using LibraryOn.Application.UseCases.Genres.GetAll;
 using LibraryOn.Application.UseCases.Genres.GetById;
 using LibraryOn.Application.UseCases.Genres.Register;
 using LibraryOn.Application.UseCases.Genres.Update;
@@ -17,7 +18,7 @@ namespace LibraryOn.Api.Controllers
         [ProducesResponseType(typeof(ResponseRegisteredGenreJson), StatusCodes.Status201Created)]
         [ProducesResponseType(typeof(ResponseErrorJson), StatusCodes.Status400BadRequest)]
         //[ProducesResponseType()] adicionar classe para lista de erros
-        public async Task<IActionResult> Register([FromServices] IRegisterGenreUseCase useCase,
+        public async Task<IActionResult> RegisterGenre([FromServices] IRegisterGenreUseCase useCase,
                                                   [FromBody] RequestGenreJson request)
         {
             var response = await useCase.Execute(request);
@@ -28,7 +29,7 @@ namespace LibraryOn.Api.Controllers
         [Route("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ResponseErrorJson), StatusCodes.Status404NotFound)]
-        public async Task<IActionResult> GetById([FromServices] IGetGenreByIdUseCase useCase,
+        public async Task<IActionResult> GetByIdGenre([FromServices] IGetGenreByIdUseCase useCase,
                                                    [FromRoute] long id)
         {
             var response = await useCase.Execute(id);
@@ -36,11 +37,25 @@ namespace LibraryOn.Api.Controllers
             return Ok(response);
         }
 
+        [HttpGet]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ResponseErrorJson), StatusCodes.Status404NotFound)]
+        public async Task<IActionResult> GetAllGenre([FromServices] IGetAllGenreUseCase useCase)
+        {
+            var response = await useCase.Execute();
+
+            if (response.Genres.Count != 0)
+            {
+                return Ok(response);
+            }
+
+            return NoContent();
+        }
         [HttpDelete]
         [Route("{id}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(typeof(ResponseErrorJson), StatusCodes.Status404NotFound)]
-        public async Task<IActionResult> Delete([FromServices] IDeleteGenreUseCase useCase,
+        public async Task<IActionResult> DeleteGenre([FromServices] IDeleteGenreUseCase useCase,
                                                 [FromRoute] long id)
         {
             await useCase.Execute(id);
@@ -53,12 +68,11 @@ namespace LibraryOn.Api.Controllers
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(typeof(ResponseErrorJson), StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ResponseErrorJson), StatusCodes.Status404NotFound)]
-        public async Task<IActionResult> Update([FromServices] IUpdateGenreUseCase useCase,
+        public async Task<IActionResult> UpdateGenre([FromServices] IUpdateGenreUseCase useCase,
                                                 [FromRoute] long id,
                                                 [FromBody] RequestGenreJson request)
         {
             await useCase.Execute(id, request);
-
 
             return NoContent();
         }

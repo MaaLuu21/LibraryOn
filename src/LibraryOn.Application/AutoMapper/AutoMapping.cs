@@ -1,5 +1,7 @@
 ﻿using AutoMapper;
+using LibraryOn.Communication.Requests.Books;
 using LibraryOn.Communication.Requests.Genres;
+using LibraryOn.Communication.Responses.Book;
 using LibraryOn.Communication.Responses.Genres;
 using LibraryOn.Domain.Entities;
 
@@ -15,11 +17,13 @@ public class AutoMapping : Profile
     private void RequestToEntity()
     {
         CreateMap<RequestGenreJson, Genre>();
+        CreateMap<RequestBookJson, Book>();
 
     }
 
     private void EntityToResponse()
     {
         CreateMap<Genre, ResponseRegisteredGenreJson>();
+        CreateMap<Book, ResponseRegisteredBookJson>();
     }
 }

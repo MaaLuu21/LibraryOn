@@ -1,4 +1,5 @@
 ﻿using LibraryOn.Domain.Repositories;
+using LibraryOn.Domain.Repositories.Books;
 using LibraryOn.Domain.Repositories.Genres;
 using LibraryOn.Infrastructure.DataAcess;
 using LibraryOn.Infrastructure.DataAcess.Repositories;
@@ -17,11 +18,13 @@ public static class DependencyInjectionExtension
 
     private static void AddRepositories (IServiceCollection services)
     {
+        //genre
         services.AddScoped<IUnityOfWork, UnityOfWork>();
         services.AddScoped<IGenresWriteOnlyRepository, GenresRepository>();
         services.AddScoped<IGenresReadOnlyRepository, GenresRepository>();
         services.AddScoped<IGenresUpdateOnlyRepository, GenresRepository>();
-
+        //book
+        services.AddScoped<IBookWriteOnlyRepository, BooksRepository>();
     }
 
     private static void AddDbContext (IServiceCollection services,  IConfiguration configuration)
