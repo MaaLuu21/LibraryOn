@@ -10,6 +10,4 @@ public class Book
     public string? Description { get; set; }
     public ICollection<Genre> Genres { get; set; } = new List<Genre>();
     public DateTime PublishYear { get; set; }
-
-
 }

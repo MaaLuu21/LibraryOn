@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LibraryOn.Infrastructure.Migrations
 {
     [DbContext(typeof(LibraryOnDbContext))]
-    [Migration("20260106162319_InitialCreate")]
+    [Migration("20260109174203_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -27,24 +27,26 @@ namespace LibraryOn.Infrastructure.Migrations
 
             modelBuilder.Entity("BookGenre", b =>
                 {
-                    b.Property<Guid>("BooksId")
-                        .HasColumnType("char(36)");
+                    b.Property<long>("BooksId")
+                        .HasColumnType("bigint");
 
-                    b.Property<int>("GenresId")
-                        .HasColumnType("int");
+                    b.Property<long>("GenresId")
+                        .HasColumnType("bigint");
 
                     b.HasKey("BooksId", "GenresId");
 
                     b.HasIndex("GenresId");
 
-                    b.ToTable("BookGenre");
+                    b.ToTable("BookGenres", (string)null);
                 });
 
             modelBuilder.Entity("LibraryOn.Domain.Entities.Book", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("char(36)");
+                        .HasColumnType("bigint");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<long>("Id"));
 
                     b.Property<string>("Author")
                         .IsRequired()
@@ -62,16 +64,16 @@ namespace LibraryOn.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Book");
+                    b.ToTable("Books");
                 });
 
             modelBuilder.Entity("LibraryOn.Domain.Entities.Genre", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("bigint");
 
-                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<long>("Id"));
 
                     b.Property<string>("Name")
                         .IsRequired()

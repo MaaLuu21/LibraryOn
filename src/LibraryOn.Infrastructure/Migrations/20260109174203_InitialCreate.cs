@@ -16,10 +16,11 @@ namespace LibraryOn.Infrastructure.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
-                name: "Book",
+                name: "Books",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "char(36)", nullable: false, collation: "ascii_general_ci"),
+                    Id = table.Column<long>(type: "bigint", nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     Title = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Author = table.Column<string>(type: "longtext", nullable: false)
@@ -30,7 +31,7 @@ namespace LibraryOn.Infrastructure.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Book", x => x.Id);
+                    table.PrimaryKey("PK_Books", x => x.Id);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
@@ -38,7 +39,7 @@ namespace LibraryOn.Infrastructure.Migrations
                 name: "Genres",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     Name = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4")
@@ -50,23 +51,23 @@ namespace LibraryOn.Infrastructure.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
-                name: "BookGenre",
+                name: "BookGenres",
                 columns: table => new
                 {
-                    BooksId = table.Column<Guid>(type: "char(36)", nullable: false, collation: "ascii_general_ci"),
-                    GenresId = table.Column<int>(type: "int", nullable: false)
+                    BooksId = table.Column<long>(type: "bigint", nullable: false),
+                    GenresId = table.Column<long>(type: "bigint", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_BookGenre", x => new { x.BooksId, x.GenresId });
+                    table.PrimaryKey("PK_BookGenres", x => new { x.BooksId, x.GenresId });
                     table.ForeignKey(
-                        name: "FK_BookGenre_Book_BooksId",
+                        name: "FK_BookGenres_Books_BooksId",
                         column: x => x.BooksId,
-                        principalTable: "Book",
+                        principalTable: "Books",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_BookGenre_Genres_GenresId",
+                        name: "FK_BookGenres_Genres_GenresId",
                         column: x => x.GenresId,
                         principalTable: "Genres",
                         principalColumn: "Id",
@@ -75,8 +76,8 @@ namespace LibraryOn.Infrastructure.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateIndex(
-                name: "IX_BookGenre_GenresId",
-                table: "BookGenre",
+                name: "IX_BookGenres_GenresId",
+                table: "BookGenres",
                 column: "GenresId");
         }
 
@@ -84,10 +85,10 @@ namespace LibraryOn.Infrastructure.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "BookGenre");
+                name: "BookGenres");
 
             migrationBuilder.DropTable(
-                name: "Book");
+                name: "Books");
 
             migrationBuilder.DropTable(
                 name: "Genres");

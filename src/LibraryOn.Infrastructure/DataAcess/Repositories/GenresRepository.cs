@@ -37,6 +37,12 @@ internal class GenresRepository : IGenresReadOnlyRepository, IGenresWriteOnlyRep
     {
         return await _dbContext.Genres.FirstOrDefaultAsync(g => g.Id == id);
     }
+    public async Task<List<Genre>> GetByIds(List<long> ids)
+    {
+        return await _dbContext.Genres
+            .Where(g => ids.Contains(g.Id))
+            .ToListAsync();
+    }
 
     public void Update(Genre genre)
     {

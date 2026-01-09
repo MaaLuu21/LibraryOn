@@ -1,6 +1,7 @@
 ﻿using LibraryOn.Application.UseCases.Genres.Delete;
 using LibraryOn.Application.UseCases.Genres.GetAll;
 using LibraryOn.Application.UseCases.Genres.GetById;
+using LibraryOn.Application.UseCases.Genres.GetByIds;
 using LibraryOn.Application.UseCases.Genres.Register;
 using LibraryOn.Application.UseCases.Genres.Update;
 using LibraryOn.Communication.Requests.Genres;
@@ -77,6 +78,17 @@ namespace LibraryOn.Api.Controllers
             return NoContent();
         }
 
+
+        [HttpGet("by-ids")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ResponseErrorJson), StatusCodes.Status404NotFound)]
+        public async Task<IActionResult> GetByIdsGenre([FromServices] IGetGenresByIdsUseCase useCase,
+                                                       [FromQuery] List<long> ids)
+        {
+            var response = await useCase.Execute(ids);
+
+            return Ok(response);
+        }
 
     }
 }

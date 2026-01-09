@@ -3,6 +3,7 @@ using LibraryOn.Application.UseCases.Books.Register;
 using LibraryOn.Application.UseCases.Genres.Delete;
 using LibraryOn.Application.UseCases.Genres.GetAll;
 using LibraryOn.Application.UseCases.Genres.GetById;
+using LibraryOn.Application.UseCases.Genres.GetByIds;
 using LibraryOn.Application.UseCases.Genres.Register;
 using LibraryOn.Application.UseCases.Genres.Update;
 using Microsoft.Extensions.DependencyInjection;
@@ -31,6 +32,7 @@ public static class DependencyInjectionExtension
         services.AddScoped<IDeleteGenreUseCase, DeleteGenreUseCase>();
         services.AddScoped<IUpdateGenreUseCase, UpdateGenreUseCase>();
         services.AddScoped<IGetAllGenreUseCase, GetAllGenreUseCase>();
+        services.AddScoped<IGetGenresByIdsUseCase, GetGenresByIdsUseCase>();
         
         //book
         services.AddScoped<IRegisterBookUseCase, RegisterBookUseCase>();

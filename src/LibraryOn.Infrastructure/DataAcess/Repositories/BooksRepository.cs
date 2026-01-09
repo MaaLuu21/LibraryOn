@@ -1,5 +1,6 @@
 ﻿using LibraryOn.Domain.Entities;
 using LibraryOn.Domain.Repositories.Books;
+using Microsoft.EntityFrameworkCore;
 
 namespace LibraryOn.Infrastructure.DataAcess.Repositories;
 internal class BooksRepository : IBookWriteOnlyRepository
@@ -13,7 +14,8 @@ internal class BooksRepository : IBookWriteOnlyRepository
 
     public async Task Add (Book book)
     {
-        await _dbContext.AddAsync(book); 
+        await _dbContext.AddAsync(book);
+        
     }
 
 }
