@@ -35,3 +35,8 @@ F:\ESTUDOS\C#\PORTIFOLIO\LibraryOn\src\LibraryOn.Application\bin\Debug\net8.0\Li
 F:\ESTUDOS\C#\PORTIFOLIO\LibraryOn\src\LibraryOn.Application\bin\Debug\net8.0\pt-BR\LibraryOn.Exception.resources.dll
 F:\ESTUDOS\C#\PORTIFOLIO\LibraryOn\src\LibraryOn.Application\obj\Debug\net8.0\LibraryO.B2379168.Up2Date
 F:\ESTUDOS\C#\PORTIFOLIO\LibraryOn\src\LibraryOn.Application\obj\Debug\net8.0\ref\LibraryOn.Application.dll
+C:\desenvolvimento\dotnet\LibraryOn\src\LibraryOn.Application\bin\Debug\net8.0\LibraryOn.Domain.dll
+C:\desenvolvimento\dotnet\LibraryOn\src\LibraryOn.Application\bin\Debug\net8.0\LibraryOn.Exception.dll
+C:\desenvolvimento\dotnet\LibraryOn\src\LibraryOn.Application\bin\Debug\net8.0\LibraryOn.Domain.pdb
+C:\desenvolvimento\dotnet\LibraryOn\src\LibraryOn.Application\bin\Debug\net8.0\LibraryOn.Exception.pdb
+C:\desenvolvimento\dotnet\LibraryOn\src\LibraryOn.Application\bin\Debug\net8.0\pt-BR\LibraryOn.Exception.resources.dll

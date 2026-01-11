@@ -18,7 +18,6 @@ namespace LibraryOn.Api.Controllers
         [HttpPost]
         [ProducesResponseType(typeof(ResponseRegisteredGenreJson), StatusCodes.Status201Created)]
         [ProducesResponseType(typeof(ResponseErrorJson), StatusCodes.Status400BadRequest)]
-        //[ProducesResponseType()] adicionar classe para lista de erros
         public async Task<IActionResult> RegisterGenre([FromServices] IRegisterGenreUseCase useCase,
                                                   [FromBody] RequestGenreJson request)
         {

@@ -10,3 +10,15 @@ F:\ESTUDOS\C#\PORTIFOLIO\LibraryOn\src\LibraryOn.Domain\obj\Debug\net8.0\Library
 F:\ESTUDOS\C#\PORTIFOLIO\LibraryOn\src\LibraryOn.Domain\obj\Debug\net8.0\refint\LibraryOn.Domain.dll
 F:\ESTUDOS\C#\PORTIFOLIO\LibraryOn\src\LibraryOn.Domain\obj\Debug\net8.0\LibraryOn.Domain.pdb
 F:\ESTUDOS\C#\PORTIFOLIO\LibraryOn\src\LibraryOn.Domain\obj\Debug\net8.0\ref\LibraryOn.Domain.dll
+C:\desenvolvimento\dotnet\LibraryOn\src\LibraryOn.Domain\bin\Debug\net8.0\LibraryOn.Domain.deps.json
+C:\desenvolvimento\dotnet\LibraryOn\src\LibraryOn.Domain\bin\Debug\net8.0\LibraryOn.Domain.dll
+C:\desenvolvimento\dotnet\LibraryOn\src\LibraryOn.Domain\bin\Debug\net8.0\LibraryOn.Domain.pdb
+C:\desenvolvimento\dotnet\LibraryOn\src\LibraryOn.Domain\obj\Debug\net8.0\LibraryOn.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\desenvolvimento\dotnet\LibraryOn\src\LibraryOn.Domain\obj\Debug\net8.0\LibraryOn.Domain.AssemblyInfoInputs.cache
+C:\desenvolvimento\dotnet\LibraryOn\src\LibraryOn.Domain\obj\Debug\net8.0\LibraryOn.Domain.AssemblyInfo.cs
+C:\desenvolvimento\dotnet\LibraryOn\src\LibraryOn.Domain\obj\Debug\net8.0\LibraryOn.Domain.csproj.CoreCompileInputs.cache
+C:\desenvolvimento\dotnet\LibraryOn\src\LibraryOn.Domain\obj\Debug\net8.0\LibraryOn.Domain.sourcelink.json
+C:\desenvolvimento\dotnet\LibraryOn\src\LibraryOn.Domain\obj\Debug\net8.0\LibraryOn.Domain.dll
+C:\desenvolvimento\dotnet\LibraryOn\src\LibraryOn.Domain\obj\Debug\net8.0\refint\LibraryOn.Domain.dll
+C:\desenvolvimento\dotnet\LibraryOn\src\LibraryOn.Domain\obj\Debug\net8.0\LibraryOn.Domain.pdb
+C:\desenvolvimento\dotnet\LibraryOn\src\LibraryOn.Domain\obj\Debug\net8.0\ref\LibraryOn.Domain.dll

@@ -23,8 +23,13 @@ public class AutoMapping : Profile
 
     private void EntityToResponse()
     {
+        //Genre
         CreateMap<Genre, ResponseGenreJson>();
         CreateMap<Genre, ResponseRegisteredGenreJson>();
+
+        //Book
         CreateMap<Book, ResponseRegisteredBookJson>();
+        CreateMap<Book, ResponseShortBookJson>();
+        CreateMap<Book, ResponseBookJson>();
     }
 }

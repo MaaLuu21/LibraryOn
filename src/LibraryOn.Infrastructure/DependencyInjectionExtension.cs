@@ -25,6 +25,7 @@ public static class DependencyInjectionExtension
         services.AddScoped<IGenresUpdateOnlyRepository, GenresRepository>();
         //book
         services.AddScoped<IBookWriteOnlyRepository, BooksRepository>();
+        services.AddScoped<IBookReadOnlyRepository, BooksRepository>();
     }
 
     private static void AddDbContext (IServiceCollection services,  IConfiguration configuration)
