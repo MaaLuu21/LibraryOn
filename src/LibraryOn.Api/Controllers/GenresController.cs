@@ -29,7 +29,7 @@ namespace LibraryOn.Api.Controllers
         [Route("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ResponseErrorJson), StatusCodes.Status404NotFound)]
-        public async Task<IActionResult> GetByIdGenre([FromServices] IGetGenreByIdUseCase useCase,
+        public async Task<IActionResult> GetById([FromServices] IGetGenreByIdUseCase useCase,
                                                    [FromRoute] long id)
         {
             var response = await useCase.Execute(id);
@@ -40,7 +40,7 @@ namespace LibraryOn.Api.Controllers
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ResponseErrorJson), StatusCodes.Status404NotFound)]
-        public async Task<IActionResult> GetAllGenre([FromServices] IGetAllGenreUseCase useCase)
+        public async Task<IActionResult> GetAll([FromServices] IGetAllGenreUseCase useCase)
         {
             var response = await useCase.Execute();
 
@@ -81,7 +81,7 @@ namespace LibraryOn.Api.Controllers
         [HttpGet("by-ids")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ResponseErrorJson), StatusCodes.Status404NotFound)]
-        public async Task<IActionResult> GetByIdsGenre([FromServices] IGetGenresByIdsUseCase useCase,
+        public async Task<IActionResult> GetByIds([FromServices] IGetGenresByIdsUseCase useCase,
                                                        [FromQuery] List<long> ids)
         {
             var response = await useCase.Execute(ids);

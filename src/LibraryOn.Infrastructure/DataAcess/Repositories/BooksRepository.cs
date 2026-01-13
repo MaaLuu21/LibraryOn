@@ -22,4 +22,12 @@ internal class BooksRepository : IBookWriteOnlyRepository, IBookReadOnlyReposito
     {
         return await _dbContext.Books.AsNoTracking().ToListAsync();
     }
+
+    public async Task<Book?> GetById(long id)
+    {
+        return await _dbContext.Books
+            .Include(b => b.Genres)
+            .AsNoTracking()
+            .FirstOrDefaultAsync(b => b.Id == id);
+    }
 }

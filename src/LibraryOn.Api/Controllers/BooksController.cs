@@ -1,11 +1,10 @@
 ﻿using LibraryOn.Application.UseCases.Books.GetAll;
+using LibraryOn.Application.UseCases.Books.GetById;
 using LibraryOn.Application.UseCases.Books.Register;
 using LibraryOn.Communication.Requests.Books;
 using LibraryOn.Communication.Responses;
 using LibraryOn.Communication.Responses.Book;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using System.Resources;
 
 namespace LibraryOn.Api.Controllers
 {
@@ -28,11 +27,25 @@ namespace LibraryOn.Api.Controllers
         [HttpGet]
         [ProducesResponseType (StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ResponseErrorJson), StatusCodes.Status404NotFound)]
-        public async Task<IActionResult> GetAllBook([FromServices] IGetAllBookUseCase useCase)
+        public async Task<IActionResult> GetAll([FromServices] IGetAllBookUseCase useCase)
         {
             var response = await useCase.Execute();
 
             return Ok(response);
         }
+
+        [HttpGet]
+        [Route("{id}")]
+        [ProducesResponseType (StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ResponseErrorJson), StatusCodes.Status404NotFound)]
+        public async Task<IActionResult> GetById([FromServices] IGetBookByIdUseCase useCase,
+                                                  [FromRoute] long id)
+        {
+            var response = await useCase.Execute(id);
+
+
+            return Ok(response);
+        }
+        
     }
 }

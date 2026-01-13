@@ -120,6 +120,9 @@
   <data name="AUTHOR_REQUIRED" xml:space="preserve">
     <value>Autor é obrigatório.</value>
   </data>
+  <data name="BOOK_NOT_FOUND" xml:space="preserve">
+    <value>Livro não encontrado.</value>
+  </data>
   <data name="GENRE_NOT_FOUND" xml:space="preserve">
     <value>Gênero não encontrado.</value>
   </data>
