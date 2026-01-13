@@ -1,4 +1,5 @@
-﻿using LibraryOn.Application.UseCases.Books.GetAll;
+﻿using LibraryOn.Application.UseCases.Books.Delete;
+using LibraryOn.Application.UseCases.Books.GetAll;
 using LibraryOn.Application.UseCases.Books.GetById;
 using LibraryOn.Application.UseCases.Books.Register;
 using LibraryOn.Communication.Requests.Books;
@@ -25,7 +26,7 @@ namespace LibraryOn.Api.Controllers
         }
 
         [HttpGet]
-        [ProducesResponseType (StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ResponseErrorJson), StatusCodes.Status404NotFound)]
         public async Task<IActionResult> GetAll([FromServices] IGetAllBookUseCase useCase)
         {
@@ -36,15 +37,27 @@ namespace LibraryOn.Api.Controllers
 
         [HttpGet]
         [Route("{id}")]
-        [ProducesResponseType (StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ResponseErrorJson), StatusCodes.Status404NotFound)]
         public async Task<IActionResult> GetById([FromServices] IGetBookByIdUseCase useCase,
                                                   [FromRoute] long id)
         {
             var response = await useCase.Execute(id);
 
-
             return Ok(response);
+        }
+
+        [HttpDelete]
+        [Route("{id}")]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(typeof(ResponseErrorJson), StatusCodes.Status404NotFound)]
+
+        public async Task<IActionResult> Delete([FromServices] IDeleteBookUseCase useCase,
+                                                [FromRoute] long id)
+        {
+            await useCase.Execute(id);
+
+            return NoContent();
         }
         
     }

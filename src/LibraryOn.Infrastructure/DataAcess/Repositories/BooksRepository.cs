@@ -18,6 +18,11 @@ internal class BooksRepository : IBookWriteOnlyRepository, IBookReadOnlyReposito
         
     }
 
+    public void Delete(Book book)
+    {
+        _dbContext.Books.Remove(book);
+    }
+
     public async Task<List<Book>> GetAll()
     {
         return await _dbContext.Books.AsNoTracking().ToListAsync();

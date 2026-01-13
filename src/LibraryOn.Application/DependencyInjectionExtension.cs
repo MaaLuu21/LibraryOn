@@ -1,4 +1,5 @@
 ﻿using LibraryOn.Application.AutoMapper;
+using LibraryOn.Application.UseCases.Books.Delete;
 using LibraryOn.Application.UseCases.Books.GetAll;
 using LibraryOn.Application.UseCases.Books.GetById;
 using LibraryOn.Application.UseCases.Books.Register;
@@ -40,6 +41,7 @@ public static class DependencyInjectionExtension
         services.AddScoped<IRegisterBookUseCase, RegisterBookUseCase>();
         services.AddScoped<IGetAllBookUseCase, GetAllBookUseCase>();
         services.AddScoped<IGetBookByIdUseCase, GetBookByIdUseCase>();
+        services.AddScoped<IDeleteBookUseCase, DeleteBookUseCase>();
 
     }
 }
