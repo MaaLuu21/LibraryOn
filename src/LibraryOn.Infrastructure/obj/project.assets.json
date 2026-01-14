@@ -2,6 +2,40 @@
   "version": 3,
   "targets": {
     "net8.0": {
+      "Flunt/2.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Flunt.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Flunt.dll": {}
+        }
+      },
+      "Flunt.Br/2.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Flunt": "2.0.3"
+        },
+        "compile": {
+          "lib/netstandard2.0/Flunt.Br.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Flunt.Br.dll": {}
+        }
+      },
+      "libphonenumber-csharp/9.0.21": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/PhoneNumbers.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/PhoneNumbers.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Microsoft.EntityFrameworkCore/8.0.22": {
         "type": "package",
         "dependencies": {
@@ -281,6 +315,51 @@
     }
   },
   "libraries": {
+    "Flunt/2.0.3": {
+      "sha512": "0AEzlD5GM7b9aNn+CjSU9T9dney9ZqIlmvBa5pmLjx5sxVH4MEv2f7yKNVLmpQ6mGgTl3vQHDwqWZEL0+sRb1A==",
+      "type": "package",
+      "path": "flunt/2.0.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "flunt.2.0.3.nupkg.sha512",
+        "flunt.nuspec",
+        "icon.png",
+        "lib/netstandard2.0/Flunt.dll"
+      ]
+    },
+    "Flunt.Br/2.0.0": {
+      "sha512": "OdURuAJ00wbtbRFbg32hJSx3ZENibuwQ7ayTzaI/oeMWtTQBjr3zhfb/bSipPDsIIK/sMoxdbmZzh3j7bcGyjQ==",
+      "type": "package",
+      "path": "flunt.br/2.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "flunt-icon-br_compressed.png",
+        "flunt.br.2.0.0.nupkg.sha512",
+        "flunt.br.nuspec",
+        "lib/netstandard2.0/Flunt.Br.dll"
+      ]
+    },
+    "libphonenumber-csharp/9.0.21": {
+      "sha512": "JIWzSxu0VVxpvnx/AdXpuy09wASnbcHIiii3Qr8nTCsef49jbDXWeyPFkoTGeCAkqZwJHB1qRPUp/58dtJlieQ==",
+      "type": "package",
+      "path": "libphonenumber-csharp/9.0.21",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "icon.png",
+        "lib/net8.0/PhoneNumbers.dll",
+        "lib/net8.0/PhoneNumbers.xml",
+        "lib/net9.0/PhoneNumbers.dll",
+        "lib/net9.0/PhoneNumbers.xml",
+        "lib/netstandard2.0/PhoneNumbers.dll",
+        "lib/netstandard2.0/PhoneNumbers.xml",
+        "libphonenumber-csharp.9.0.21.nupkg.sha512",
+        "libphonenumber-csharp.nuspec"
+      ]
+    },
     "Microsoft.EntityFrameworkCore/8.0.22": {
       "sha512": "nKGrD/WOO1d7qtXvghFAHre5Fk3ubw41pDFM0hbFxVIkMFxl4B0ug2LylMHOq+dgAceUeo3bx0qMh6/Jl9NbrA==",
       "type": "package",
@@ -730,9 +809,11 @@
   },
   "projectFileDependencyGroups": {
     "net8.0": [
+      "Flunt.Br >= 2.0.0",
       "LibraryOn.Domain >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 8.0.22",
-      "Pomelo.EntityFrameworkCore.MySql >= 8.0.3"
+      "Pomelo.EntityFrameworkCore.MySql >= 8.0.3",
+      "libphonenumber-csharp >= 9.0.21"
     ]
   },
   "packageFolders": {
@@ -790,6 +871,10 @@
       "net8.0": {
         "targetAlias": "net8.0",
         "dependencies": {
+          "Flunt.Br": {
+            "target": "Package",
+            "version": "[2.0.0, )"
+          },
           "Microsoft.EntityFrameworkCore": {
             "target": "Package",
             "version": "[8.0.22, )"
@@ -797,6 +882,10 @@
           "Pomelo.EntityFrameworkCore.MySql": {
             "target": "Package",
             "version": "[8.0.3, )"
+          },
+          "libphonenumber-csharp": {
+            "target": "Package",
+            "version": "[9.0.21, )"
           }
         },
         "imports": [

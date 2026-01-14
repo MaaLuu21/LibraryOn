@@ -441,6 +441,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Flunt.Br": {
+              "target": "Package",
+              "version": "[2.0.0, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[8.0.22, )"
@@ -448,6 +452,10 @@
             "Pomelo.EntityFrameworkCore.MySql": {
               "target": "Package",
               "version": "[8.0.3, )"
+            },
+            "libphonenumber-csharp": {
+              "target": "Package",
+              "version": "[9.0.21, )"
             }
           },
           "imports": [
