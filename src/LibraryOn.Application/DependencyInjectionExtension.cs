@@ -3,6 +3,7 @@ using LibraryOn.Application.UseCases.Books.Delete;
 using LibraryOn.Application.UseCases.Books.GetAll;
 using LibraryOn.Application.UseCases.Books.GetById;
 using LibraryOn.Application.UseCases.Books.Register;
+using LibraryOn.Application.UseCases.Books.Update;
 using LibraryOn.Application.UseCases.Genres.Delete;
 using LibraryOn.Application.UseCases.Genres.GetAll;
 using LibraryOn.Application.UseCases.Genres.GetById;
@@ -42,6 +43,8 @@ public static class DependencyInjectionExtension
         services.AddScoped<IGetAllBookUseCase, GetAllBookUseCase>();
         services.AddScoped<IGetBookByIdUseCase, GetBookByIdUseCase>();
         services.AddScoped<IDeleteBookUseCase, DeleteBookUseCase>();
+        services.AddScoped<IUpdateBookUseCase, UpdateBookUseCase>();
+
 
     }
 }

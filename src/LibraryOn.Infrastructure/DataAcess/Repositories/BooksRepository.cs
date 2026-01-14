@@ -3,7 +3,7 @@ using LibraryOn.Domain.Repositories.Books;
 using Microsoft.EntityFrameworkCore;
 
 namespace LibraryOn.Infrastructure.DataAcess.Repositories;
-internal class BooksRepository : IBookWriteOnlyRepository, IBookReadOnlyRepository
+internal class BooksRepository : IBookWriteOnlyRepository, IBookReadOnlyRepository, IBookUpdateOnlyRepository
 {
     private readonly LibraryOnDbContext _dbContext;
 
@@ -28,11 +28,22 @@ internal class BooksRepository : IBookWriteOnlyRepository, IBookReadOnlyReposito
         return await _dbContext.Books.AsNoTracking().ToListAsync();
     }
 
-    public async Task<Book?> GetById(long id)
+    async Task<Book?> IBookReadOnlyRepository.GetById(long id)
     {
         return await _dbContext.Books
             .Include(b => b.Genres)
             .AsNoTracking()
             .FirstOrDefaultAsync(b => b.Id == id);
+    }
+    async Task<Book?> IBookUpdateOnlyRepository.GetById(long id)
+    {
+        return await _dbContext.Books
+            .Include(b => b.Genres)
+            .FirstOrDefaultAsync(b => b.Id == id);
+    }
+
+    public void Update(Book book)
+    {
+         _dbContext.Books.Update(book);
     }
 }

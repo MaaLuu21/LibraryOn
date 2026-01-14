@@ -2,6 +2,7 @@
 using LibraryOn.Application.UseCases.Books.GetAll;
 using LibraryOn.Application.UseCases.Books.GetById;
 using LibraryOn.Application.UseCases.Books.Register;
+using LibraryOn.Application.UseCases.Books.Update;
 using LibraryOn.Communication.Requests.Books;
 using LibraryOn.Communication.Responses;
 using LibraryOn.Communication.Responses.Book;
@@ -56,6 +57,20 @@ namespace LibraryOn.Api.Controllers
                                                 [FromRoute] long id)
         {
             await useCase.Execute(id);
+
+            return NoContent();
+        }
+
+        [HttpPut]
+        [Route("{id}")]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(typeof(ResponseErrorJson), StatusCodes.Status404NotFound)]
+        [ProducesResponseType(typeof(ResponseErrorJson), StatusCodes.Status400BadRequest)]
+        public async Task<IActionResult> Update([FromServices] IUpdateBookUseCase useCase,
+                                                [FromBody] RequestBookJson request,
+                                                [FromRoute] long id)
+        {
+            await useCase.Execute(id, request);
 
             return NoContent();
         }
