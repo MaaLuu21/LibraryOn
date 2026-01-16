@@ -14,8 +14,7 @@ internal class BooksRepository : IBookWriteOnlyRepository, IBookReadOnlyReposito
 
     public async Task Add (Book book)
     {
-        await _dbContext.AddAsync(book);
-        
+        await _dbContext.Books.AddAsync(book);  
     }
 
     public void Delete(Book book)

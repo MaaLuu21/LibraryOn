@@ -1,5 +1,7 @@
 ﻿using LibraryOn.Domain.Exceptions;
+using LibraryOn.Domain.Exceptions.Errors;
 using LibraryOn.Domain.Validators;
+using System.Text.RegularExpressions;
 
 namespace LibraryOn.Domain.ValueObjects;
 public sealed class PhoneNumber
@@ -15,10 +17,12 @@ public sealed class PhoneNumber
     {
         if(string.IsNullOrEmpty(value) || !validator.IsValid(value))
         {
-            throw new InvalidPhoneNumberException();
+            throw new DomainException(DomainErrorCodes.InvalidPhoneNumber);
         }
 
-        return new PhoneNumber(value);
-    }
+        var phoneClean = Regex.Replace(value, @"\D", "");
 
+        return new PhoneNumber(phoneClean);
+    }
+    public override string ToString() => Value;
 }

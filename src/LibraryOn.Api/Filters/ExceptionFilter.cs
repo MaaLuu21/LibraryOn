@@ -1,4 +1,5 @@
 ﻿using LibraryOn.Communication.Responses;
+using LibraryOn.Domain.Exceptions;
 using LibraryOn.Exception;
 using LibraryOn.Exception.ExceptionsBase;
 using Microsoft.AspNetCore.Mvc;
@@ -14,6 +15,10 @@ public class ExceptionFilter : IExceptionFilter
         {
             HandleProjectException(context);
         }
+        else if (context.Exception is DomainException)
+        {
+            HandleDomainException(context);
+        }
         else
         {
             ThrowUnknowError(context);
@@ -23,10 +28,20 @@ public class ExceptionFilter : IExceptionFilter
     private void HandleProjectException(ExceptionContext context)
     {
         var libraryOnException = (LibraryOnException)context.Exception;
+        
         var errorResponse = new ResponseErrorJson(libraryOnException.GetErrors());
 
         context.HttpContext.Response.StatusCode = libraryOnException.StatusCode;
         context.Result = new ObjectResult(errorResponse);
+    }
+    private void HandleDomainException(ExceptionContext context)
+    {
+        var domainException = (DomainException)context.Exception;
+        var errorResponse = new ResponseErrorJson(domainException.ErrorCodes);
+
+        context.HttpContext.Response.StatusCode = StatusCodes.Status400BadRequest;
+        context.Result = new ObjectResult(errorResponse);
+
     }
     private void ThrowUnknowError(ExceptionContext context)
     {

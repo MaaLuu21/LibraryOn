@@ -7,11 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Flunt.Br" Version="2.0.0" />
+    <PackageReference Include="libphonenumber-csharp" Version="9.0.21" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.22" />
     <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="8.0.3" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\LibraryOn.Application\LibraryOn.Application.csproj" />
     <ProjectReference Include="..\LibraryOn.Domain\LibraryOn.Domain.csproj" />
   </ItemGroup>
 

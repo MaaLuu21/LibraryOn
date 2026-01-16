@@ -1020,6 +1020,7 @@
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
           "Flunt.Br": "2.0.0",
+          "LibraryOn.Application": "1.0.0",
           "LibraryOn.Domain": "1.0.0",
           "Microsoft.EntityFrameworkCore": "8.0.22",
           "Pomelo.EntityFrameworkCore.MySql": "8.0.3",

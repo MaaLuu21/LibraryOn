@@ -1,4 +1,6 @@
 ﻿using LibraryOn.Domain.Exceptions;
+using LibraryOn.Domain.Exceptions.Errors;
+using System.Text.RegularExpressions;
 
 namespace LibraryOn.Domain.ValueObjects;
 public record Cpf
@@ -12,27 +14,22 @@ public record Cpf
 
     public static Cpf Create(string value)
     {
-        if(string.IsNullOrWhiteSpace(value))
-        {
-            throw new InvalidCpfException();
-        }
-
         if (string.IsNullOrWhiteSpace(value))
-            throw new InvalidCpfException();
+            throw new DomainException(DomainErrorCodes.InvalidCpf);
 
-        // Remove tudo que não é número
         var cpf = new string(value.Where(char.IsDigit).ToArray());
 
-        // Validação completa
         if (!IsValidCpf(cpf))
-            throw new InvalidCpfException();
+            throw new DomainException(DomainErrorCodes.InvalidCpf);
 
         return new Cpf(cpf);
     }
 
-    private static bool IsValidCpf(string cpf)
+    public static bool IsValidCpf(string cpf)
     {
-        if (cpf.Length != 11)
+        var cpfClean = Regex.Replace(cpf, @"\D", "");
+
+        if (cpfClean.Length != 11)
             return false;
 
         string[] invalids = {
@@ -41,26 +38,27 @@ public record Cpf
             "88888888888", "99999999999"
         };
 
-        if (invalids.Contains(cpf))
+        if (invalids.Contains(cpfClean))
             return false;
 
         int sum = 0;
         for (int i = 0; i < 9; i++)
-            sum += (cpf[i] - '0') * (10 - i);
+            sum += (cpfClean[i] - '0') * (10 - i);
 
         int remainder = sum % 11;
         int firstDigit = remainder < 2 ? 0 : 11 - remainder;
 
-        if ((cpf[9] - '0') != firstDigit)
+        if ((cpfClean[9] - '0') != firstDigit)
             return false;
 
         sum = 0;
         for (int i = 0; i < 10; i++)
-            sum += (cpf[i] - '0') * (11 - i);
+            sum += (cpfClean[i] - '0') * (11 - i);
 
         remainder = sum % 11;
         int secondDigit = remainder < 2 ? 0 : 11 - remainder;
 
-        return (cpf[10] - '0') == secondDigit;
+        return (cpfClean[10] - '0') == secondDigit;
     }
+    public override string ToString() => Value;
 }

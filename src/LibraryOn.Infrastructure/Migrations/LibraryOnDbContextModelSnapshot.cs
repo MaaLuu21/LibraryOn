@@ -81,6 +81,24 @@ namespace LibraryOn.Infrastructure.Migrations
                     b.ToTable("Genres");
                 });
 
+            modelBuilder.Entity("LibraryOn.Domain.Entities.Reader", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<long>("Id"));
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(150)
+                        .HasColumnType("varchar(150)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Readers");
+                });
+
             modelBuilder.Entity("BookGenre", b =>
                 {
                     b.HasOne("LibraryOn.Domain.Entities.Book", null)
@@ -93,6 +111,72 @@ namespace LibraryOn.Infrastructure.Migrations
                         .WithMany()
                         .HasForeignKey("GenresId")
                         .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("LibraryOn.Domain.Entities.Reader", b =>
+                {
+                    b.OwnsOne("LibraryOn.Domain.ValueObjects.Cpf", "Cpf", b1 =>
+                        {
+                            b1.Property<long>("ReaderId")
+                                .HasColumnType("bigint");
+
+                            b1.Property<string>("Value")
+                                .IsRequired()
+                                .HasColumnType("longtext")
+                                .HasColumnName("Cpf");
+
+                            b1.HasKey("ReaderId");
+
+                            b1.ToTable("Readers");
+
+                            b1.WithOwner()
+                                .HasForeignKey("ReaderId");
+                        });
+
+                    b.OwnsOne("LibraryOn.Domain.ValueObjects.Email", "Email", b1 =>
+                        {
+                            b1.Property<long>("ReaderId")
+                                .HasColumnType("bigint");
+
+                            b1.Property<string>("Value")
+                                .IsRequired()
+                                .HasColumnType("longtext")
+                                .HasColumnName("Email");
+
+                            b1.HasKey("ReaderId");
+
+                            b1.ToTable("Readers");
+
+                            b1.WithOwner()
+                                .HasForeignKey("ReaderId");
+                        });
+
+                    b.OwnsOne("LibraryOn.Domain.ValueObjects.PhoneNumber", "PhoneNumber", b1 =>
+                        {
+                            b1.Property<long>("ReaderId")
+                                .HasColumnType("bigint");
+
+                            b1.Property<string>("Value")
+                                .IsRequired()
+                                .HasColumnType("longtext")
+                                .HasColumnName("PhoneNumber");
+
+                            b1.HasKey("ReaderId");
+
+                            b1.ToTable("Readers");
+
+                            b1.WithOwner()
+                                .HasForeignKey("ReaderId");
+                        });
+
+                    b.Navigation("Cpf")
+                        .IsRequired();
+
+                    b.Navigation("Email")
+                        .IsRequired();
+
+                    b.Navigation("PhoneNumber")
                         .IsRequired();
                 });
 #pragma warning restore 612, 618

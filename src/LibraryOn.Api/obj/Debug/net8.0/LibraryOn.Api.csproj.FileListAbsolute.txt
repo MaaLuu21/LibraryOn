@@ -124,7 +124,6 @@ F:\ESTUDOS\C#\PORTIFOLIO\LibraryOn\src\LibraryOn.Api\obj\Debug\net8.0\refint\Lib
 F:\ESTUDOS\C#\PORTIFOLIO\LibraryOn\src\LibraryOn.Api\obj\Debug\net8.0\LibraryOn.Api.pdb
 F:\ESTUDOS\C#\PORTIFOLIO\LibraryOn\src\LibraryOn.Api\obj\Debug\net8.0\LibraryOn.Api.genruntimeconfig.cache
 F:\ESTUDOS\C#\PORTIFOLIO\LibraryOn\src\LibraryOn.Api\obj\Debug\net8.0\ref\LibraryOn.Api.dll
-F:\ESTUDOS\C#\PORTIFOLIO\LibraryOn\src\LibraryOn.Api\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\desenvolvimento\dotnet\LibraryOn\src\LibraryOn.Api\bin\Debug\net8.0\appsettings.Development.json
 C:\desenvolvimento\dotnet\LibraryOn\src\LibraryOn.Api\bin\Debug\net8.0\appsettings.json
 C:\desenvolvimento\dotnet\LibraryOn\src\LibraryOn.Api\bin\Debug\net8.0\LibraryOn.Api.staticwebassets.endpoints.json
@@ -252,3 +251,7 @@ C:\desenvolvimento\dotnet\LibraryOn\src\LibraryOn.Api\obj\Debug\net8.0\refint\Li
 C:\desenvolvimento\dotnet\LibraryOn\src\LibraryOn.Api\obj\Debug\net8.0\LibraryOn.Api.pdb
 C:\desenvolvimento\dotnet\LibraryOn\src\LibraryOn.Api\obj\Debug\net8.0\LibraryOn.Api.genruntimeconfig.cache
 C:\desenvolvimento\dotnet\LibraryOn\src\LibraryOn.Api\obj\Debug\net8.0\ref\LibraryOn.Api.dll
+F:\ESTUDOS\C#\PORTIFOLIO\LibraryOn\src\LibraryOn.Api\bin\Debug\net8.0\Flunt.dll
+F:\ESTUDOS\C#\PORTIFOLIO\LibraryOn\src\LibraryOn.Api\bin\Debug\net8.0\Flunt.Br.dll
+F:\ESTUDOS\C#\PORTIFOLIO\LibraryOn\src\LibraryOn.Api\bin\Debug\net8.0\PhoneNumbers.dll
+F:\ESTUDOS\C#\PORTIFOLIO\LibraryOn\src\LibraryOn.Api\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

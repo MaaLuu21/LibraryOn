@@ -79,6 +79,42 @@ namespace LibraryOn.Exception {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cpf invalid..
+        /// </summary>
+        public static string CPF_INVALID {
+            get {
+                return ResourceManager.GetString("CPF_INVALID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cpf required..
+        /// </summary>
+        public static string CPF_REQUIRED {
+            get {
+                return ResourceManager.GetString("CPF_REQUIRED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Email invalid..
+        /// </summary>
+        public static string EMAIL_INVALID {
+            get {
+                return ResourceManager.GetString("EMAIL_INVALID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Email required..
+        /// </summary>
+        public static string EMAIL_REQUIRED {
+            get {
+                return ResourceManager.GetString("EMAIL_REQUIRED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Genre not found..
         /// </summary>
         public static string GENRE_NOT_FOUND {
@@ -102,6 +138,33 @@ namespace LibraryOn.Exception {
         public static string INVALID_ID {
             get {
                 return ResourceManager.GetString("INVALID_ID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name required..
+        /// </summary>
+        public static string NAME_REQUIRED {
+            get {
+                return ResourceManager.GetString("NAME_REQUIRED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Phone number invalid..
+        /// </summary>
+        public static string PHONE_NUMBER_INVALID {
+            get {
+                return ResourceManager.GetString("PHONE_NUMBER_INVALID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Phone number required..
+        /// </summary>
+        public static string PHONE_NUMBER_REQUIRED {
+            get {
+                return ResourceManager.GetString("PHONE_NUMBER_REQUIRED", resourceCulture);
             }
         }
         

@@ -1,8 +1,11 @@
 ﻿using LibraryOn.Domain.Repositories;
 using LibraryOn.Domain.Repositories.Books;
 using LibraryOn.Domain.Repositories.Genres;
+using LibraryOn.Domain.Repositories.Readers;
+using LibraryOn.Domain.Validators;
 using LibraryOn.Infrastructure.DataAcess;
 using LibraryOn.Infrastructure.DataAcess.Repositories;
+using LibraryOn.Infrastructure.Validators;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -27,6 +30,11 @@ public static class DependencyInjectionExtension
         services.AddScoped<IBookWriteOnlyRepository, BooksRepository>();
         services.AddScoped<IBookReadOnlyRepository, BooksRepository>();
         services.AddScoped<IBookUpdateOnlyRepository, BooksRepository>();
+
+        //reader
+        services.AddScoped<IReaderWriteOnlyRepository, ReaderRepository>();
+
+        services.AddScoped<IPhoneNumberValidator, PhoneNumberValidator>();
     }
 
     private static void AddDbContext (IServiceCollection services,  IConfiguration configuration)

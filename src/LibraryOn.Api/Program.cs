@@ -1,3 +1,4 @@
+using LibraryOn.Api;
 using LibraryOn.Api.csproj.Filters;
 using LibraryOn.Api.csproj.Middleware;
 using LibraryOn.Application;
@@ -13,12 +14,15 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddHttpContextAccessor();
+
 //filtro excecoes
 builder.Services.AddMvc(options => options.Filters.Add(typeof(ExceptionFilter)));
 
 //injeção de dependencia
 builder.Services.AddInfrastructure(builder.Configuration);
 builder.Services.AddApplication();
+builder.Services.AddApi();
 
 var app = builder.Build();
 

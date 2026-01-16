@@ -25,7 +25,7 @@ internal class RegisterGenreUseCase : IRegisterGenreUseCase
     {
         Validate(request);
 
-         var entity = _mapper.Map<Genre>(request);
+        var entity = _mapper.Map<Genre>(request);
 
         await _repository.Add(entity);
         await _unityOfWork.Commit();

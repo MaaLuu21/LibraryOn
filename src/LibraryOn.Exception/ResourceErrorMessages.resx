@@ -123,6 +123,18 @@
   <data name="BOOK_NOT_FOUND" xml:space="preserve">
     <value>Book not found.</value>
   </data>
+  <data name="CPF_INVALID" xml:space="preserve">
+    <value>Cpf invalid.</value>
+  </data>
+  <data name="CPF_REQUIRED" xml:space="preserve">
+    <value>Cpf required.</value>
+  </data>
+  <data name="EMAIL_INVALID" xml:space="preserve">
+    <value>Email invalid.</value>
+  </data>
+  <data name="EMAIL_REQUIRED" xml:space="preserve">
+    <value>Email required.</value>
+  </data>
   <data name="GENRE_NOT_FOUND" xml:space="preserve">
     <value>Genre not found.</value>
   </data>
@@ -131,6 +143,15 @@
   </data>
   <data name="INVALID_ID" xml:space="preserve">
     <value>Invalid ID.</value>
+  </data>
+  <data name="NAME_REQUIRED" xml:space="preserve">
+    <value>Name required.</value>
+  </data>
+  <data name="PHONE_NUMBER_INVALID" xml:space="preserve">
+    <value>Phone number invalid.</value>
+  </data>
+  <data name="PHONE_NUMBER_REQUIRED" xml:space="preserve">
+    <value>Phone number required.</value>
   </data>
   <data name="PUBLISH_YEAR_CANT_BE_FOR_THE_FUTURE" xml:space="preserve">
     <value>Publish year can't be for the future.</value>

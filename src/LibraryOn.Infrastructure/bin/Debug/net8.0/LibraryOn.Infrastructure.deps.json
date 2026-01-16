@@ -8,12 +8,61 @@
     ".NETCoreApp,Version=v8.0": {
       "LibraryOn.Infrastructure/1.0.0": {
         "dependencies": {
+          "Flunt.Br": "2.0.0",
+          "LibraryOn.Application": "1.0.0",
           "LibraryOn.Domain": "1.0.0",
           "Microsoft.EntityFrameworkCore": "8.0.22",
-          "Pomelo.EntityFrameworkCore.MySql": "8.0.3"
+          "Pomelo.EntityFrameworkCore.MySql": "8.0.3",
+          "libphonenumber-csharp": "9.0.21"
         },
         "runtime": {
           "LibraryOn.Infrastructure.dll": {}
+        }
+      },
+      "AutoMapper/13.0.1": {
+        "dependencies": {
+          "Microsoft.Extensions.Options": "8.0.2"
+        },
+        "runtime": {
+          "lib/net6.0/AutoMapper.dll": {
+            "assemblyVersion": "13.0.0.0",
+            "fileVersion": "13.0.1.0"
+          }
+        }
+      },
+      "FluentValidation/12.1.0": {
+        "runtime": {
+          "lib/net8.0/FluentValidation.dll": {
+            "assemblyVersion": "12.0.0.0",
+            "fileVersion": "12.1.0.0"
+          }
+        }
+      },
+      "Flunt/2.0.3": {
+        "runtime": {
+          "lib/netstandard2.0/Flunt.dll": {
+            "assemblyVersion": "2.0.3.0",
+            "fileVersion": "2.0.3.0"
+          }
+        }
+      },
+      "Flunt.Br/2.0.0": {
+        "dependencies": {
+          "Flunt": "2.0.3"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Flunt.Br.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.0.0.0"
+          }
+        }
+      },
+      "libphonenumber-csharp/9.0.21": {
+        "runtime": {
+          "lib/net8.0/PhoneNumbers.dll": {
+            "assemblyVersion": "9.0.21.0",
+            "fileVersion": "9.0.21.0"
+          }
         }
       },
       "Microsoft.EntityFrameworkCore/8.0.22": {
@@ -174,11 +223,48 @@
           }
         }
       },
+      "LibraryOn.Application/1.0.0": {
+        "dependencies": {
+          "AutoMapper": "13.0.1",
+          "FluentValidation": "12.1.0",
+          "LibraryOn.Communication": "1.0.0",
+          "LibraryOn.Domain": "1.0.0",
+          "LibraryOn.Exception": "1.0.0",
+          "Microsoft.Extensions.DependencyInjection": "8.0.1"
+        },
+        "runtime": {
+          "LibraryOn.Application.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "LibraryOn.Communication/1.0.0": {
+        "runtime": {
+          "LibraryOn.Communication.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
       "LibraryOn.Domain/1.0.0": {
         "runtime": {
           "LibraryOn.Domain.dll": {
             "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "LibraryOn.Exception/1.0.0": {
+        "runtime": {
+          "LibraryOn.Exception.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        },
+        "resources": {
+          "pt-BR/LibraryOn.Exception.resources.dll": {
+            "locale": "pt-BR"
           }
         }
       }
@@ -189,6 +275,41 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "AutoMapper/13.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-/Fx1SbJ16qS7dU4i604Sle+U9VLX+WSNVJggk6MupKVkYvvBm4XqYaeFuf67diHefHKHs50uQIS2YEDFhPCakQ==",
+      "path": "automapper/13.0.1",
+      "hashPath": "automapper.13.0.1.nupkg.sha512"
+    },
+    "FluentValidation/12.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-FqWEn8BdbbFEHGanj9K8SVo+LyBeFWy2rolaE+e1TNUbifr8M7Iss+I1AqTSc8kjKtvjl/WN4XIHiRpslh42bA==",
+      "path": "fluentvalidation/12.1.0",
+      "hashPath": "fluentvalidation.12.1.0.nupkg.sha512"
+    },
+    "Flunt/2.0.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-0AEzlD5GM7b9aNn+CjSU9T9dney9ZqIlmvBa5pmLjx5sxVH4MEv2f7yKNVLmpQ6mGgTl3vQHDwqWZEL0+sRb1A==",
+      "path": "flunt/2.0.3",
+      "hashPath": "flunt.2.0.3.nupkg.sha512"
+    },
+    "Flunt.Br/2.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-OdURuAJ00wbtbRFbg32hJSx3ZENibuwQ7ayTzaI/oeMWtTQBjr3zhfb/bSipPDsIIK/sMoxdbmZzh3j7bcGyjQ==",
+      "path": "flunt.br/2.0.0",
+      "hashPath": "flunt.br.2.0.0.nupkg.sha512"
+    },
+    "libphonenumber-csharp/9.0.21": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-JIWzSxu0VVxpvnx/AdXpuy09wASnbcHIiii3Qr8nTCsef49jbDXWeyPFkoTGeCAkqZwJHB1qRPUp/58dtJlieQ==",
+      "path": "libphonenumber-csharp/9.0.21",
+      "hashPath": "libphonenumber-csharp.9.0.21.nupkg.sha512"
     },
     "Microsoft.EntityFrameworkCore/8.0.22": {
       "type": "package",
@@ -295,7 +416,22 @@
       "path": "pomelo.entityframeworkcore.mysql/8.0.3",
       "hashPath": "pomelo.entityframeworkcore.mysql.8.0.3.nupkg.sha512"
     },
+    "LibraryOn.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "LibraryOn.Communication/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "LibraryOn.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "LibraryOn.Exception/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

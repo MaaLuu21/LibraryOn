@@ -51,6 +51,7 @@ namespace LibraryOn.Api.Controllers
 
             return NoContent();
         }
+
         [HttpDelete]
         [Route("{id}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
@@ -76,7 +77,6 @@ namespace LibraryOn.Api.Controllers
 
             return NoContent();
         }
-
 
         [HttpGet("by-ids")]
         [ProducesResponseType(StatusCodes.Status200OK)]

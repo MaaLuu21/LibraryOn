@@ -1,11 +1,14 @@
 ﻿namespace LibraryOn.Domain.Exceptions;
 public class DomainException : Exception
 {
-    public string ErrorCode { get; }
+    public List<string> ErrorCodes { get; }
 
-    protected DomainException(string errorCode)
+    public DomainException(string errorCode)
     {
-        ErrorCode = errorCode;
+        ErrorCodes = new List<string> { errorCode };
     }
-
+    public DomainException(IEnumerable<string> errorCodes)
+    {
+        ErrorCodes = errorCodes.ToList();
+    }
 }
