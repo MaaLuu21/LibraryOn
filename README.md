@@ -10,7 +10,70 @@ Os funcionários têm a função de cadastrar novos usuários e registrar ou atu
   <img src="https://img.shields.io/badge/Contribuições-Bem%20vindas-brightgreen?style=for-the-badge"/>
 </p>
 
-## Desenvolvimento
-Atualmente, o projeto encontra-se em fase inicial de desenvolvimento, com foco na organização das ideias, definição do domínio e elaboração dos diagramas UML que servirão de base para a implementação das próximas etapas.
+## 🧠 Objetivo do Projeto
 
-- [Diagramas UML](https://github.com/MaaLuu21/LibraryOn/tree/main/docs)
+- Consolidar conhecimentos em desenvolvimento backend com .NET
+- Aplicar princípios de organização de código e separação de responsabilidades
+- Demonstrar uso prático de EF Core com banco de dados relacional
+- Servir como projeto de portfólio profissional
+
+## Status do Projeto
+
+O projeto encontra-se em fase intermediária de desenvolvimento, com funcionalidades já implementadas e outras em evolução.
+
+## Funcionalidades já implementadas
+
+- API REST com ASP.NET Core
+- Endpoints CRUD implementados para múltiplas entidades 
+- Persistência de dados utilizando:
+  - Entity Framework Core
+  - MySQL
+- Migrations configuradas e aplicadas via EF Core
+- Organização do código em camadas
+- Uso de DTOs para entrada e saída de dados
+- Relacionamentos entre entidades configurados no banco de dados
+
+## 🔄 Em desenvolvimento / Próximos passos
+
+- Finalização do CRUD para todas as entidades do domínio
+- Refinamento das regras de negócio e validações
+- Implementação de testes automatizados (unitários e de integração)
+- Melhoria da documentação da API via Swagger
+- Padronização de respostas e tratamento global de exceções
+- Implementação de autenticação e autorização
+- Autenticação e autorização
+
+---
+
+## 🛠️ Tecnologias Utilizadas
+
+- C#
+- ASP.NET Core Web API
+- Entity Framework Core
+- MySQL
+- Swagger / OpenAPI
+- Git e GitHub
+
+---
+
+## 📁 Estrutura do Projeto
+```
+  LibraryOn/
+  ├── docs/ # Documentação e diagramas
+  ├── src/
+  │   ├── LibraryOn.Api # Controllers e configuração da API
+  │   ├── LibraryOn.Application # Serviços e casos de uso
+  │   ├── LibraryOn.Communication # DTOs de Requests e Responses
+  │   ├── LibraryOn.Domain # Entidades, Value Objects e regras de domínio
+  │   ├── LibraryOn.Exceptions # Exceções
+  │   └── LibraryOn.Infrastructure # EF Core, DbContext e persistência
+  ├── LibraryOn.sln
+  └── README.md
+```
+## 💾 Banco de Dados
+
+- Banco de dados relacional: MySQL
+- ORM: Entity Framework Core
+- Estrutura criada e versionada através de migrations
+- Relacionamentos configurados utilizando Fluent API
+
