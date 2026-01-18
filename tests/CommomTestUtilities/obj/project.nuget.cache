@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "VOvJbzmwf1s=",
+  "success": true,
+  "projectFilePath": "F:\\ESTUDOS\\C#\\PORTIFOLIO\\LibraryOn\\tests\\CommomTestUtilities\\CommomTestUtilities.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\maria\\.nuget\\packages\\bogus\\35.6.5\\bogus.35.6.5.nupkg.sha512"
+  ],
+  "logs": []
+}

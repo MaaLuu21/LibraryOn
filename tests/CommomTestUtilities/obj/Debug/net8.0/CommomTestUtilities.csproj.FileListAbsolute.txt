@@ -1,0 +1,16 @@
+F:\ESTUDOS\C#\PORTIFOLIO\LibraryOn\tests\CommomTestUtilities\bin\Debug\net8.0\CommomTestUtilities.deps.json
+F:\ESTUDOS\C#\PORTIFOLIO\LibraryOn\tests\CommomTestUtilities\bin\Debug\net8.0\CommomTestUtilities.dll
+F:\ESTUDOS\C#\PORTIFOLIO\LibraryOn\tests\CommomTestUtilities\bin\Debug\net8.0\CommomTestUtilities.pdb
+F:\ESTUDOS\C#\PORTIFOLIO\LibraryOn\tests\CommomTestUtilities\bin\Debug\net8.0\LibraryOn.Communication.dll
+F:\ESTUDOS\C#\PORTIFOLIO\LibraryOn\tests\CommomTestUtilities\bin\Debug\net8.0\LibraryOn.Communication.pdb
+F:\ESTUDOS\C#\PORTIFOLIO\LibraryOn\tests\CommomTestUtilities\obj\Debug\net8.0\CommomTestUtilities.csproj.AssemblyReference.cache
+F:\ESTUDOS\C#\PORTIFOLIO\LibraryOn\tests\CommomTestUtilities\obj\Debug\net8.0\CommomTestUtilities.GeneratedMSBuildEditorConfig.editorconfig
+F:\ESTUDOS\C#\PORTIFOLIO\LibraryOn\tests\CommomTestUtilities\obj\Debug\net8.0\CommomTestUtilities.AssemblyInfoInputs.cache
+F:\ESTUDOS\C#\PORTIFOLIO\LibraryOn\tests\CommomTestUtilities\obj\Debug\net8.0\CommomTestUtilities.AssemblyInfo.cs
+F:\ESTUDOS\C#\PORTIFOLIO\LibraryOn\tests\CommomTestUtilities\obj\Debug\net8.0\CommomTestUtilities.csproj.CoreCompileInputs.cache
+F:\ESTUDOS\C#\PORTIFOLIO\LibraryOn\tests\CommomTestUtilities\obj\Debug\net8.0\CommomTestUtilities.sourcelink.json
+F:\ESTUDOS\C#\PORTIFOLIO\LibraryOn\tests\CommomTestUtilities\obj\Debug\net8.0\CommomTe.98287853.Up2Date
+F:\ESTUDOS\C#\PORTIFOLIO\LibraryOn\tests\CommomTestUtilities\obj\Debug\net8.0\CommomTestUtilities.dll
+F:\ESTUDOS\C#\PORTIFOLIO\LibraryOn\tests\CommomTestUtilities\obj\Debug\net8.0\refint\CommomTestUtilities.dll
+F:\ESTUDOS\C#\PORTIFOLIO\LibraryOn\tests\CommomTestUtilities\obj\Debug\net8.0\CommomTestUtilities.pdb
+F:\ESTUDOS\C#\PORTIFOLIO\LibraryOn\tests\CommomTestUtilities\obj\Debug\net8.0\ref\CommomTestUtilities.dll
