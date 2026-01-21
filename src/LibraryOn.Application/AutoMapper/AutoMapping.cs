@@ -39,6 +39,10 @@ public class AutoMapping : Profile
         CreateMap<Reader, ResponseRegisteredReaderJson>()
             .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id))
             .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.Name));
-            
+        
+        CreateMap<Reader, ResponseShortReaderJson>();
+        CreateMap<Reader, ResponseReaderJson>()
+            .ForMember(dest => dest.Email, opt => opt.MapFrom(src => src.Email.Value));
+
     }
 }

@@ -178,6 +178,15 @@ namespace LibraryOn.Exception {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Reader not found..
+        /// </summary>
+        public static string READER_NOT_FOUND {
+            get {
+                return ResourceManager.GetString("READER_NOT_FOUND", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Title required..
         /// </summary>
         public static string TITLE_REQUIRED {

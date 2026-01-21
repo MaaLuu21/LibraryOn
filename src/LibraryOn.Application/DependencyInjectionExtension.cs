@@ -10,6 +10,9 @@ using LibraryOn.Application.UseCases.Genres.GetById;
 using LibraryOn.Application.UseCases.Genres.GetByIds;
 using LibraryOn.Application.UseCases.Genres.Register;
 using LibraryOn.Application.UseCases.Genres.Update;
+using LibraryOn.Application.UseCases.Readers.Delete;
+using LibraryOn.Application.UseCases.Readers.GetAll;
+using LibraryOn.Application.UseCases.Readers.GetById;
 using LibraryOn.Application.UseCases.Readers.Register;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -49,6 +52,9 @@ public static class DependencyInjectionExtension
 
         //reader
         services.AddScoped<IRegisterReaderUseCase, RegisterReaderUseCase>();
+        services.AddScoped<IGetAllReadersUseCase, GetAllReadersUseCase>();
+        services.AddScoped<IGetReaderByIdUseCase, GetReaderByIdUseCase>();
+        services.AddScoped<IDeleteReaderUseCase, DeleteReaderUseCase>();
         
 
 

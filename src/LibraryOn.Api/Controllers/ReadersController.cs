@@ -1,4 +1,7 @@
-﻿using LibraryOn.Application.UseCases.Readers.Register;
+﻿using LibraryOn.Application.UseCases.Readers.Delete;
+using LibraryOn.Application.UseCases.Readers.GetAll;
+using LibraryOn.Application.UseCases.Readers.GetById;
+using LibraryOn.Application.UseCases.Readers.Register;
 using LibraryOn.Communication.Requests.Readers;
 using LibraryOn.Communication.Responses;
 using LibraryOn.Communication.Responses.Book;
@@ -20,6 +23,40 @@ public class ReadersController : ControllerBase
 
 
         return Created(string.Empty, response);
+    }
+
+    [HttpGet]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(ResponseErrorJson), StatusCodes.Status404NotFound)]
+    public async Task<IActionResult> GetAll([FromServices] IGetAllReadersUseCase useCase)
+    {
+        var response = await useCase.Execute();
+
+        return Ok(response);
+    }
+
+    [HttpGet]
+    [Route("{id}")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(ResponseErrorJson), StatusCodes.Status404NotFound)]
+    public async Task<IActionResult> GetById([FromServices] IGetReaderByIdUseCase useCase,
+                                             [FromRoute] long id)
+    {
+        var response = await useCase.Execute(id);
+
+        return Ok(response);
+    }
+
+    [HttpDelete]
+    [Route("{id}")]
+    [ProducesResponseType(StatusCodes.Status204NoContent)]
+    [ProducesResponseType(typeof(ResponseErrorJson), StatusCodes.Status404NotFound)]
+    public async Task<IActionResult> Delete([FromServices] IDeleteReaderUseCase useCase,
+                                            [FromRoute] long id)
+    {
+        await useCase.Execute(id);
+
+        return NoContent();
     }
 
 }

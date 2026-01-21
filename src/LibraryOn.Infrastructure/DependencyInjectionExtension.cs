@@ -33,6 +33,7 @@ public static class DependencyInjectionExtension
 
         //reader
         services.AddScoped<IReaderWriteOnlyRepository, ReaderRepository>();
+        services.AddScoped<IReaderReadOnlyRepository, ReaderRepository>();
 
         services.AddScoped<IPhoneNumberValidator, PhoneNumberValidator>();
     }
