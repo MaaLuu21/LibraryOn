@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\LibraryOn.Communication\LibraryOn.Communication.csproj" />
+    <ProjectReference Include="..\..\src\LibraryOn.Domain\LibraryOn.Domain.csproj" />
   </ItemGroup>
 
 </Project>

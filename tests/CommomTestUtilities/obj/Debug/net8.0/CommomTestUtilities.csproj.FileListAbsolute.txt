@@ -14,3 +14,5 @@ F:\ESTUDOS\C#\PORTIFOLIO\LibraryOn\tests\CommomTestUtilities\obj\Debug\net8.0\Co
 F:\ESTUDOS\C#\PORTIFOLIO\LibraryOn\tests\CommomTestUtilities\obj\Debug\net8.0\refint\CommomTestUtilities.dll
 F:\ESTUDOS\C#\PORTIFOLIO\LibraryOn\tests\CommomTestUtilities\obj\Debug\net8.0\CommomTestUtilities.pdb
 F:\ESTUDOS\C#\PORTIFOLIO\LibraryOn\tests\CommomTestUtilities\obj\Debug\net8.0\ref\CommomTestUtilities.dll
+F:\ESTUDOS\C#\PORTIFOLIO\LibraryOn\tests\CommomTestUtilities\bin\Debug\net8.0\LibraryOn.Domain.dll
+F:\ESTUDOS\C#\PORTIFOLIO\LibraryOn\tests\CommomTestUtilities\bin\Debug\net8.0\LibraryOn.Domain.pdb

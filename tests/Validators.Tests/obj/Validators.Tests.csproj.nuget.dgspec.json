@@ -1,7 +1,7 @@
 {
   "format": 1,
   "restore": {
-    "F:\\ESTUDOS\\C#\\PORTIFOLIO\\LibraryOn\\Validators.Tests\\Validators.Tests.csproj": {}
+    "F:\\ESTUDOS\\C#\\PORTIFOLIO\\LibraryOn\\tests\\Validators.Tests\\Validators.Tests.csproj": {}
   },
   "projects": {
     "F:\\ESTUDOS\\C#\\PORTIFOLIO\\LibraryOn\\src\\LibraryOn.Application\\LibraryOn.Application.csproj": {
@@ -323,6 +323,9 @@
             "projectReferences": {
               "F:\\ESTUDOS\\C#\\PORTIFOLIO\\LibraryOn\\src\\LibraryOn.Communication\\LibraryOn.Communication.csproj": {
                 "projectPath": "F:\\ESTUDOS\\C#\\PORTIFOLIO\\LibraryOn\\src\\LibraryOn.Communication\\LibraryOn.Communication.csproj"
+              },
+              "F:\\ESTUDOS\\C#\\PORTIFOLIO\\LibraryOn\\src\\LibraryOn.Domain\\LibraryOn.Domain.csproj": {
+                "projectPath": "F:\\ESTUDOS\\C#\\PORTIFOLIO\\LibraryOn\\src\\LibraryOn.Domain\\LibraryOn.Domain.csproj"
               }
             }
           }
@@ -368,14 +371,14 @@
         }
       }
     },
-    "F:\\ESTUDOS\\C#\\PORTIFOLIO\\LibraryOn\\Validators.Tests\\Validators.Tests.csproj": {
+    "F:\\ESTUDOS\\C#\\PORTIFOLIO\\LibraryOn\\tests\\Validators.Tests\\Validators.Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\ESTUDOS\\C#\\PORTIFOLIO\\LibraryOn\\Validators.Tests\\Validators.Tests.csproj",
+        "projectUniqueName": "F:\\ESTUDOS\\C#\\PORTIFOLIO\\LibraryOn\\tests\\Validators.Tests\\Validators.Tests.csproj",
         "projectName": "Validators.Tests",
-        "projectPath": "F:\\ESTUDOS\\C#\\PORTIFOLIO\\LibraryOn\\Validators.Tests\\Validators.Tests.csproj",
+        "projectPath": "F:\\ESTUDOS\\C#\\PORTIFOLIO\\LibraryOn\\tests\\Validators.Tests\\Validators.Tests.csproj",
         "packagesPath": "C:\\Users\\maria\\.nuget\\packages\\",
-        "outputPath": "F:\\ESTUDOS\\C#\\PORTIFOLIO\\LibraryOn\\Validators.Tests\\obj\\",
+        "outputPath": "F:\\ESTUDOS\\C#\\PORTIFOLIO\\LibraryOn\\tests\\Validators.Tests\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -403,8 +406,8 @@
               "F:\\ESTUDOS\\C#\\PORTIFOLIO\\LibraryOn\\src\\LibraryOn.Communication\\LibraryOn.Communication.csproj": {
                 "projectPath": "F:\\ESTUDOS\\C#\\PORTIFOLIO\\LibraryOn\\src\\LibraryOn.Communication\\LibraryOn.Communication.csproj"
               },
-              "F:\\ESTUDOS\\C#\\PORTIFOLIO\\LibraryOn\\src\\LibraryOn.Exception\\LibraryOn.Exception.csproj": {
-                "projectPath": "F:\\ESTUDOS\\C#\\PORTIFOLIO\\LibraryOn\\src\\LibraryOn.Exception\\LibraryOn.Exception.csproj"
+              "F:\\ESTUDOS\\C#\\PORTIFOLIO\\LibraryOn\\src\\LibraryOn.Domain\\LibraryOn.Domain.csproj": {
+                "projectPath": "F:\\ESTUDOS\\C#\\PORTIFOLIO\\LibraryOn\\src\\LibraryOn.Domain\\LibraryOn.Domain.csproj"
               },
               "F:\\ESTUDOS\\C#\\PORTIFOLIO\\LibraryOn\\tests\\CommomTestUtilities\\CommomTestUtilities.csproj": {
                 "projectPath": "F:\\ESTUDOS\\C#\\PORTIFOLIO\\LibraryOn\\tests\\CommomTestUtilities\\CommomTestUtilities.csproj"
@@ -435,6 +438,10 @@
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
               "version": "[17.8.0, )"
+            },
+            "Moq": {
+              "target": "Package",
+              "version": "[4.20.72, )"
             },
             "coverlet.collector": {
               "target": "Package",

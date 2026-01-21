@@ -9,7 +9,8 @@
       "CommomTestUtilities/1.0.0": {
         "dependencies": {
           "Bogus": "35.6.5",
-          "LibraryOn.Communication": "1.0.0"
+          "LibraryOn.Communication": "1.0.0",
+          "LibraryOn.Domain": "1.0.0"
         },
         "runtime": {
           "CommomTestUtilities.dll": {}
@@ -26,6 +27,14 @@
       "LibraryOn.Communication/1.0.0": {
         "runtime": {
           "LibraryOn.Communication.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "LibraryOn.Domain/1.0.0": {
+        "runtime": {
+          "LibraryOn.Domain.dll": {
             "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
           }
@@ -47,6 +56,11 @@
       "hashPath": "bogus.35.6.5.nupkg.sha512"
     },
     "LibraryOn.Communication/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "LibraryOn.Domain/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -24,6 +24,16 @@
         "runtime": {
           "bin/placeholder/LibraryOn.Communication.dll": {}
         }
+      },
+      "LibraryOn.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/LibraryOn.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/LibraryOn.Domain.dll": {}
+        }
       }
     }
   },
@@ -53,12 +63,18 @@
       "type": "project",
       "path": "../../src/LibraryOn.Communication/LibraryOn.Communication.csproj",
       "msbuildProject": "../../src/LibraryOn.Communication/LibraryOn.Communication.csproj"
+    },
+    "LibraryOn.Domain/1.0.0": {
+      "type": "project",
+      "path": "../../src/LibraryOn.Domain/LibraryOn.Domain.csproj",
+      "msbuildProject": "../../src/LibraryOn.Domain/LibraryOn.Domain.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net8.0": [
       "Bogus >= 35.6.5",
-      "LibraryOn.Communication >= 1.0.0"
+      "LibraryOn.Communication >= 1.0.0",
+      "LibraryOn.Domain >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -96,6 +112,9 @@
           "projectReferences": {
             "F:\\ESTUDOS\\C#\\PORTIFOLIO\\LibraryOn\\src\\LibraryOn.Communication\\LibraryOn.Communication.csproj": {
               "projectPath": "F:\\ESTUDOS\\C#\\PORTIFOLIO\\LibraryOn\\src\\LibraryOn.Communication\\LibraryOn.Communication.csproj"
+            },
+            "F:\\ESTUDOS\\C#\\PORTIFOLIO\\LibraryOn\\src\\LibraryOn.Domain\\LibraryOn.Domain.csproj": {
+              "projectPath": "F:\\ESTUDOS\\C#\\PORTIFOLIO\\LibraryOn\\src\\LibraryOn.Domain\\LibraryOn.Domain.csproj"
             }
           }
         }
