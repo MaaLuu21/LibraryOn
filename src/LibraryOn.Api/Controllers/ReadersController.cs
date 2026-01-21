@@ -2,6 +2,7 @@
 using LibraryOn.Application.UseCases.Readers.GetAll;
 using LibraryOn.Application.UseCases.Readers.GetById;
 using LibraryOn.Application.UseCases.Readers.Register;
+using LibraryOn.Application.UseCases.Readers.Update;
 using LibraryOn.Communication.Requests.Readers;
 using LibraryOn.Communication.Responses;
 using LibraryOn.Communication.Responses.Book;
@@ -55,6 +56,21 @@ public class ReadersController : ControllerBase
                                             [FromRoute] long id)
     {
         await useCase.Execute(id);
+
+        return NoContent();
+    }
+
+    [HttpPut]
+    [Route("{id}")]
+    [ProducesResponseType(StatusCodes.Status204NoContent)]
+    [ProducesResponseType(typeof(ResponseErrorJson), StatusCodes.Status404NotFound)]
+    [ProducesResponseType(typeof(ResponseErrorJson), StatusCodes.Status400BadRequest)]
+    public async Task<IActionResult> Update([FromServices] IUpdateReaderUseCase usecase,
+                                            [FromRoute] long id,
+                                            [FromBody] RequestReaderJson request)
+    {
+        await usecase.Execute(id, request);
+
 
         return NoContent();
     }

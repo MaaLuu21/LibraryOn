@@ -3,7 +3,7 @@ using LibraryOn.Domain.Repositories.Readers;
 using Microsoft.EntityFrameworkCore;
 
 namespace LibraryOn.Infrastructure.DataAcess.Repositories;
-internal class ReaderRepository : IReaderWriteOnlyRepository, IReaderReadOnlyRepository
+internal class ReaderRepository : IReaderWriteOnlyRepository, IReaderReadOnlyRepository, IReaderUpdateOnlyRepository
 {
     private readonly LibraryOnDbContext _dbContext;
 
@@ -27,8 +27,18 @@ internal class ReaderRepository : IReaderWriteOnlyRepository, IReaderReadOnlyRep
         return _dbContext.Readers.AsNoTracking().ToListAsync();
     }
 
-    public async Task<Reader?> GetById(long id)
+    async Task<Reader?> IReaderUpdateOnlyRepository.GetById(long id)
     {
         return await _dbContext.Readers.FirstOrDefaultAsync(r => r.Id == id);
+    }
+
+    public void Update(Reader reader)
+    {
+        _dbContext.Readers.Update(reader);
+    }
+
+    async Task<Reader?> IReaderReadOnlyRepository.GetById(long id)
+    {
+        return await _dbContext.Readers.AsNoTracking().FirstOrDefaultAsync(r => r.Id == id);
     }
 }

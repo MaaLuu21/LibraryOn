@@ -21,6 +21,7 @@ public class AutoMapping : Profile
     {
         CreateMap<RequestGenreJson, Genre>();
         CreateMap<RequestBookJson, Book>();
+        CreateMap<RequestReaderJson, Reader>();
 
     }
 

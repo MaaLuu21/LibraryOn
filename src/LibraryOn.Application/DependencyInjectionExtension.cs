@@ -14,6 +14,7 @@ using LibraryOn.Application.UseCases.Readers.Delete;
 using LibraryOn.Application.UseCases.Readers.GetAll;
 using LibraryOn.Application.UseCases.Readers.GetById;
 using LibraryOn.Application.UseCases.Readers.Register;
+using LibraryOn.Application.UseCases.Readers.Update;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace LibraryOn.Application;
@@ -55,6 +56,7 @@ public static class DependencyInjectionExtension
         services.AddScoped<IGetAllReadersUseCase, GetAllReadersUseCase>();
         services.AddScoped<IGetReaderByIdUseCase, GetReaderByIdUseCase>();
         services.AddScoped<IDeleteReaderUseCase, DeleteReaderUseCase>();
+        services.AddScoped<IUpdateReaderUseCase, UpdateReaderUseCase>();
         
 
 
