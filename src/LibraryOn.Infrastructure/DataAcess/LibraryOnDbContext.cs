@@ -9,6 +9,8 @@ internal class LibraryOnDbContext : DbContext
     public DbSet<Genre> Genres { get; set; }
     public DbSet<Book> Books { get; set; }
     public DbSet<Reader> Readers { get; set; }
+    public DbSet<Loan> Loans { get; set; }
+    public DbSet<Employee> Employees { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -45,6 +47,16 @@ internal class LibraryOnDbContext : DbContext
                 c.Property(p => p.Value)
                  .HasColumnName("Cpf")
                  .IsRequired();
+            });
+        });
+
+        modelBuilder.Entity<Employee>(entity =>
+        {
+            entity.OwnsOne(e => e.Email, email =>
+            {
+                email.Property(e => e.Value)
+                     .HasColumnName("Email")
+                     .IsRequired();
             });
         });
     }

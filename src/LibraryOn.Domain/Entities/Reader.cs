@@ -13,7 +13,7 @@ public class Reader
     public PhoneNumber PhoneNumber { get; private set; }
     public Email Email { get; private set; }
     public Cpf Cpf { get; private set; }
-    public ICollection<Loan> Loans { get; set; }
+    public ICollection<Loan> Loans { get; set; } = [];
 
     protected Reader() { }
 
@@ -25,14 +25,14 @@ public class Reader
         Cpf = cpf;
     }
 
-    public Loan BorrowBook(Book book, DateTime loanDate)
+    public Loan BorrowBook(Book book, Employee employee, DateTime loanDate)
     {
         if(Loans.Count(l => l.Status == LoanStatus.Active) >= MaxLoan)
         {
             throw new DomainException(DomainErrorCodes.LimitLoans);
         }
 
-        var loan = new Loan(book, this, loanDate);
+        var loan = new Loan(book, this, employee, loanDate);
         Loans.Add(loan);
         return loan;
     }

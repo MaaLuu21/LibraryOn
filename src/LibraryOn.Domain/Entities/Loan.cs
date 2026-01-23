@@ -1,6 +1,7 @@
 ﻿using LibraryOn.Domain.Enums;
 using LibraryOn.Domain.Exceptions;
 using LibraryOn.Domain.Exceptions.Errors;
+using System.Reflection.Metadata.Ecma335;
 
 namespace LibraryOn.Domain.Entities;
 public class Loan
@@ -14,13 +15,15 @@ public class Loan
     public DateTime LoanDate { get; private set; }
     public LoanStatus Status { get; private set; }
     public DateTime? ReturnedAt { get; private set; }
+    public Employee Employee { get; set; }
 
     protected Loan() { }
 
-    public Loan(Book book, Reader reader, DateTime loanDate)
+    public Loan(Book book, Reader reader, Employee employee, DateTime loanDate)
     {
         Book = book ?? throw new DomainException(DomainErrorCodes.BookRequired);
         Reader = reader ?? throw new DomainException(DomainErrorCodes.ReaderRequired);
+        Employee = employee ?? throw new DomainException(DomainErrorCodes.EmployeeRequired);
 
         LoanDate = loanDate;
         DueDate = loanDate.AddDays(DefaultLoanDays);

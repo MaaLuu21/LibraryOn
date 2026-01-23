@@ -10,4 +10,5 @@ public class DomainErrorCodes
     public const string InvalidDueDate = "INVALID_DUE_DATE";
     public const string InvalidReturn = "RETURN_INVALID";
     public const string LimitLoans = "LIMIT_OF_LOANS_REACHED";
+    public const string EmployeeRequired = "EMPLOYEE_REQUIRED";
 }

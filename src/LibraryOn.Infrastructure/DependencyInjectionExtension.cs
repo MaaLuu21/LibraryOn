@@ -1,6 +1,7 @@
 ﻿using LibraryOn.Domain.Repositories;
 using LibraryOn.Domain.Repositories.Books;
 using LibraryOn.Domain.Repositories.Genres;
+using LibraryOn.Domain.Repositories.Loans;
 using LibraryOn.Domain.Repositories.Readers;
 using LibraryOn.Domain.Validators;
 using LibraryOn.Infrastructure.DataAcess;
@@ -35,6 +36,9 @@ public static class DependencyInjectionExtension
         services.AddScoped<IReaderWriteOnlyRepository, ReaderRepository>();
         services.AddScoped<IReaderReadOnlyRepository, ReaderRepository>();
         services.AddScoped<IReaderUpdateOnlyRepository, ReaderRepository>();
+
+        //loan
+        services.AddScoped<ILoansWriteOnlyRepository, LoansRepository>();
 
         services.AddScoped<IPhoneNumberValidator, PhoneNumberValidator>();
     }

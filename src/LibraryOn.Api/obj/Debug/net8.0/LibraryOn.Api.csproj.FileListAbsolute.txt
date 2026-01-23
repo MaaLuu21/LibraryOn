@@ -254,4 +254,3 @@ C:\desenvolvimento\dotnet\LibraryOn\src\LibraryOn.Api\obj\Debug\net8.0\ref\Libra
 F:\ESTUDOS\C#\PORTIFOLIO\LibraryOn\src\LibraryOn.Api\bin\Debug\net8.0\Flunt.dll
 F:\ESTUDOS\C#\PORTIFOLIO\LibraryOn\src\LibraryOn.Api\bin\Debug\net8.0\Flunt.Br.dll
 F:\ESTUDOS\C#\PORTIFOLIO\LibraryOn\src\LibraryOn.Api\bin\Debug\net8.0\PhoneNumbers.dll
-F:\ESTUDOS\C#\PORTIFOLIO\LibraryOn\src\LibraryOn.Api\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

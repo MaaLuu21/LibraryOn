@@ -64,6 +64,33 @@ namespace LibraryOn.Infrastructure.Migrations
                     b.ToTable("Books");
                 });
 
+            modelBuilder.Entity("LibraryOn.Domain.Entities.Employee", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<long>("Id"));
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("PasswordHash")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<int>("Role")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Employees");
+                });
+
             modelBuilder.Entity("LibraryOn.Domain.Entities.Genre", b =>
                 {
                     b.Property<long>("Id")
@@ -79,6 +106,46 @@ namespace LibraryOn.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Genres");
+                });
+
+            modelBuilder.Entity("LibraryOn.Domain.Entities.Loan", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<long>("Id"));
+
+                    b.Property<long?>("BookId")
+                        .HasColumnType("bigint");
+
+                    b.Property<DateTime>("DueDate")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<long>("EmployeeId")
+                        .HasColumnType("bigint");
+
+                    b.Property<DateTime>("LoanDate")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<long?>("ReaderId")
+                        .HasColumnType("bigint");
+
+                    b.Property<DateTime?>("ReturnedAt")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BookId");
+
+                    b.HasIndex("EmployeeId");
+
+                    b.HasIndex("ReaderId");
+
+                    b.ToTable("Loans");
                 });
 
             modelBuilder.Entity("LibraryOn.Domain.Entities.Reader", b =>
@@ -114,26 +181,55 @@ namespace LibraryOn.Infrastructure.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("LibraryOn.Domain.Entities.Reader", b =>
+            modelBuilder.Entity("LibraryOn.Domain.Entities.Employee", b =>
                 {
-                    b.OwnsOne("LibraryOn.Domain.ValueObjects.Cpf", "Cpf", b1 =>
+                    b.OwnsOne("LibraryOn.Domain.ValueObjects.Email", "Email", b1 =>
                         {
-                            b1.Property<long>("ReaderId")
+                            b1.Property<long>("EmployeeId")
                                 .HasColumnType("bigint");
 
                             b1.Property<string>("Value")
                                 .IsRequired()
                                 .HasColumnType("longtext")
-                                .HasColumnName("Cpf");
+                                .HasColumnName("Email");
 
-                            b1.HasKey("ReaderId");
+                            b1.HasKey("EmployeeId");
 
-                            b1.ToTable("Readers");
+                            b1.ToTable("Employees");
 
                             b1.WithOwner()
-                                .HasForeignKey("ReaderId");
+                                .HasForeignKey("EmployeeId");
                         });
 
+                    b.Navigation("Email")
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("LibraryOn.Domain.Entities.Loan", b =>
+                {
+                    b.HasOne("LibraryOn.Domain.Entities.Book", "Book")
+                        .WithMany("Loans")
+                        .HasForeignKey("BookId");
+
+                    b.HasOne("LibraryOn.Domain.Entities.Employee", "Employee")
+                        .WithMany("Loans")
+                        .HasForeignKey("EmployeeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("LibraryOn.Domain.Entities.Reader", "Reader")
+                        .WithMany("Loans")
+                        .HasForeignKey("ReaderId");
+
+                    b.Navigation("Book");
+
+                    b.Navigation("Employee");
+
+                    b.Navigation("Reader");
+                });
+
+            modelBuilder.Entity("LibraryOn.Domain.Entities.Reader", b =>
+                {
                     b.OwnsOne("LibraryOn.Domain.ValueObjects.Email", "Email", b1 =>
                         {
                             b1.Property<long>("ReaderId")
@@ -143,6 +239,24 @@ namespace LibraryOn.Infrastructure.Migrations
                                 .IsRequired()
                                 .HasColumnType("longtext")
                                 .HasColumnName("Email");
+
+                            b1.HasKey("ReaderId");
+
+                            b1.ToTable("Readers");
+
+                            b1.WithOwner()
+                                .HasForeignKey("ReaderId");
+                        });
+
+                    b.OwnsOne("LibraryOn.Domain.ValueObjects.Cpf", "Cpf", b1 =>
+                        {
+                            b1.Property<long>("ReaderId")
+                                .HasColumnType("bigint");
+
+                            b1.Property<string>("Value")
+                                .IsRequired()
+                                .HasColumnType("longtext")
+                                .HasColumnName("Cpf");
 
                             b1.HasKey("ReaderId");
 
@@ -178,6 +292,21 @@ namespace LibraryOn.Infrastructure.Migrations
 
                     b.Navigation("PhoneNumber")
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("LibraryOn.Domain.Entities.Book", b =>
+                {
+                    b.Navigation("Loans");
+                });
+
+            modelBuilder.Entity("LibraryOn.Domain.Entities.Employee", b =>
+                {
+                    b.Navigation("Loans");
+                });
+
+            modelBuilder.Entity("LibraryOn.Domain.Entities.Reader", b =>
+                {
+                    b.Navigation("Loans");
                 });
 #pragma warning restore 612, 618
         }
