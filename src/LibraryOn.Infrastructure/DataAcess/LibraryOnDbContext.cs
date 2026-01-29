@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 
 namespace LibraryOn.Infrastructure.DataAcess;
-internal class LibraryOnDbContext : DbContext
+public class LibraryOnDbContext : DbContext
 {
     public LibraryOnDbContext(DbContextOptions options) : base(options) { } 
 
@@ -35,28 +35,11 @@ internal class LibraryOnDbContext : DbContext
                   .IsRequired();
             });
 
-            entity.OwnsOne(r => r.Email, e =>
-            {
-                e.Property(p => p.Value)
-                 .HasColumnName("Email")
-                 .IsRequired();
-            });
-
             entity.OwnsOne(r => r.Cpf, c =>
             {
                 c.Property(p => p.Value)
                  .HasColumnName("Cpf")
                  .IsRequired();
-            });
-        });
-
-        modelBuilder.Entity<Employee>(entity =>
-        {
-            entity.OwnsOne(e => e.Email, email =>
-            {
-                email.Property(e => e.Value)
-                     .HasColumnName("Email")
-                     .IsRequired();
             });
         });
     }

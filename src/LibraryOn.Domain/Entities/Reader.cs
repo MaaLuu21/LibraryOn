@@ -11,17 +11,15 @@ public class Reader
     public long Id { get; set; }
     public string Name { get; set; } = string.Empty;
     public PhoneNumber PhoneNumber { get; private set; }
-    public Email Email { get; private set; }
+    public string Email { get; set; } = string.Empty;
     public Cpf Cpf { get; private set; }
     public ICollection<Loan> Loans { get; set; } = [];
 
     protected Reader() { }
 
-    public Reader(PhoneNumber phoneNumber,
-                  Email email, Cpf cpf)
+    public Reader(PhoneNumber phoneNumber, Cpf cpf)
     {
         PhoneNumber = phoneNumber;
-        Email = email;
         Cpf = cpf;
     }
 

@@ -12,8 +12,12 @@ public class ReaderValidator : AbstractValidator<RequestReaderJson>
     {
         RuleFor(r => r.Name).NotEmpty().WithMessage(ResourceErrorMessages.NAME_REQUIRED);
         RuleFor(r => r.PhoneNumber).NotEmpty().WithMessage(ResourceErrorMessages.PHONE_NUMBER_REQUIRED);
-        RuleFor(r => r.Email).NotEmpty().WithMessage(ResourceErrorMessages.EMAIL_REQUIRED)
-            .Must(Email.IsValidEmail).WithMessage(ResourceErrorMessages.EMAIL_INVALID);
+        RuleFor(r => r.Email)
+            .NotEmpty()
+            .WithMessage(ResourceErrorMessages.EMAIL_REQUIRED)
+            .EmailAddress()
+            .When(r => !string.IsNullOrWhiteSpace(r.Email), ApplyConditionTo.CurrentValidator)
+            .WithMessage(ResourceErrorMessages.EMAIL_INVALID);
         RuleFor(r => r.Cpf).NotEmpty().WithMessage(ResourceErrorMessages.CPF_REQUIRED);
         RuleFor(r => r.Cpf).Must(Cpf.IsValidCpf)
             .When(r => !string.IsNullOrWhiteSpace(r.Cpf))

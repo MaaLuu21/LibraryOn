@@ -32,13 +32,13 @@ public class RegisterBookUseCase : IRegisterBookUseCase
 
         var entity = _mapper.Map<Book>(request);
         var genres = await _genreRepository.GetByIds(request.GenreIds);
-
-        if(genres == null || genres.Count == 0)
+    
+        if (genres == null || genres.Count == 0)
         {
             throw new NotFoundExecption(ResourceErrorMessages.GENRE_NOT_FOUND);
         }
 
-        foreach(Genre genre in genres)
+        foreach (Genre genre in genres)
         {
             entity.Genres.Add(genre);
         }

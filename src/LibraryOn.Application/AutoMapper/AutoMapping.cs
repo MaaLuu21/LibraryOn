@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using LibraryOn.Communication.Requests.Books;
+using LibraryOn.Communication.Requests.Employee;
 using LibraryOn.Communication.Requests.Genres;
 using LibraryOn.Communication.Requests.Readers;
 using LibraryOn.Communication.Responses.Book;
@@ -22,6 +23,8 @@ public class AutoMapping : Profile
         CreateMap<RequestGenreJson, Genre>();
         CreateMap<RequestBookJson, Book>();
         CreateMap<RequestReaderJson, Reader>();
+        CreateMap<RequestRegisterEmployeeJson, Employee>()
+            .ForMember(dest => dest.Password, config => config.Ignore());
 
     }
 
@@ -42,8 +45,6 @@ public class AutoMapping : Profile
             .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.Name));
         
         CreateMap<Reader, ResponseShortReaderJson>();
-        CreateMap<Reader, ResponseReaderJson>()
-            .ForMember(dest => dest.Email, opt => opt.MapFrom(src => src.Email.Value));
 
     }
 }

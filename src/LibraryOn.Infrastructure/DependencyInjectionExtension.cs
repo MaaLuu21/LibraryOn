@@ -1,11 +1,15 @@
 ﻿using LibraryOn.Domain.Repositories;
 using LibraryOn.Domain.Repositories.Books;
+using LibraryOn.Domain.Repositories.Employees;
 using LibraryOn.Domain.Repositories.Genres;
 using LibraryOn.Domain.Repositories.Loans;
 using LibraryOn.Domain.Repositories.Readers;
+using LibraryOn.Domain.Security.Cryptography;
+using LibraryOn.Domain.Security.Tokens;
 using LibraryOn.Domain.Validators;
 using LibraryOn.Infrastructure.DataAcess;
 using LibraryOn.Infrastructure.DataAcess.Repositories;
+using LibraryOn.Infrastructure.Security.Tokens;
 using LibraryOn.Infrastructure.Validators;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -16,8 +20,18 @@ public static class DependencyInjectionExtension
 {
     public static void AddInfrastructure (this IServiceCollection services, IConfiguration configuration)
     {
-       AddDbContext(services, configuration);
-       AddRepositories(services);
+        services.AddScoped<IPasswordEncripter, Security.Cryptography.Bcrypt>();
+        AddToken(services, configuration);
+        AddDbContext(services, configuration);
+        AddRepositories(services);
+    }
+
+    private static void AddToken(IServiceCollection services, IConfiguration configuration)
+    {
+        var expirationTimeMinutes = configuration.GetValue<uint>("Settings:Jwt:ExpiresMinutes");
+        var singningKey = configuration.GetValue<string>("Settings:Jwt:SigningKey");
+
+        services.AddScoped<IAccessTokenGenerator>(config => new JwtTokenGenerator(expirationTimeMinutes, singningKey!));
     }
 
     private static void AddRepositories (IServiceCollection services)
@@ -38,7 +52,13 @@ public static class DependencyInjectionExtension
         services.AddScoped<IReaderUpdateOnlyRepository, ReaderRepository>();
 
         //loan
-        services.AddScoped<ILoansWriteOnlyRepository, LoansRepository>();
+        services.AddScoped<ILoanWriteOnlyRepository, LoanRepository>();
+
+        //Employee
+        services.AddScoped<IEmployeeWriteOnlyRepository, EmployeeRepository>();
+        services.AddScoped<IEmployeeReadOnlyRepository, EmployeeRepository>();
+
+
 
         services.AddScoped<IPhoneNumberValidator, PhoneNumberValidator>();
     }

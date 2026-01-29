@@ -52,8 +52,8 @@ namespace LibraryOn.Infrastructure.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("longtext");
 
-                    b.Property<DateTime>("PublishYear")
-                        .HasColumnType("datetime(6)");
+                    b.Property<int>("PublishYear")
+                        .HasColumnType("int");
 
                     b.Property<string>("Title")
                         .IsRequired()
@@ -72,6 +72,13 @@ namespace LibraryOn.Infrastructure.Migrations
 
                     MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<long>("Id"));
 
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<Guid>("EmployeeIdentifier")
+                        .HasColumnType("char(36)");
+
                     b.Property<bool>("IsActive")
                         .HasColumnType("tinyint(1)");
 
@@ -79,7 +86,7 @@ namespace LibraryOn.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<string>("PasswordHash")
+                    b.Property<string>("Password")
                         .IsRequired()
                         .HasColumnType("longtext");
 
@@ -156,6 +163,10 @@ namespace LibraryOn.Infrastructure.Migrations
 
                     MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<long>("Id"));
 
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(150)
@@ -178,30 +189,6 @@ namespace LibraryOn.Infrastructure.Migrations
                         .WithMany()
                         .HasForeignKey("GenresId")
                         .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("LibraryOn.Domain.Entities.Employee", b =>
-                {
-                    b.OwnsOne("LibraryOn.Domain.ValueObjects.Email", "Email", b1 =>
-                        {
-                            b1.Property<long>("EmployeeId")
-                                .HasColumnType("bigint");
-
-                            b1.Property<string>("Value")
-                                .IsRequired()
-                                .HasColumnType("longtext")
-                                .HasColumnName("Email");
-
-                            b1.HasKey("EmployeeId");
-
-                            b1.ToTable("Employees");
-
-                            b1.WithOwner()
-                                .HasForeignKey("EmployeeId");
-                        });
-
-                    b.Navigation("Email")
                         .IsRequired();
                 });
 
@@ -230,24 +217,6 @@ namespace LibraryOn.Infrastructure.Migrations
 
             modelBuilder.Entity("LibraryOn.Domain.Entities.Reader", b =>
                 {
-                    b.OwnsOne("LibraryOn.Domain.ValueObjects.Email", "Email", b1 =>
-                        {
-                            b1.Property<long>("ReaderId")
-                                .HasColumnType("bigint");
-
-                            b1.Property<string>("Value")
-                                .IsRequired()
-                                .HasColumnType("longtext")
-                                .HasColumnName("Email");
-
-                            b1.HasKey("ReaderId");
-
-                            b1.ToTable("Readers");
-
-                            b1.WithOwner()
-                                .HasForeignKey("ReaderId");
-                        });
-
                     b.OwnsOne("LibraryOn.Domain.ValueObjects.Cpf", "Cpf", b1 =>
                         {
                             b1.Property<long>("ReaderId")
@@ -285,9 +254,6 @@ namespace LibraryOn.Infrastructure.Migrations
                         });
 
                     b.Navigation("Cpf")
-                        .IsRequired();
-
-                    b.Navigation("Email")
                         .IsRequired();
 
                     b.Navigation("PhoneNumber")

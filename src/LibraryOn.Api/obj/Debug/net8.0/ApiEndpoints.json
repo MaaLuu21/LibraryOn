@@ -167,6 +167,41 @@
     ]
   },
   {
+    "ContainingType": "LibraryOn.Api.Controllers.EmployeeController",
+    "Method": "Register",
+    "RelativePath": "api/Employee",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "LibraryOn.Communication.Requests.Employee.RequestRegisterEmployeeJson",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "LibraryOn.Communication.Responses.Employee.ResponseRegisteredEmployeeJson",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 201
+      },
+      {
+        "Type": "LibraryOn.Communication.Responses.ResponseErrorJson",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 400
+      }
+    ]
+  },
+  {
     "ContainingType": "LibraryOn.Api.Controllers.GenresController",
     "Method": "RegisterGenre",
     "RelativePath": "api/Genres",

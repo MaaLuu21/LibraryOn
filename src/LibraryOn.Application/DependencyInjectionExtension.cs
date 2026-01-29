@@ -4,6 +4,7 @@ using LibraryOn.Application.UseCases.Books.GetAll;
 using LibraryOn.Application.UseCases.Books.GetById;
 using LibraryOn.Application.UseCases.Books.Register;
 using LibraryOn.Application.UseCases.Books.Update;
+using LibraryOn.Application.UseCases.Employee.Register;
 using LibraryOn.Application.UseCases.Genres.Delete;
 using LibraryOn.Application.UseCases.Genres.GetAll;
 using LibraryOn.Application.UseCases.Genres.GetById;
@@ -15,6 +16,7 @@ using LibraryOn.Application.UseCases.Readers.GetAll;
 using LibraryOn.Application.UseCases.Readers.GetById;
 using LibraryOn.Application.UseCases.Readers.Register;
 using LibraryOn.Application.UseCases.Readers.Update;
+using LibraryOn.Domain.Repositories.Employees;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace LibraryOn.Application;
@@ -57,7 +59,10 @@ public static class DependencyInjectionExtension
         services.AddScoped<IGetReaderByIdUseCase, GetReaderByIdUseCase>();
         services.AddScoped<IDeleteReaderUseCase, DeleteReaderUseCase>();
         services.AddScoped<IUpdateReaderUseCase, UpdateReaderUseCase>();
-        
+
+        //employee
+        services.AddScoped<IRegisterEmployeeUseCase, RegisterEmployeeUseCase>();
+
 
 
     }

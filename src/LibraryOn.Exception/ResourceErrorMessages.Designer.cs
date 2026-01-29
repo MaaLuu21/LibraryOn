@@ -97,6 +97,15 @@ namespace LibraryOn.Exception {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Email already registered..
+        /// </summary>
+        public static string EMAIL_ALREADY_REGISTERED {
+            get {
+                return ResourceManager.GetString("EMAIL_ALREADY_REGISTERED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Email invalid..
         /// </summary>
         public static string EMAIL_INVALID {
@@ -142,6 +151,15 @@ namespace LibraryOn.Exception {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Invalid password..
+        /// </summary>
+        public static string INVALID_PASSWORD {
+            get {
+                return ResourceManager.GetString("INVALID_PASSWORD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Name required..
         /// </summary>
         public static string NAME_REQUIRED {
@@ -169,11 +187,11 @@ namespace LibraryOn.Exception {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Publish year can&apos;t be for the future..
+        ///   Looks up a localized string similar to Publish year invalid..
         /// </summary>
-        public static string PUBLISH_YEAR_CANT_BE_FOR_THE_FUTURE {
+        public static string PUBLISH_YEAR_INVALID {
             get {
-                return ResourceManager.GetString("PUBLISH_YEAR_CANT_BE_FOR_THE_FUTURE", resourceCulture);
+                return ResourceManager.GetString("PUBLISH_YEAR_INVALID", resourceCulture);
             }
         }
         

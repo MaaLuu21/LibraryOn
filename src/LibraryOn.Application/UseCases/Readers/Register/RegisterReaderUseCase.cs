@@ -32,12 +32,12 @@ public class RegisterReaderUseCase : IRegisterReaderUseCase
         Validate(request);
 
         var phoneNumber = PhoneNumber.Create(request.PhoneNumber, _phoneNumberValidator);
-        var email = Email.Create(request.Email);
         var cpf = Cpf.Create(request.Cpf);
 
-        var entity = new Reader(phoneNumber, email, cpf)
+        var entity = new Reader(phoneNumber, cpf )
         {
             Name = request.Name,
+            Email = request.Email,
         };
 
 

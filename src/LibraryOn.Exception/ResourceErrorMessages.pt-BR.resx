@@ -129,6 +129,9 @@
   <data name="CPF_REQUIRED" xml:space="preserve">
     <value>Cpf obrigatório.</value>
   </data>
+  <data name="EMAIL_ALREADY_REGISTERED" xml:space="preserve">
+    <value>Email já resgistrado.</value>
+  </data>
   <data name="EMAIL_INVALID" xml:space="preserve">
     <value>Email obrigatório.</value>
   </data>
@@ -144,6 +147,9 @@
   <data name="INVALID_ID" xml:space="preserve">
     <value>ID inválido.</value>
   </data>
+  <data name="INVALID_PASSWORD" xml:space="preserve">
+    <value>Senha inválida.</value>
+  </data>
   <data name="NAME_REQUIRED" xml:space="preserve">
     <value>Nome obrigdatório.</value>
   </data>
@@ -153,8 +159,8 @@
   <data name="PHONE_NUMBER_REQUIRED" xml:space="preserve">
     <value>Número de telefone obrigatório.</value>
   </data>
-  <data name="PUBLISH_YEAR_CANT_BE_FOR_THE_FUTURE" xml:space="preserve">
-    <value>A data de publicação não pode ser futura.</value>
+  <data name="PUBLISH_YEAR_INVALID" xml:space="preserve">
+    <value>Data de publicação inválida.</value>
   </data>
   <data name="READER_NOT_FOUND" xml:space="preserve">
     <value>Leitor não encontrado.</value>

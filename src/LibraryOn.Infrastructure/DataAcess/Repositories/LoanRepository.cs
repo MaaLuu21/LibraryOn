@@ -2,10 +2,10 @@
 using LibraryOn.Domain.Repositories.Loans;
 
 namespace LibraryOn.Infrastructure.DataAcess.Repositories;
-internal class LoansRepository : ILoansWriteOnlyRepository
+internal class LoanRepository : ILoanWriteOnlyRepository
 {
     private readonly LibraryOnDbContext _dbContext;
-    public LoansRepository(LibraryOnDbContext dbContext)
+    public LoanRepository(LibraryOnDbContext dbContext)
     {
         _dbContext = dbContext;
     }
