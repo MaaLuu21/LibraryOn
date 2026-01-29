@@ -11,7 +11,6 @@ public class RegisterReaderValidatorTests
     [Fact]
     public void sucess()
     {
-        //Arrange
         var phoneNumberValidatorMock = new Mock<IPhoneNumberValidator>();
         phoneNumberValidatorMock
             .Setup(p => p.IsValid(It.IsAny<string>()))
@@ -21,10 +20,8 @@ public class RegisterReaderValidatorTests
         var validator = new ReaderValidator(phoneNumberValidatorMock.Object);
         var request = RequestRegisterReaderJsonBuilder.Build();
 
-        //Act
         var result = validator.Validate(request);
 
-        //Assert
         result.IsValid.Should().BeTrue();
     }
     [Theory]
