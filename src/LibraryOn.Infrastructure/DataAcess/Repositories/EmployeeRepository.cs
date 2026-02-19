@@ -27,7 +27,7 @@ internal class EmployeeRepository : IEmployeeWriteOnlyRepository, IEmployeeReadO
         return await _dbContext.Employees.AnyAsync(e => e.Email.Equals(email));
     }
 
-    public async Task<Employee?> GetEmployeeEmail(string email)
+    public async Task<Employee?> GetEmployeeByEmail(string email)
     {
         return await _dbContext.Employees.AsNoTracking().FirstOrDefaultAsync(e => e.Email.Equals(email));
     }

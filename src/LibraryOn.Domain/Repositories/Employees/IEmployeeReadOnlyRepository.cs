@@ -2,6 +2,6 @@
 public interface IEmployeeReadOnlyRepository
 {
     Task<bool> ExistActiveEmployeeWithEmail(string email);
-    Task<Entities.Employee?> GetEmployeeEmail(string email);
+    Task<Entities.Employee?> GetEmployeeByEmail(string email);
 
 }

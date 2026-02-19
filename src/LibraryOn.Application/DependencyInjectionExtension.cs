@@ -11,6 +11,7 @@ using LibraryOn.Application.UseCases.Genres.GetById;
 using LibraryOn.Application.UseCases.Genres.GetByIds;
 using LibraryOn.Application.UseCases.Genres.Register;
 using LibraryOn.Application.UseCases.Genres.Update;
+using LibraryOn.Application.UseCases.Login.DoLogin;
 using LibraryOn.Application.UseCases.Readers.Delete;
 using LibraryOn.Application.UseCases.Readers.GetAll;
 using LibraryOn.Application.UseCases.Readers.GetById;
@@ -62,6 +63,9 @@ public static class DependencyInjectionExtension
 
         //employee
         services.AddScoped<IRegisterEmployeeUseCase, RegisterEmployeeUseCase>();
+
+        //Login
+        services.AddScoped<IDoLoginUseCase, DoLoginUseCase>();
 
 
 

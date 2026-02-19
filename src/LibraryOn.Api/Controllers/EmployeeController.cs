@@ -21,4 +21,10 @@ public class EmployeeController : ControllerBase
 
         return Created(string.Empty, response);
     }
+
+    // login - CONTROLLER SEPARADO E ISOLADO PARA O LOGIN
+    // update password
+    // update employee
+    // 
+    // delete
 }
