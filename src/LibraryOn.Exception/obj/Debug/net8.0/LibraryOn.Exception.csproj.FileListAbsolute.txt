@@ -32,3 +32,4 @@ F:\ESTUDOS\C#\PORTIFOLIO\LibraryOn\src\LibraryOn.Exception\obj\Debug\net8.0\Libr
 F:\ESTUDOS\C#\PORTIFOLIO\LibraryOn\src\LibraryOn.Exception\obj\Debug\net8.0\refint\LibraryOn.Exception.dll
 F:\ESTUDOS\C#\PORTIFOLIO\LibraryOn\src\LibraryOn.Exception\obj\Debug\net8.0\LibraryOn.Exception.pdb
 F:\ESTUDOS\C#\PORTIFOLIO\LibraryOn\src\LibraryOn.Exception\obj\Debug\net8.0\ref\LibraryOn.Exception.dll
+F:\ESTUDOS\C#\PORTIFOLIO\LibraryOn\src\LibraryOn.Exception\obj\Debug\net8.0\pt-BR\LibraryOn.Exception.resources.cs

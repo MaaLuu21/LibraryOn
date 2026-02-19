@@ -6,6 +6,8 @@ using LibraryOn.Application.UseCases.Books.Update;
 using LibraryOn.Communication.Requests.Books;
 using LibraryOn.Communication.Responses;
 using LibraryOn.Communication.Responses.Book;
+using LibraryOn.Domain.Enums;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LibraryOn.Api.Controllers
@@ -17,6 +19,7 @@ namespace LibraryOn.Api.Controllers
         [HttpPost]
         [ProducesResponseType(typeof(ResponseRegisteredBookJson), StatusCodes.Status201Created)]
         [ProducesResponseType(typeof(ResponseErrorJson), StatusCodes.Status404NotFound)]
+        [Authorize(Roles = Roles.ADMIN)]
         public async Task<IActionResult> RegisterBook([FromServices] IRegisterBookUseCase useCase,
                                                        [FromBody] RequestBookJson request)
         {

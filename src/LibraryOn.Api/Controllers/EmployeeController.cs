@@ -2,7 +2,6 @@
 using LibraryOn.Communication.Requests.Employee;
 using LibraryOn.Communication.Responses;
 using LibraryOn.Communication.Responses.Employee;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LibraryOn.Api.Controllers;
@@ -22,9 +21,7 @@ public class EmployeeController : ControllerBase
         return Created(string.Empty, response);
     }
 
-    // login - CONTROLLER SEPARADO E ISOLADO PARA O LOGIN
     // update password
     // update employee
-    // 
     // delete
 }
