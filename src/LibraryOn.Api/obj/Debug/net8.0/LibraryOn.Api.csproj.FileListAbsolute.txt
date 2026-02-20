@@ -265,3 +265,16 @@ F:\ESTUDOS\C#\PORTIFOLIO\LibraryOn\src\LibraryOn.Api\obj\Debug\net8.0\LibraryOn.
 F:\ESTUDOS\C#\PORTIFOLIO\LibraryOn\src\LibraryOn.Api\obj\Debug\net8.0\LibraryOn.Api.genruntimeconfig.cache
 F:\ESTUDOS\C#\PORTIFOLIO\LibraryOn\src\LibraryOn.Api\obj\Debug\net8.0\ref\LibraryOn.Api.dll
 F:\ESTUDOS\C#\PORTIFOLIO\LibraryOn\src\LibraryOn.Api\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\desenvolvimento\dotnet\LibraryOn\src\LibraryOn.Api\bin\Debug\net8.0\BCrypt.Net-Next.dll
+C:\desenvolvimento\dotnet\LibraryOn\src\LibraryOn.Api\bin\Debug\net8.0\Flunt.dll
+C:\desenvolvimento\dotnet\LibraryOn\src\LibraryOn.Api\bin\Debug\net8.0\Flunt.Br.dll
+C:\desenvolvimento\dotnet\LibraryOn\src\LibraryOn.Api\bin\Debug\net8.0\PhoneNumbers.dll
+C:\desenvolvimento\dotnet\LibraryOn\src\LibraryOn.Api\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\desenvolvimento\dotnet\LibraryOn\src\LibraryOn.Api\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Binder.dll
+C:\desenvolvimento\dotnet\LibraryOn\src\LibraryOn.Api\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+C:\desenvolvimento\dotnet\LibraryOn\src\LibraryOn.Api\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\desenvolvimento\dotnet\LibraryOn\src\LibraryOn.Api\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+C:\desenvolvimento\dotnet\LibraryOn\src\LibraryOn.Api\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+C:\desenvolvimento\dotnet\LibraryOn\src\LibraryOn.Api\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\desenvolvimento\dotnet\LibraryOn\src\LibraryOn.Api\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+C:\desenvolvimento\dotnet\LibraryOn\src\LibraryOn.Api\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll

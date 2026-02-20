@@ -1,7 +1,9 @@
 using LibraryOn.Api;
 using LibraryOn.Api.csproj.Filters;
 using LibraryOn.Api.csproj.Middleware;
+using LibraryOn.Api.Token;
 using LibraryOn.Application;
+using LibraryOn.Domain.Security.Tokens;
 using LibraryOn.Infrastructure;
 using LibraryOn.Infrastructure.Migrations;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -47,6 +49,9 @@ builder.Services.AddSwaggerGen(config =>
         }
     });
 });
+
+
+builder.Services.AddScoped<ITokenProvider, HttpTokenContextValue>();
 
 builder.Services.AddHttpContextAccessor();
 

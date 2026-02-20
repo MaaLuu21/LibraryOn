@@ -6,10 +6,12 @@ using LibraryOn.Domain.Repositories.Loans;
 using LibraryOn.Domain.Repositories.Readers;
 using LibraryOn.Domain.Security.Cryptography;
 using LibraryOn.Domain.Security.Tokens;
+using LibraryOn.Domain.Services.LoggedEmployee;
 using LibraryOn.Domain.Validators;
 using LibraryOn.Infrastructure.DataAcess;
 using LibraryOn.Infrastructure.DataAcess.Repositories;
 using LibraryOn.Infrastructure.Security.Tokens;
+using LibraryOn.Infrastructure.Services.LoggedEmployee;
 using LibraryOn.Infrastructure.Validators;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -21,6 +23,8 @@ public static class DependencyInjectionExtension
     public static void AddInfrastructure (this IServiceCollection services, IConfiguration configuration)
     {
         services.AddScoped<IPasswordEncripter, Security.Cryptography.Bcrypt>();
+        services.AddScoped<ILoggedEmployee, LoggedEmployee>();
+
         AddToken(services, configuration);
         AddDbContext(services, configuration);
         AddRepositories(services);

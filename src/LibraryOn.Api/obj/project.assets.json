@@ -3213,23 +3213,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\maria\\.nuget\\packages\\": {},
+    "C:\\Users\\Magal do R6\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\ESTUDOS\\C#\\PORTIFOLIO\\LibraryOn\\src\\LibraryOn.Api\\LibraryOn.Api.csproj",
+      "projectUniqueName": "C:\\desenvolvimento\\dotnet\\LibraryOn\\src\\LibraryOn.Api\\LibraryOn.Api.csproj",
       "projectName": "LibraryOn.Api",
-      "projectPath": "F:\\ESTUDOS\\C#\\PORTIFOLIO\\LibraryOn\\src\\LibraryOn.Api\\LibraryOn.Api.csproj",
-      "packagesPath": "C:\\Users\\maria\\.nuget\\packages\\",
-      "outputPath": "F:\\ESTUDOS\\C#\\PORTIFOLIO\\LibraryOn\\src\\LibraryOn.Api\\obj\\",
+      "projectPath": "C:\\desenvolvimento\\dotnet\\LibraryOn\\src\\LibraryOn.Api\\LibraryOn.Api.csproj",
+      "packagesPath": "C:\\Users\\Magal do R6\\.nuget\\packages\\",
+      "outputPath": "C:\\desenvolvimento\\dotnet\\LibraryOn\\src\\LibraryOn.Api\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\maria\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Magal do R6\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -3238,24 +3238,23 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "F:\\ESTUDOS\\C#\\PORTIFOLIO\\LibraryOn\\src\\LibraryOn.Application\\LibraryOn.Application.csproj": {
-              "projectPath": "F:\\ESTUDOS\\C#\\PORTIFOLIO\\LibraryOn\\src\\LibraryOn.Application\\LibraryOn.Application.csproj"
+            "C:\\desenvolvimento\\dotnet\\LibraryOn\\src\\LibraryOn.Application\\LibraryOn.Application.csproj": {
+              "projectPath": "C:\\desenvolvimento\\dotnet\\LibraryOn\\src\\LibraryOn.Application\\LibraryOn.Application.csproj"
             },
-            "F:\\ESTUDOS\\C#\\PORTIFOLIO\\LibraryOn\\src\\LibraryOn.Communication\\LibraryOn.Communication.csproj": {
-              "projectPath": "F:\\ESTUDOS\\C#\\PORTIFOLIO\\LibraryOn\\src\\LibraryOn.Communication\\LibraryOn.Communication.csproj"
+            "C:\\desenvolvimento\\dotnet\\LibraryOn\\src\\LibraryOn.Communication\\LibraryOn.Communication.csproj": {
+              "projectPath": "C:\\desenvolvimento\\dotnet\\LibraryOn\\src\\LibraryOn.Communication\\LibraryOn.Communication.csproj"
             },
-            "F:\\ESTUDOS\\C#\\PORTIFOLIO\\LibraryOn\\src\\LibraryOn.Exception\\LibraryOn.Exception.csproj": {
-              "projectPath": "F:\\ESTUDOS\\C#\\PORTIFOLIO\\LibraryOn\\src\\LibraryOn.Exception\\LibraryOn.Exception.csproj"
+            "C:\\desenvolvimento\\dotnet\\LibraryOn\\src\\LibraryOn.Exception\\LibraryOn.Exception.csproj": {
+              "projectPath": "C:\\desenvolvimento\\dotnet\\LibraryOn\\src\\LibraryOn.Exception\\LibraryOn.Exception.csproj"
             },
-            "F:\\ESTUDOS\\C#\\PORTIFOLIO\\LibraryOn\\src\\LibraryOn.Infrastructure\\LibraryOn.Infrastructure.csproj": {
-              "projectPath": "F:\\ESTUDOS\\C#\\PORTIFOLIO\\LibraryOn\\src\\LibraryOn.Infrastructure\\LibraryOn.Infrastructure.csproj"
+            "C:\\desenvolvimento\\dotnet\\LibraryOn\\src\\LibraryOn.Infrastructure\\LibraryOn.Infrastructure.csproj": {
+              "projectPath": "C:\\desenvolvimento\\dotnet\\LibraryOn\\src\\LibraryOn.Infrastructure\\LibraryOn.Infrastructure.csproj"
             }
           }
         }
@@ -3314,7 +3313,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

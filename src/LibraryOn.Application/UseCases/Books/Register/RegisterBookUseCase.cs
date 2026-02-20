@@ -5,6 +5,7 @@ using LibraryOn.Domain.Entities;
 using LibraryOn.Domain.Repositories;
 using LibraryOn.Domain.Repositories.Books;
 using LibraryOn.Domain.Repositories.Genres;
+using LibraryOn.Domain.Services.LoggedEmployee;
 using LibraryOn.Exception;
 using LibraryOn.Exception.ExceptionsBase;
 
@@ -15,15 +16,18 @@ public class RegisterBookUseCase : IRegisterBookUseCase
     private readonly IUnityOfWork _unityOfWork;
     private readonly IGenresReadOnlyRepository _genreRepository;
     private readonly IMapper _mapper;
+    private readonly ILoggedEmployee _loggedEmployee;
 
     public RegisterBookUseCase(IBookWriteOnlyRepository repository,
                                IUnityOfWork unityOfWork,
-                               IMapper mapper, IGenresReadOnlyRepository genreRepository)
+                               IMapper mapper, IGenresReadOnlyRepository genreRepository,
+                               ILoggedEmployee loggedEmployee)
     {
         _repository = repository;
         _unityOfWork = unityOfWork;
         _mapper = mapper;
         _genreRepository = genreRepository;
+        _loggedEmployee = loggedEmployee;
     }
 
     public async Task<ResponseRegisteredBookJson> Execute(RequestBookJson request)
@@ -31,8 +35,9 @@ public class RegisterBookUseCase : IRegisterBookUseCase
         Validate(request);
 
         var entity = _mapper.Map<Book>(request);
+
         var genres = await _genreRepository.GetByIds(request.GenreIds);
-    
+
         if (genres == null || genres.Count == 0)
         {
             throw new NotFoundExecption(ResourceErrorMessages.GENRE_NOT_FOUND);

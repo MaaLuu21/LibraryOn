@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "F:\\ESTUDOS\\C#\\PORTIFOLIO\\LibraryOn\\src\\LibraryOn.Infrastructure\\LibraryOn.Infrastructure.csproj": {}
+    "C:\\desenvolvimento\\dotnet\\LibraryOn\\src\\LibraryOn.Infrastructure\\LibraryOn.Infrastructure.csproj": {}
   },
   "projects": {
-    "F:\\ESTUDOS\\C#\\PORTIFOLIO\\LibraryOn\\src\\LibraryOn.Application\\LibraryOn.Application.csproj": {
+    "C:\\desenvolvimento\\dotnet\\LibraryOn\\src\\LibraryOn.Application\\LibraryOn.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\ESTUDOS\\C#\\PORTIFOLIO\\LibraryOn\\src\\LibraryOn.Application\\LibraryOn.Application.csproj",
+        "projectUniqueName": "C:\\desenvolvimento\\dotnet\\LibraryOn\\src\\LibraryOn.Application\\LibraryOn.Application.csproj",
         "projectName": "LibraryOn.Application",
-        "projectPath": "F:\\ESTUDOS\\C#\\PORTIFOLIO\\LibraryOn\\src\\LibraryOn.Application\\LibraryOn.Application.csproj",
-        "packagesPath": "C:\\Users\\maria\\.nuget\\packages\\",
-        "outputPath": "F:\\ESTUDOS\\C#\\PORTIFOLIO\\LibraryOn\\src\\LibraryOn.Application\\obj\\",
+        "projectPath": "C:\\desenvolvimento\\dotnet\\LibraryOn\\src\\LibraryOn.Application\\LibraryOn.Application.csproj",
+        "packagesPath": "C:\\Users\\Magal do R6\\.nuget\\packages\\",
+        "outputPath": "C:\\desenvolvimento\\dotnet\\LibraryOn\\src\\LibraryOn.Application\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\maria\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Magal do R6\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,21 +26,20 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "F:\\ESTUDOS\\C#\\PORTIFOLIO\\LibraryOn\\src\\LibraryOn.Communication\\LibraryOn.Communication.csproj": {
-                "projectPath": "F:\\ESTUDOS\\C#\\PORTIFOLIO\\LibraryOn\\src\\LibraryOn.Communication\\LibraryOn.Communication.csproj"
+              "C:\\desenvolvimento\\dotnet\\LibraryOn\\src\\LibraryOn.Communication\\LibraryOn.Communication.csproj": {
+                "projectPath": "C:\\desenvolvimento\\dotnet\\LibraryOn\\src\\LibraryOn.Communication\\LibraryOn.Communication.csproj"
               },
-              "F:\\ESTUDOS\\C#\\PORTIFOLIO\\LibraryOn\\src\\LibraryOn.Domain\\LibraryOn.Domain.csproj": {
-                "projectPath": "F:\\ESTUDOS\\C#\\PORTIFOLIO\\LibraryOn\\src\\LibraryOn.Domain\\LibraryOn.Domain.csproj"
+              "C:\\desenvolvimento\\dotnet\\LibraryOn\\src\\LibraryOn.Domain\\LibraryOn.Domain.csproj": {
+                "projectPath": "C:\\desenvolvimento\\dotnet\\LibraryOn\\src\\LibraryOn.Domain\\LibraryOn.Domain.csproj"
               },
-              "F:\\ESTUDOS\\C#\\PORTIFOLIO\\LibraryOn\\src\\LibraryOn.Exception\\LibraryOn.Exception.csproj": {
-                "projectPath": "F:\\ESTUDOS\\C#\\PORTIFOLIO\\LibraryOn\\src\\LibraryOn.Exception\\LibraryOn.Exception.csproj"
+              "C:\\desenvolvimento\\dotnet\\LibraryOn\\src\\LibraryOn.Exception\\LibraryOn.Exception.csproj": {
+                "projectPath": "C:\\desenvolvimento\\dotnet\\LibraryOn\\src\\LibraryOn.Exception\\LibraryOn.Exception.csproj"
               }
             }
           }
@@ -90,24 +89,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "F:\\ESTUDOS\\C#\\PORTIFOLIO\\LibraryOn\\src\\LibraryOn.Communication\\LibraryOn.Communication.csproj": {
+    "C:\\desenvolvimento\\dotnet\\LibraryOn\\src\\LibraryOn.Communication\\LibraryOn.Communication.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\ESTUDOS\\C#\\PORTIFOLIO\\LibraryOn\\src\\LibraryOn.Communication\\LibraryOn.Communication.csproj",
+        "projectUniqueName": "C:\\desenvolvimento\\dotnet\\LibraryOn\\src\\LibraryOn.Communication\\LibraryOn.Communication.csproj",
         "projectName": "LibraryOn.Communication",
-        "projectPath": "F:\\ESTUDOS\\C#\\PORTIFOLIO\\LibraryOn\\src\\LibraryOn.Communication\\LibraryOn.Communication.csproj",
-        "packagesPath": "C:\\Users\\maria\\.nuget\\packages\\",
-        "outputPath": "F:\\ESTUDOS\\C#\\PORTIFOLIO\\LibraryOn\\src\\LibraryOn.Communication\\obj\\",
+        "projectPath": "C:\\desenvolvimento\\dotnet\\LibraryOn\\src\\LibraryOn.Communication\\LibraryOn.Communication.csproj",
+        "packagesPath": "C:\\Users\\Magal do R6\\.nuget\\packages\\",
+        "outputPath": "C:\\desenvolvimento\\dotnet\\LibraryOn\\src\\LibraryOn.Communication\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\maria\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Magal do R6\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -116,7 +115,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -156,24 +154,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "F:\\ESTUDOS\\C#\\PORTIFOLIO\\LibraryOn\\src\\LibraryOn.Domain\\LibraryOn.Domain.csproj": {
+    "C:\\desenvolvimento\\dotnet\\LibraryOn\\src\\LibraryOn.Domain\\LibraryOn.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\ESTUDOS\\C#\\PORTIFOLIO\\LibraryOn\\src\\LibraryOn.Domain\\LibraryOn.Domain.csproj",
+        "projectUniqueName": "C:\\desenvolvimento\\dotnet\\LibraryOn\\src\\LibraryOn.Domain\\LibraryOn.Domain.csproj",
         "projectName": "LibraryOn.Domain",
-        "projectPath": "F:\\ESTUDOS\\C#\\PORTIFOLIO\\LibraryOn\\src\\LibraryOn.Domain\\LibraryOn.Domain.csproj",
-        "packagesPath": "C:\\Users\\maria\\.nuget\\packages\\",
-        "outputPath": "F:\\ESTUDOS\\C#\\PORTIFOLIO\\LibraryOn\\src\\LibraryOn.Domain\\obj\\",
+        "projectPath": "C:\\desenvolvimento\\dotnet\\LibraryOn\\src\\LibraryOn.Domain\\LibraryOn.Domain.csproj",
+        "packagesPath": "C:\\Users\\Magal do R6\\.nuget\\packages\\",
+        "outputPath": "C:\\desenvolvimento\\dotnet\\LibraryOn\\src\\LibraryOn.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\maria\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Magal do R6\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -182,7 +180,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -222,24 +219,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "F:\\ESTUDOS\\C#\\PORTIFOLIO\\LibraryOn\\src\\LibraryOn.Exception\\LibraryOn.Exception.csproj": {
+    "C:\\desenvolvimento\\dotnet\\LibraryOn\\src\\LibraryOn.Exception\\LibraryOn.Exception.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\ESTUDOS\\C#\\PORTIFOLIO\\LibraryOn\\src\\LibraryOn.Exception\\LibraryOn.Exception.csproj",
+        "projectUniqueName": "C:\\desenvolvimento\\dotnet\\LibraryOn\\src\\LibraryOn.Exception\\LibraryOn.Exception.csproj",
         "projectName": "LibraryOn.Exception",
-        "projectPath": "F:\\ESTUDOS\\C#\\PORTIFOLIO\\LibraryOn\\src\\LibraryOn.Exception\\LibraryOn.Exception.csproj",
-        "packagesPath": "C:\\Users\\maria\\.nuget\\packages\\",
-        "outputPath": "F:\\ESTUDOS\\C#\\PORTIFOLIO\\LibraryOn\\src\\LibraryOn.Exception\\obj\\",
+        "projectPath": "C:\\desenvolvimento\\dotnet\\LibraryOn\\src\\LibraryOn.Exception\\LibraryOn.Exception.csproj",
+        "packagesPath": "C:\\Users\\Magal do R6\\.nuget\\packages\\",
+        "outputPath": "C:\\desenvolvimento\\dotnet\\LibraryOn\\src\\LibraryOn.Exception\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\maria\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Magal do R6\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -248,7 +245,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -288,24 +284,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "F:\\ESTUDOS\\C#\\PORTIFOLIO\\LibraryOn\\src\\LibraryOn.Infrastructure\\LibraryOn.Infrastructure.csproj": {
+    "C:\\desenvolvimento\\dotnet\\LibraryOn\\src\\LibraryOn.Infrastructure\\LibraryOn.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\ESTUDOS\\C#\\PORTIFOLIO\\LibraryOn\\src\\LibraryOn.Infrastructure\\LibraryOn.Infrastructure.csproj",
+        "projectUniqueName": "C:\\desenvolvimento\\dotnet\\LibraryOn\\src\\LibraryOn.Infrastructure\\LibraryOn.Infrastructure.csproj",
         "projectName": "LibraryOn.Infrastructure",
-        "projectPath": "F:\\ESTUDOS\\C#\\PORTIFOLIO\\LibraryOn\\src\\LibraryOn.Infrastructure\\LibraryOn.Infrastructure.csproj",
-        "packagesPath": "C:\\Users\\maria\\.nuget\\packages\\",
-        "outputPath": "F:\\ESTUDOS\\C#\\PORTIFOLIO\\LibraryOn\\src\\LibraryOn.Infrastructure\\obj\\",
+        "projectPath": "C:\\desenvolvimento\\dotnet\\LibraryOn\\src\\LibraryOn.Infrastructure\\LibraryOn.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\Magal do R6\\.nuget\\packages\\",
+        "outputPath": "C:\\desenvolvimento\\dotnet\\LibraryOn\\src\\LibraryOn.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\maria\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Magal do R6\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -314,18 +310,17 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "F:\\ESTUDOS\\C#\\PORTIFOLIO\\LibraryOn\\src\\LibraryOn.Application\\LibraryOn.Application.csproj": {
-                "projectPath": "F:\\ESTUDOS\\C#\\PORTIFOLIO\\LibraryOn\\src\\LibraryOn.Application\\LibraryOn.Application.csproj"
+              "C:\\desenvolvimento\\dotnet\\LibraryOn\\src\\LibraryOn.Application\\LibraryOn.Application.csproj": {
+                "projectPath": "C:\\desenvolvimento\\dotnet\\LibraryOn\\src\\LibraryOn.Application\\LibraryOn.Application.csproj"
               },
-              "F:\\ESTUDOS\\C#\\PORTIFOLIO\\LibraryOn\\src\\LibraryOn.Domain\\LibraryOn.Domain.csproj": {
-                "projectPath": "F:\\ESTUDOS\\C#\\PORTIFOLIO\\LibraryOn\\src\\LibraryOn.Domain\\LibraryOn.Domain.csproj"
+              "C:\\desenvolvimento\\dotnet\\LibraryOn\\src\\LibraryOn.Domain\\LibraryOn.Domain.csproj": {
+                "projectPath": "C:\\desenvolvimento\\dotnet\\LibraryOn\\src\\LibraryOn.Domain\\LibraryOn.Domain.csproj"
               }
             }
           }
@@ -391,7 +386,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
