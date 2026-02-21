@@ -178,6 +178,15 @@ namespace LibraryOn.Exception {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Password is different then the current.
+        /// </summary>
+        public static string PASSWORD_DIFFEERENT_THEN_CURRENT {
+            get {
+                return ResourceManager.GetString("PASSWORD_DIFFEERENT_THEN_CURRENT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Phone number invalid..
         /// </summary>
         public static string PHONE_NUMBER_INVALID {

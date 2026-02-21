@@ -17,7 +17,7 @@ public class JwtTokenGenerator : IAccessTokenGenerator
         _expirationTimeMinutes = expirationTimeMinutes;
         _signingKey = signingKey;
     }
-
+    
     public string Generate(Employee employee)
     {
         var claims = new List<Claim>

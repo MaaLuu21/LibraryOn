@@ -1,5 +1,6 @@
-﻿using LibraryOn.Application.UseCases.Employee.Register;
-using LibraryOn.Communication.Requests.Employee;
+﻿using LibraryOn.Application.UseCases.Employee.ChangePassword;
+using LibraryOn.Application.UseCases.Employee.Register;
+using LibraryOn.Communication.Requests.Employees;
 using LibraryOn.Communication.Responses;
 using LibraryOn.Communication.Responses.Employee;
 using Microsoft.AspNetCore.Mvc;
@@ -21,7 +22,18 @@ public class EmployeeController : ControllerBase
         return Created(string.Empty, response);
     }
 
-    // update password
+    [HttpPut("change-password")]
+    [ProducesResponseType(StatusCodes.Status204NoContent)]
+    [ProducesResponseType(typeof(ResponseErrorJson), StatusCodes.Status404NotFound)]
+    public async Task<IActionResult> ChangePassword([FromServices] IChangePasswordUseCase useCase,
+                                                    [FromBody] RequestChangePasswordJson request)
+    {
+        await useCase.Execute(request);
+
+
+        return NoContent();
+    }
+
     // update employee
     // delete
 }

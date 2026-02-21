@@ -1,0 +1,14 @@
+## Build results
+bin/
+obj/
+
+## .NET
+*.dll
+*.exe
+*.pdb
+
+## Visual Studio
+.vs/
+
+## Local config
+appsettings.Development.json

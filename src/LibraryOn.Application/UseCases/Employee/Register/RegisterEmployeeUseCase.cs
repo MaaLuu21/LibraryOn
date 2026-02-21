@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using FluentValidation.Results;
-using LibraryOn.Communication.Requests.Employee;
+using LibraryOn.Communication.Requests.Employees;
 using LibraryOn.Communication.Responses.Employee;
 using LibraryOn.Domain.Repositories;
 using LibraryOn.Domain.Repositories.Employees;
@@ -8,7 +8,6 @@ using LibraryOn.Domain.Security.Cryptography;
 using LibraryOn.Domain.Security.Tokens;
 using LibraryOn.Exception;
 using LibraryOn.Exception.ExceptionsBase;
-using System.Threading.Tasks;
 
 namespace LibraryOn.Application.UseCases.Employee.Register;
 public class RegisterEmployeeUseCase : IRegisterEmployeeUseCase

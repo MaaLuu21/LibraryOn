@@ -1,10 +1,10 @@
 ﻿using FluentValidation;
 using LibraryOn.Application.SharedValidators;
-using LibraryOn.Communication.Requests.Employee;
+using LibraryOn.Communication.Requests.Employees;
 using LibraryOn.Domain.ValueObjects;
 using LibraryOn.Exception;
 
-namespace LibraryOn.Application.UseCases.Employee;
+namespace LibraryOn.Application.UseCases.Employee.Register;
 public class RegisterEmployeeValidator : AbstractValidator<RequestRegisterEmployeeJson>
 {
     public RegisterEmployeeValidator()

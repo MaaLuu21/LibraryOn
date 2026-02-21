@@ -156,6 +156,9 @@
   <data name="NAME_REQUIRED" xml:space="preserve">
     <value>Nome obrigdatório.</value>
   </data>
+  <data name="PASSWORD_DIFFEERENT_THEN_CURRENT" xml:space="preserve">
+    <value>A senha é diferente da senha atual</value>
+  </data>
   <data name="PHONE_NUMBER_INVALID" xml:space="preserve">
     <value>Número de telefone inválido.</value>
   </data>

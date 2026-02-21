@@ -156,6 +156,9 @@
   <data name="NAME_REQUIRED" xml:space="preserve">
     <value>Name required.</value>
   </data>
+  <data name="PASSWORD_DIFFEERENT_THEN_CURRENT" xml:space="preserve">
+    <value>Password is different then the current</value>
+  </data>
   <data name="PHONE_NUMBER_INVALID" xml:space="preserve">
     <value>Phone number invalid.</value>
   </data>

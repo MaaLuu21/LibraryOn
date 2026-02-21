@@ -61,6 +61,7 @@ public static class DependencyInjectionExtension
         //Employee
         services.AddScoped<IEmployeeWriteOnlyRepository, EmployeeRepository>();
         services.AddScoped<IEmployeeReadOnlyRepository, EmployeeRepository>();
+        services.AddScoped<IEmployeeUpdateOnlyRepository, EmployeeRepository>();
 
 
 

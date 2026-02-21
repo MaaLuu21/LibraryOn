@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace LibraryOn.Infrastructure.DataAcess.Repositories;
-internal class EmployeeRepository : IEmployeeWriteOnlyRepository, IEmployeeReadOnlyRepository
+internal class EmployeeRepository : IEmployeeWriteOnlyRepository, IEmployeeReadOnlyRepository, IEmployeeUpdateOnlyRepository
 {
     private readonly LibraryOnDbContext _dbContext;
 
@@ -27,8 +27,18 @@ internal class EmployeeRepository : IEmployeeWriteOnlyRepository, IEmployeeReadO
         return await _dbContext.Employees.AnyAsync(e => e.Email.Equals(email));
     }
 
+    public async Task<Employee> GetById(long id)
+    {
+        return await _dbContext.Employees.FirstAsync(e => e.Id == id);
+    }
+
     public async Task<Employee?> GetEmployeeByEmail(string email)
     {
         return await _dbContext.Employees.AsNoTracking().FirstOrDefaultAsync(e => e.Email.Equals(email));
+    }
+
+    public void Update(Employee employee)
+    {
+        _dbContext.Employees.Update(employee);
     }
 }

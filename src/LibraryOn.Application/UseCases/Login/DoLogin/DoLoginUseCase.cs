@@ -1,4 +1,4 @@
-﻿using LibraryOn.Communication.Requests.Employee;
+﻿using LibraryOn.Communication.Requests.Employees;
 using LibraryOn.Communication.Responses.Employee;
 using LibraryOn.Domain.Repositories.Employees;
 using LibraryOn.Domain.Security.Cryptography;
