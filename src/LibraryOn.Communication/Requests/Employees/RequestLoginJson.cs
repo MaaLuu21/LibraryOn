@@ -1,4 +1,4 @@
-﻿namespace LibraryOn.Communication.Requests.Employee;
+﻿namespace LibraryOn.Communication.Requests.Employees;
 public class RequestLoginJson
 {
     public string Email { get; set; } = string.Empty;

@@ -1,6 +1,6 @@
 ﻿using System.Data;
 
-namespace LibraryOn.Communication.Requests.Employee;
+namespace LibraryOn.Communication.Requests.Employees;
 public class RequestRegisterEmployeeJson
 {
     public string Name { get; set; } = string.Empty;
