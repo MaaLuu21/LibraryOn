@@ -34,6 +34,11 @@ public class EmployeeController : ControllerBase
         return NoContent();
     }
 
-    // update employee
+    [HttpDelete]
+    public async Task<IActionResult> Delete()
+    {
+
+        return NoContent();
+    }
     // delete
 }

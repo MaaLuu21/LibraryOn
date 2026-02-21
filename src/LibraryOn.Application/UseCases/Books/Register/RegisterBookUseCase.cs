@@ -16,18 +16,16 @@ public class RegisterBookUseCase : IRegisterBookUseCase
     private readonly IUnityOfWork _unityOfWork;
     private readonly IGenresReadOnlyRepository _genreRepository;
     private readonly IMapper _mapper;
-    private readonly ILoggedEmployee _loggedEmployee;
 
     public RegisterBookUseCase(IBookWriteOnlyRepository repository,
                                IUnityOfWork unityOfWork,
-                               IMapper mapper, IGenresReadOnlyRepository genreRepository,
-                               ILoggedEmployee loggedEmployee)
+                               IMapper mapper, 
+                               IGenresReadOnlyRepository genreRepository)
     {
         _repository = repository;
         _unityOfWork = unityOfWork;
         _mapper = mapper;
         _genreRepository = genreRepository;
-        _loggedEmployee = loggedEmployee;
     }
 
     public async Task<ResponseRegisteredBookJson> Execute(RequestBookJson request)
