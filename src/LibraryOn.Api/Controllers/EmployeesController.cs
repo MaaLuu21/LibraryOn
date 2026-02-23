@@ -1,14 +1,19 @@
 ﻿using LibraryOn.Application.UseCases.Employee.ChangePassword;
+using LibraryOn.Application.UseCases.Employee.Delete;
+using LibraryOn.Application.UseCases.Employee.GetAll;
 using LibraryOn.Application.UseCases.Employee.Register;
 using LibraryOn.Communication.Requests.Employees;
 using LibraryOn.Communication.Responses;
 using LibraryOn.Communication.Responses.Employee;
+using LibraryOn.Domain.Enums;
+using LibraryOn.Infrastructure.DataAcess;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LibraryOn.Api.Controllers;
 [Route("api/[controller]")]
 [ApiController]
-public class EmployeeController : ControllerBase
+public class EmployeesController : ControllerBase
 {
     [HttpPost]
     [ProducesResponseType(typeof(ResponseRegisteredEmployeeJson), StatusCodes.Status201Created)]
@@ -35,10 +40,26 @@ public class EmployeeController : ControllerBase
     }
 
     [HttpDelete]
-    public async Task<IActionResult> Delete()
+    [ProducesResponseType(StatusCodes.Status204NoContent)]
+    [ProducesResponseType(typeof(ResponseErrorJson), StatusCodes.Status404NotFound)]
+    [Authorize(Roles = Roles.ADMIN)]
+    public async Task<IActionResult> Delete([FromServices] IDeleteEmployeeAccountUseCase useCase,
+                                            [FromQuery] long id)
     {
+        await useCase.Execute(id);
 
         return NoContent();
     }
-    // delete
+    //get all
+    [HttpGet]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(ResponseErrorJson), StatusCodes.Status404NotFound)]
+    [Authorize(Roles = Roles.ADMIN)]
+    public async Task<IActionResult> GetAll([FromServices] IGetAllEmployeesUseCase useCase)
+    {
+        var response = await useCase.Execute();
+
+        return Ok(response);
+    }
+    //Employee profile com dados e historico de loans?
 }

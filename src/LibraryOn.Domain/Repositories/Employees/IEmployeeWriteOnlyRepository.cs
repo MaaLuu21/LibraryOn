@@ -4,4 +4,5 @@ namespace LibraryOn.Domain.Repositories.Employees;
 public interface IEmployeeWriteOnlyRepository
 {
     Task Add(Employee employee);
+    void Delete(Employee employee);
 }

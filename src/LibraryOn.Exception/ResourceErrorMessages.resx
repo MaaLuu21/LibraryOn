@@ -141,6 +141,9 @@
   <data name="EMAIL_REQUIRED" xml:space="preserve">
     <value>Email required.</value>
   </data>
+  <data name="EMPLOYEE_NOT_FOUND" xml:space="preserve">
+    <value>Employee not found.</value>
+  </data>
   <data name="GENRE_NOT_FOUND" xml:space="preserve">
     <value>Genre not found.</value>
   </data>

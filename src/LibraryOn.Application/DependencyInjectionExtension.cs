@@ -5,6 +5,8 @@ using LibraryOn.Application.UseCases.Books.GetById;
 using LibraryOn.Application.UseCases.Books.Register;
 using LibraryOn.Application.UseCases.Books.Update;
 using LibraryOn.Application.UseCases.Employee.ChangePassword;
+using LibraryOn.Application.UseCases.Employee.Delete;
+using LibraryOn.Application.UseCases.Employee.GetAll;
 using LibraryOn.Application.UseCases.Employee.Register;
 using LibraryOn.Application.UseCases.Genres.Delete;
 using LibraryOn.Application.UseCases.Genres.GetAll;
@@ -65,6 +67,9 @@ public static class DependencyInjectionExtension
         //employee
         services.AddScoped<IRegisterEmployeeUseCase, RegisterEmployeeUseCase>();
         services.AddScoped<IChangePasswordUseCase, ChangePasswordUseCase>();
+        services.AddScoped<IDeleteEmployeeAccountUseCase, DeleteEmployeeAccountUseCase>();
+        services.AddScoped<IGetAllEmployeesUseCase, GetAllEmployeesUseCase>();
+
 
         //Login
         services.AddScoped<IDoLoginUseCase, DoLoginUseCase>();

@@ -22,23 +22,44 @@ internal class EmployeeRepository : IEmployeeWriteOnlyRepository, IEmployeeReadO
        await _dbContext.Employees.AddAsync(employee);
     }
 
+    public void Delete(Employee employee)
+    {
+        _dbContext.Employees.Remove(employee);
+    }
+
     public async Task<bool> ExistActiveEmployeeWithEmail(string email)
     {
         return await _dbContext.Employees.AnyAsync(e => e.Email.Equals(email));
     }
 
-    public async Task<Employee> GetById(long id)
+    async Task<Employee> IEmployeeUpdateOnlyRepository.GetById(long id)
     {
         return await _dbContext.Employees.FirstAsync(e => e.Id == id);
     }
 
     public async Task<Employee?> GetEmployeeByEmail(string email)
     {
-        return await _dbContext.Employees.AsNoTracking().FirstOrDefaultAsync(e => e.Email.Equals(email));
+        return await _dbContext
+            .Employees
+            .AsNoTracking()
+            .FirstOrDefaultAsync(e => e.Email.Equals(email));
     }
 
     public void Update(Employee employee)
     {
         _dbContext.Employees.Update(employee);
+    }
+
+    async Task<Employee?> IEmployeeReadOnlyRepository.GetById(long id)
+    {
+        return await _dbContext
+            .Employees
+            .AsNoTracking()
+            .FirstOrDefaultAsync(e => e.Id == id);
+    }
+
+    public async Task<List<Employee>> GetAll()
+    {
+        return await _dbContext.Employees.AsNoTracking().ToListAsync();
     }
 }
