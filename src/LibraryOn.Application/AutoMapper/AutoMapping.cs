@@ -1,7 +1,6 @@
 ﻿using AutoMapper;
 using LibraryOn.Communication.Requests.Books;
 using LibraryOn.Communication.Requests.Employees;
-using LibraryOn.Communication.Requests.Employees;
 using LibraryOn.Communication.Requests.Genres;
 using LibraryOn.Communication.Requests.Readers;
 using LibraryOn.Communication.Responses.Book;
@@ -9,7 +8,6 @@ using LibraryOn.Communication.Responses.Employee;
 using LibraryOn.Communication.Responses.Genres;
 using LibraryOn.Communication.Responses.Readers;
 using LibraryOn.Domain.Entities;
-using LibraryOn.Domain.ValueObjects;
 
 namespace LibraryOn.Application.AutoMapper;
 public class AutoMapping : Profile
@@ -47,6 +45,7 @@ public class AutoMapping : Profile
             .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.Name));
         
         CreateMap<Reader, ResponseShortReaderJson>();
+        CreateMap<Reader, ResponseReaderJson>();
 
         //employee
         CreateMap<Employee, ResponseShortEmployeeJson>();

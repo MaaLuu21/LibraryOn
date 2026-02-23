@@ -8,7 +8,7 @@ public class Employee
     public string Name { get; set; } = string.Empty;
     public string Email { get; set; } = string.Empty;
     public string Password { get; set; } = string.Empty;
-    public string Role { get; set; } = Roles.EMPLOYEE;
+    public string Role { get; set; } = Roles.CLERK;
     public ICollection<Loan?> Loans { get; set; } = [];
     public Guid EmployeeIdentifier { get; set; }
     public bool MustChangePassword { get; set; }

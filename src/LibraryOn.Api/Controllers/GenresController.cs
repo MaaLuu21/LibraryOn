@@ -7,6 +7,8 @@ using LibraryOn.Application.UseCases.Genres.Update;
 using LibraryOn.Communication.Requests.Genres;
 using LibraryOn.Communication.Responses;
 using LibraryOn.Communication.Responses.Genres;
+using LibraryOn.Domain.Enums;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LibraryOn.Api.Controllers
@@ -15,16 +17,19 @@ namespace LibraryOn.Api.Controllers
     [ApiController]
     public class GenresController : ControllerBase
     {
+        [Authorize(Roles = Roles.ADMIN + "," + Roles.MANAGER)]
         [HttpPost]
         [ProducesResponseType(typeof(ResponseRegisteredGenreJson), StatusCodes.Status201Created)]
         [ProducesResponseType(typeof(ResponseErrorJson), StatusCodes.Status400BadRequest)]
-        public async Task<IActionResult> RegisterGenre([FromServices] IRegisterGenreUseCase useCase,
+        public async Task<IActionResult> Register([FromServices] IRegisterGenreUseCase useCase,
                                                   [FromBody] RequestGenreJson request)
         {
             var response = await useCase.Execute(request);
 
             return Created(string.Empty, response);
         }
+
+        [Authorize]
         [HttpGet]
         [Route("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
@@ -37,6 +42,7 @@ namespace LibraryOn.Api.Controllers
             return Ok(response);
         }
 
+        [Authorize]
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ResponseErrorJson), StatusCodes.Status404NotFound)]
@@ -52,6 +58,7 @@ namespace LibraryOn.Api.Controllers
             return NoContent();
         }
 
+        [Authorize(Roles = Roles.ADMIN + "," + Roles.MANAGER)]
         [HttpDelete]
         [Route("{id}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
@@ -64,6 +71,7 @@ namespace LibraryOn.Api.Controllers
             return NoContent();
         }
 
+        [Authorize(Roles = Roles.ADMIN + "," + Roles.MANAGER)]
         [HttpPut]
         [Route("{id}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
@@ -77,7 +85,7 @@ namespace LibraryOn.Api.Controllers
 
             return NoContent();
         }
-
+        [Authorize(Roles = Roles.ADMIN + "," + Roles.MANAGER)]
         [HttpGet("by-ids")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ResponseErrorJson), StatusCodes.Status404NotFound)]

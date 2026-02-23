@@ -61,6 +61,15 @@ namespace LibraryOn.Exception {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Admin can not be demoted..
+        /// </summary>
+        public static string ADMIN_CAN_NOT_BE_DEMOTED {
+            get {
+                return ResourceManager.GetString("ADMIN_CAN_NOT_BE_DEMOTED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Author required..
         /// </summary>
         public static string AUTHOR_REQUIRED {

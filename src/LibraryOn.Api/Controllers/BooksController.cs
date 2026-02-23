@@ -16,10 +16,10 @@ namespace LibraryOn.Api.Controllers
     [ApiController]
     public class BooksController : ControllerBase
     {
+        [Authorize(Roles = Roles.ADMIN + "," + Roles.MANAGER)]
         [HttpPost]
         [ProducesResponseType(typeof(ResponseRegisteredBookJson), StatusCodes.Status201Created)]
         [ProducesResponseType(typeof(ResponseErrorJson), StatusCodes.Status404NotFound)]
-        [Authorize(Roles = Roles.ADMIN)]
         public async Task<IActionResult> RegisterBook([FromServices] IRegisterBookUseCase useCase,
                                                        [FromBody] RequestBookJson request)
         {
@@ -29,6 +29,7 @@ namespace LibraryOn.Api.Controllers
             return Created(string.Empty, response);
         }
 
+        [Authorize]
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ResponseErrorJson), StatusCodes.Status404NotFound)]
@@ -39,6 +40,7 @@ namespace LibraryOn.Api.Controllers
             return Ok(response);
         }
 
+        [Authorize]
         [HttpGet]
         [Route("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
@@ -51,6 +53,7 @@ namespace LibraryOn.Api.Controllers
             return Ok(response);
         }
 
+        [Authorize(Roles = Roles.ADMIN + "," + Roles.MANAGER)]
         [HttpDelete]
         [Route("{id}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
@@ -64,6 +67,7 @@ namespace LibraryOn.Api.Controllers
             return NoContent();
         }
 
+        [Authorize(Roles = Roles.ADMIN + "," + Roles.MANAGER)]
         [HttpPut]
         [Route("{id}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]

@@ -2,36 +2,35 @@
 using FluentValidation.Results;
 using LibraryOn.Communication.Requests.Employees;
 using LibraryOn.Communication.Responses.Employee;
+using LibraryOn.Domain.Enums;
 using LibraryOn.Domain.Repositories;
 using LibraryOn.Domain.Repositories.Employees;
 using LibraryOn.Domain.Security.Cryptography;
-using LibraryOn.Domain.Security.Tokens;
 using LibraryOn.Exception;
 using LibraryOn.Exception.ExceptionsBase;
 
 namespace LibraryOn.Application.UseCases.Employee.Register;
-public class RegisterEmployeeUseCase : IRegisterEmployeeUseCase
+public abstract class RegisterEmployeeBaseUseCase
 {
     private readonly IEmployeeWriteOnlyRepository _writeRepository;
     private readonly IEmployeeReadOnlyRepository _readRepository;
     private readonly IUnityOfWork _unityOfWork;
     private readonly IPasswordEncripter _encripter;
     private readonly IMapper _mapper;
-    private readonly IAccessTokenGenerator _tokenGenerator;
 
-    public RegisterEmployeeUseCase(IEmployeeWriteOnlyRepository writeRepository,
-                                   IEmployeeReadOnlyRepository readRepository,     
+    protected abstract string Role { get; }
+
+    public RegisterEmployeeBaseUseCase(IEmployeeWriteOnlyRepository writeRepository,
+                                   IEmployeeReadOnlyRepository readRepository,
                                    IUnityOfWork unityOfWork,
                                    IPasswordEncripter encripter,
-                                   IMapper mapper,
-                                   IAccessTokenGenerator tokenGenerator)
+                                   IMapper mapper)
     {
         _writeRepository = writeRepository;
         _readRepository = readRepository;
         _unityOfWork = unityOfWork;
         _encripter = encripter;
         _mapper = mapper;
-        _tokenGenerator = tokenGenerator;
     }
 
     public async Task<ResponseRegisteredEmployeeJson> Execute(RequestRegisterEmployeeJson request)
@@ -42,7 +41,8 @@ public class RegisterEmployeeUseCase : IRegisterEmployeeUseCase
 
         employee.Password = _encripter.Encrypty(request.Password);
         employee.EmployeeIdentifier = Guid.NewGuid();
-
+        employee.Role = Role;
+        employee.MustChangePassword = true;
 
         await _writeRepository.Add(employee);
         await _unityOfWork.Commit();
@@ -50,11 +50,9 @@ public class RegisterEmployeeUseCase : IRegisterEmployeeUseCase
         return new ResponseRegisteredEmployeeJson
         {
             Name = employee.Name,
-            Token = _tokenGenerator.Generate(employee)
         };
 
     }
-
     private async Task Validate(RequestRegisterEmployeeJson request)
     {
         var result = new RegisterEmployeeValidator().Validate(request);
@@ -66,7 +64,7 @@ public class RegisterEmployeeUseCase : IRegisterEmployeeUseCase
             result.Errors.Add(new ValidationFailure(string.Empty, ResourceErrorMessages.EMAIL_ALREADY_REGISTERED));
         }
 
-        if(result.IsValid == false)
+        if (result.IsValid == false)
         {
             var errorMessage = result.Errors.Select(e => e.ErrorMessage).ToList();
 

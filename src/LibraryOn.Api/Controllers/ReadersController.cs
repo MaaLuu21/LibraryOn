@@ -6,6 +6,7 @@ using LibraryOn.Application.UseCases.Readers.Update;
 using LibraryOn.Communication.Requests.Readers;
 using LibraryOn.Communication.Responses;
 using LibraryOn.Communication.Responses.Book;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -14,6 +15,7 @@ namespace LibraryOn.Api.Controllers;
 [ApiController]
 public class ReadersController : ControllerBase
 {
+    [Authorize]
     [HttpPost]
     [ProducesResponseType(typeof(ResponseRegisteredBookJson), StatusCodes.Status201Created)]
     [ProducesResponseType(typeof(ResponseErrorJson), StatusCodes.Status404NotFound)]
@@ -22,10 +24,10 @@ public class ReadersController : ControllerBase
     {
         var response = await useCase.Execute(request);
 
-
         return Created(string.Empty, response);
     }
 
+    [Authorize]
     [HttpGet]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(ResponseErrorJson), StatusCodes.Status404NotFound)]
@@ -36,6 +38,7 @@ public class ReadersController : ControllerBase
         return Ok(response);
     }
 
+    [Authorize]
     [HttpGet]
     [Route("{id}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
@@ -48,6 +51,7 @@ public class ReadersController : ControllerBase
         return Ok(response);
     }
 
+    [Authorize]
     [HttpDelete]
     [Route("{id}")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
@@ -60,6 +64,7 @@ public class ReadersController : ControllerBase
         return NoContent();
     }
 
+    [Authorize]
     [HttpPut]
     [Route("{id}")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]

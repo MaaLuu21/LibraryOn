@@ -2,11 +2,12 @@
 using LibraryOn.Application.UseCases.Employee.Delete;
 using LibraryOn.Application.UseCases.Employee.GetAll;
 using LibraryOn.Application.UseCases.Employee.Register;
+using LibraryOn.Application.UseCases.Employee.Register.Clerk;
+using LibraryOn.Application.UseCases.Employee.Register.Manager;
 using LibraryOn.Communication.Requests.Employees;
 using LibraryOn.Communication.Responses;
 using LibraryOn.Communication.Responses.Employee;
 using LibraryOn.Domain.Enums;
-using LibraryOn.Infrastructure.DataAcess;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -15,19 +16,30 @@ namespace LibraryOn.Api.Controllers;
 [ApiController]
 public class EmployeesController : ControllerBase
 {
-    [HttpPost]
     [Authorize(Roles = Roles.ADMIN)]
+    [HttpPost("clerk")]
     [ProducesResponseType(typeof(ResponseRegisteredEmployeeJson), StatusCodes.Status201Created)]
     [ProducesResponseType(typeof(ResponseErrorJson), StatusCodes.Status400BadRequest)]
-    public async Task<IActionResult> Register([FromServices] IRegisterEmployeeUseCase useCase,
+    public async Task<IActionResult> RegisterClerk([FromServices] IRegisterClerkUseCase useCase,
                                               [FromBody] RequestRegisterEmployeeJson request)
     {
         var response = await useCase.Execute(request);
 
+        return Created(string.Empty, response);
+    }
+    [Authorize(Roles = Roles.ADMIN)]
+    [HttpPost("manager")]
+    [ProducesResponseType(typeof(ResponseRegisteredEmployeeJson), StatusCodes.Status201Created)]
+    [ProducesResponseType(typeof(ResponseErrorJson), StatusCodes.Status400BadRequest)]
+    public async Task<IActionResult> RegisterManager([FromServices] IRegisterManagerUseCase useCase,
+                                          [FromBody] RequestRegisterEmployeeJson request)
+    {
+        var response = await useCase.Execute(request);
 
         return Created(string.Empty, response);
     }
 
+    [Authorize]
     [HttpPut("change-password")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(typeof(ResponseErrorJson), StatusCodes.Status404NotFound)]
@@ -40,10 +52,10 @@ public class EmployeesController : ControllerBase
         return NoContent();
     }
 
+    [Authorize(Roles = Roles.ADMIN)]
     [HttpDelete]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(typeof(ResponseErrorJson), StatusCodes.Status404NotFound)]
-    [Authorize(Roles = Roles.ADMIN)]
     public async Task<IActionResult> Delete([FromServices] IDeleteEmployeeAccountUseCase useCase,
                                             [FromQuery] long id)
     {
