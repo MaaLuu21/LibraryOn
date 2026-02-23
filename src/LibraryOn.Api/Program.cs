@@ -1,11 +1,14 @@
 using LibraryOn.Api;
 using LibraryOn.Api.csproj.Filters;
 using LibraryOn.Api.csproj.Middleware;
+using LibraryOn.Api.Services;
 using LibraryOn.Api.Token;
 using LibraryOn.Application;
+using LibraryOn.Application.Services;
 using LibraryOn.Domain.Security.Tokens;
 using LibraryOn.Infrastructure;
 using LibraryOn.Infrastructure.Migrations;
+using LibraryOn.Infrastructure.Seed;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
@@ -52,6 +55,7 @@ builder.Services.AddSwaggerGen(config =>
 
 
 builder.Services.AddScoped<ITokenProvider, HttpTokenContextValue>();
+builder.Services.AddScoped<IRegionProvider, HttpRegionProvider>();
 
 builder.Services.AddHttpContextAccessor();
 
@@ -80,9 +84,9 @@ builder.Services.AddAuthentication(config =>
     };
 });
 
-builder.Services.AddApi();
-
 var app = builder.Build();
+
+await AdminUserSeed.SeedAsync(app.Services);
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

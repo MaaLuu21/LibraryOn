@@ -16,6 +16,7 @@ namespace LibraryOn.Api.Controllers;
 public class EmployeesController : ControllerBase
 {
     [HttpPost]
+    [Authorize(Roles = Roles.ADMIN)]
     [ProducesResponseType(typeof(ResponseRegisteredEmployeeJson), StatusCodes.Status201Created)]
     [ProducesResponseType(typeof(ResponseErrorJson), StatusCodes.Status400BadRequest)]
     public async Task<IActionResult> Register([FromServices] IRegisterEmployeeUseCase useCase,
@@ -50,7 +51,7 @@ public class EmployeesController : ControllerBase
 
         return NoContent();
     }
-    //get all
+
     [HttpGet]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(ResponseErrorJson), StatusCodes.Status404NotFound)]
@@ -61,5 +62,5 @@ public class EmployeesController : ControllerBase
 
         return Ok(response);
     }
-    //Employee profile com dados e historico de loans?
+
 }

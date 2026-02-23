@@ -40,7 +40,7 @@ public class RegisterEmployeeUseCase : IRegisterEmployeeUseCase
 
         var employee = _mapper.Map<Domain.Entities.Employee>(request);
 
-        employee.Password = _encripter.Encripty(request.Password);
+        employee.Password = _encripter.Encrypty(request.Password);
         employee.EmployeeIdentifier = Guid.NewGuid();
 
 

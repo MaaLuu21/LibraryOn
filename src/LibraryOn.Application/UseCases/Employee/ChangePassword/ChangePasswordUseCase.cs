@@ -33,7 +33,8 @@ public class ChangePasswordUseCase : IChangePasswordUseCase
         Validate(request, loggedEmployee);
 
         var employee = await _repository.GetById(loggedEmployee.Id);
-        employee.Password = _passwordEncripter.Encripty(request.NewPassword);
+        employee.Password = _passwordEncripter.Encrypty(request.NewPassword);
+        employee.MustChangePassword = false;
 
         _repository.Update(employee);
         await _unityOfWork.Commit();

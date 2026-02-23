@@ -42,7 +42,8 @@ public class DoLoginUseCase : IDoLoginUseCase
         return new ResponseRegisteredEmployeeJson
         {
             Name = employee.Name,
-            Token = _accessTokenGenerator.Generate(employee)
+            Token = _accessTokenGenerator.Generate(employee),
+            MustChangePassword = employee.MustChangePassword,            
         };
     }
 }

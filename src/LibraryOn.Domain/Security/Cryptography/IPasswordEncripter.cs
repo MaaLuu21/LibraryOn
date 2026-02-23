@@ -7,6 +7,6 @@ using System.Threading.Tasks;
 namespace LibraryOn.Domain.Security.Cryptography;
 public interface IPasswordEncripter
 {
-    string Encripty(string password);
+    string Encrypty(string password);
     bool Verify(string password, string passworHash);
 }

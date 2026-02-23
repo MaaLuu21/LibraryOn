@@ -11,7 +11,8 @@ public class Employee
     public string Role { get; set; } = Roles.EMPLOYEE;
     public ICollection<Loan?> Loans { get; set; } = [];
     public Guid EmployeeIdentifier { get; set; }
-     
+    public bool MustChangePassword { get; set; }
+
     public Employee() { }
 
 
