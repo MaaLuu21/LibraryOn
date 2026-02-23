@@ -19,14 +19,14 @@ public class Loan
 
     protected Loan() { }
 
-    public Loan(Book book, Reader reader, Employee employee, DateTime loanDate)
+    public Loan(Book book, Reader reader, Employee employee)
     {
         Book = book ?? throw new DomainException(DomainErrorCodes.BookRequired);
         Reader = reader ?? throw new DomainException(DomainErrorCodes.ReaderRequired);
         Employee = employee ?? throw new DomainException(DomainErrorCodes.EmployeeRequired);
 
-        LoanDate = loanDate;
-        DueDate = loanDate.AddDays(DefaultLoanDays);
+        LoanDate = DateTime.UtcNow;
+        DueDate = LoanDate.AddDays(DefaultLoanDays);
         Status = LoanStatus.Active;
     }
 

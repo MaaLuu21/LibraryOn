@@ -41,4 +41,11 @@ internal class ReaderRepository : IReaderWriteOnlyRepository, IReaderReadOnlyRep
     {
         return await _dbContext.Readers.AsNoTracking().FirstOrDefaultAsync(r => r.Id == id);
     }
+
+    public async Task<Reader?> GetByCpf(string cpf)
+    {
+        return await _dbContext.Readers
+            .AsNoTracking()
+            .FirstOrDefaultAsync(r => r.Cpf.Value == cpf);
+    }
 }

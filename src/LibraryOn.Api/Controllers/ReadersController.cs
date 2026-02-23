@@ -1,5 +1,6 @@
 ﻿using LibraryOn.Application.UseCases.Readers.Delete;
 using LibraryOn.Application.UseCases.Readers.GetAll;
+using LibraryOn.Application.UseCases.Readers.GetByCpf;
 using LibraryOn.Application.UseCases.Readers.GetById;
 using LibraryOn.Application.UseCases.Readers.Register;
 using LibraryOn.Application.UseCases.Readers.Update;
@@ -47,6 +48,18 @@ public class ReadersController : ControllerBase
                                              [FromRoute] long id)
     {
         var response = await useCase.Execute(id);
+
+        return Ok(response);
+    }
+
+    [Authorize]
+    [HttpGet("cpf")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(ResponseErrorJson), StatusCodes.Status404NotFound)]
+    public async Task<IActionResult> GetByCpf([FromServices] IGetReaderByCpfUseCase useCase,
+                                         [FromQuery] string cpf)
+    {
+        var response = await useCase.Execute(cpf);
 
         return Ok(response);
     }

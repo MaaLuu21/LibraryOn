@@ -123,6 +123,12 @@
   <data name="AUTHOR_REQUIRED" xml:space="preserve">
     <value>Autor é obrigatório.</value>
   </data>
+  <data name="BOOK_ID_REQUIRED" xml:space="preserve">
+    <value>Id do livro é obrigatório.</value>
+  </data>
+  <data name="BOOK_NOT_AVAILABLE" xml:space="preserve">
+    <value>Livro não está disponível.</value>
+  </data>
   <data name="BOOK_NOT_FOUND" xml:space="preserve">
     <value>Livro não encontrado.</value>
   </data>

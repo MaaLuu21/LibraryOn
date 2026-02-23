@@ -23,14 +23,14 @@ public class Reader
         Cpf = cpf;
     }
 
-    public Loan BorrowBook(Book book, Employee employee, DateTime loanDate)
+    public Loan BorrowBook(Book book, Employee employee)
     {
         if(Loans.Count(l => l.Status == LoanStatus.Active) >= MaxLoan)
         {
             throw new DomainException(DomainErrorCodes.LimitLoans);
         }
 
-        var loan = new Loan(book, this, employee, loanDate);
+        var loan = new Loan(book, this, employee);
         Loans.Add(loan);
         return loan;
     }

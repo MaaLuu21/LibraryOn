@@ -31,6 +31,7 @@ internal class BooksRepository : IBookWriteOnlyRepository, IBookReadOnlyReposito
     {
         return await _dbContext.Books
             .Include(b => b.Genres)
+            .Include(b => b.Loans)
             .AsNoTracking()
             .FirstOrDefaultAsync(b => b.Id == id);
     }

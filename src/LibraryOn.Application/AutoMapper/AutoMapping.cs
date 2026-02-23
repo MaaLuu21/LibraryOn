@@ -2,10 +2,12 @@
 using LibraryOn.Communication.Requests.Books;
 using LibraryOn.Communication.Requests.Employees;
 using LibraryOn.Communication.Requests.Genres;
+using LibraryOn.Communication.Requests.Loans;
 using LibraryOn.Communication.Requests.Readers;
 using LibraryOn.Communication.Responses.Book;
 using LibraryOn.Communication.Responses.Employee;
 using LibraryOn.Communication.Responses.Genres;
+using LibraryOn.Communication.Responses.Loans;
 using LibraryOn.Communication.Responses.Readers;
 using LibraryOn.Domain.Entities;
 
@@ -22,6 +24,7 @@ public class AutoMapping : Profile
     {
         CreateMap<RequestGenreJson, Genre>();
         CreateMap<RequestBookJson, Book>();
+        CreateMap<RequestLoanJson, Loan>();
         CreateMap<RequestReaderJson, Reader>();
         CreateMap<RequestRegisterEmployeeJson, Employee>()
             .ForMember(dest => dest.Password, config => config.Ignore());
@@ -49,6 +52,9 @@ public class AutoMapping : Profile
 
         //employee
         CreateMap<Employee, ResponseShortEmployeeJson>();
+
+        //loan
+        CreateMap<Loan, ResponseRegisteredLoanJson>();
 
     }
 }

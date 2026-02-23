@@ -64,6 +64,7 @@ public class EmployeesController : ControllerBase
         return NoContent();
     }
 
+    [Authorize]
     [HttpGet]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(ResponseErrorJson), StatusCodes.Status404NotFound)]

@@ -16,9 +16,11 @@ using LibraryOn.Application.UseCases.Genres.GetById;
 using LibraryOn.Application.UseCases.Genres.GetByIds;
 using LibraryOn.Application.UseCases.Genres.Register;
 using LibraryOn.Application.UseCases.Genres.Update;
+using LibraryOn.Application.UseCases.Loans.Register;
 using LibraryOn.Application.UseCases.Login.DoLogin;
 using LibraryOn.Application.UseCases.Readers.Delete;
 using LibraryOn.Application.UseCases.Readers.GetAll;
+using LibraryOn.Application.UseCases.Readers.GetByCpf;
 using LibraryOn.Application.UseCases.Readers.GetById;
 using LibraryOn.Application.UseCases.Readers.Register;
 using LibraryOn.Application.UseCases.Readers.Update;
@@ -65,6 +67,7 @@ public static class DependencyInjectionExtension
         services.AddScoped<IGetReaderByIdUseCase, GetReaderByIdUseCase>();
         services.AddScoped<IDeleteReaderUseCase, DeleteReaderUseCase>();
         services.AddScoped<IUpdateReaderUseCase, UpdateReaderUseCase>();
+        services.AddScoped<IGetReaderByCpfUseCase, GetReaderByCpfUseCase>();
 
         //employee
         services.AddScoped<IRegisterClerkUseCase, RegisterClerkUseCase>(); 
@@ -77,7 +80,7 @@ public static class DependencyInjectionExtension
         //Login
         services.AddScoped<IDoLoginUseCase, DoLoginUseCase>();
 
-
-
+        //loan
+        services.AddScoped<IRegisterLoanUseCase, RegisterLoanUseCase>();
     }
 }

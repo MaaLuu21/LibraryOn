@@ -79,6 +79,24 @@ namespace LibraryOn.Exception {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Book id required..
+        /// </summary>
+        public static string BOOK_ID_REQUIRED {
+            get {
+                return ResourceManager.GetString("BOOK_ID_REQUIRED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Book not available..
+        /// </summary>
+        public static string BOOK_NOT_AVAILABLE {
+            get {
+                return ResourceManager.GetString("BOOK_NOT_AVAILABLE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Book not found..
         /// </summary>
         public static string BOOK_NOT_FOUND {
