@@ -9,10 +9,10 @@ namespace LibraryOn.Api.Controllers;
 [ApiController]
 public class LoansController : ControllerBase
 {
-    [HttpPost]
+    [HttpPost("book-loan")]
     [ProducesResponseType(StatusCodes.Status201Created)]
     [ProducesResponseType(typeof(ResponseErrorJson), StatusCodes.Status400BadRequest)]
-    public async Task<IActionResult> Register([FromServices] IRegisterLoanUseCase useCase,
+    public async Task<IActionResult> RegisterLoan([FromServices] IRegisterLoanUseCase useCase,
                                               [FromBody] RequestLoanJson request)
     {
 
@@ -20,7 +20,12 @@ public class LoansController : ControllerBase
 
         return Created(string.Empty, response);
     }
-    //testar logicas para adicioanr loan ex somente dois por usuario etc
+    [HttpPost("book-return")]
+    public async Task<IActionResult> RegisterReturn()
+    {
+
+        return Ok();
+    }
     //ReturnedAt indo nulo pro BD
     //Devolver o livro
 }

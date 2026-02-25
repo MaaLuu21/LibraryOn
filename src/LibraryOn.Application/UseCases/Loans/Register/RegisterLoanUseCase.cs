@@ -72,9 +72,7 @@ public class RegisterLoanUseCase : IRegisterLoanUseCase
             throw new NotAvailableException(ResourceErrorMessages.BOOK_NOT_AVAILABLE);
         }
 
-
         var loan = new Loan(book, reader, employee);
-
 
         await _repository.Add(loan);
         await _unityOfWork.Commit();

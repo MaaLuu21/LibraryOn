@@ -4,7 +4,7 @@ using LibraryOn.Domain.Repositories.Loans;
 using Microsoft.EntityFrameworkCore;
 
 namespace LibraryOn.Infrastructure.DataAcess.Repositories;
-internal class LoanRepository : ILoanWriteOnlyRepository
+internal class LoanRepository : ILoanWriteOnlyRepository, ILoanReadOnlyRepository, ILoanUpdateOnlyRepository
 {
     private readonly LibraryOnDbContext _dbContext;
     public LoanRepository(LibraryOnDbContext dbContext)
@@ -29,5 +29,20 @@ internal class LoanRepository : ILoanWriteOnlyRepository
         _dbContext.Entry(loan.Employee).State = EntityState.Unchanged;
 
         await _dbContext.Loans.AddAsync(loan);
+    }
+
+    public async Task<Loan?> GetActiveLoan(long bookId, string cpf)
+    {
+        return await _dbContext.Loans
+            .Include(l =>  l.Book)
+            .Include(l => l.Reader)
+            .FirstOrDefaultAsync(l => l.Book!.Id == bookId
+                                && l.Reader!.Cpf.Value == cpf
+                                && l.Status == LoanStatus.Active);
+    }
+
+    public void Update(Loan loan)
+    {
+        _dbContext.Loans.Update(loan);
     }
 }

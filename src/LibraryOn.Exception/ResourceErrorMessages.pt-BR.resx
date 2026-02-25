@@ -165,6 +165,9 @@
   <data name="INVALID_PASSWORD" xml:space="preserve">
     <value>Senha inválida.</value>
   </data>
+  <data name="LOAN_NOT_FOUND_OR_ALREADY_RETURNED" xml:space="preserve">
+    <value>Empréstimo não encontrado ou já devolvido.</value>
+  </data>
   <data name="NAME_REQUIRED" xml:space="preserve">
     <value>Nome obrigdatório.</value>
   </data>

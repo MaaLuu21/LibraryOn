@@ -17,6 +17,7 @@ using LibraryOn.Application.UseCases.Genres.GetByIds;
 using LibraryOn.Application.UseCases.Genres.Register;
 using LibraryOn.Application.UseCases.Genres.Update;
 using LibraryOn.Application.UseCases.Loans.Register;
+using LibraryOn.Application.UseCases.Loans.RegisterReturn;
 using LibraryOn.Application.UseCases.Login.DoLogin;
 using LibraryOn.Application.UseCases.Readers.Delete;
 using LibraryOn.Application.UseCases.Readers.GetAll;
@@ -82,5 +83,6 @@ public static class DependencyInjectionExtension
 
         //loan
         services.AddScoped<IRegisterLoanUseCase, RegisterLoanUseCase>();
+        services.AddScoped<IUpdateLoanUseCase, UpdateLoanUseCase>();
     }
 }

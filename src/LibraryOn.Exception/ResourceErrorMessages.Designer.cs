@@ -205,6 +205,15 @@ namespace LibraryOn.Exception {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Loan not found or already returned..
+        /// </summary>
+        public static string LOAN_NOT_FOUND_OR_ALREADY_RETURNED {
+            get {
+                return ResourceManager.GetString("LOAN_NOT_FOUND_OR_ALREADY_RETURNED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Name required..
         /// </summary>
         public static string NAME_REQUIRED {
