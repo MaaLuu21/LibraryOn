@@ -214,6 +214,15 @@ namespace LibraryOn.Exception {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Number of book loans exceeded..
+        /// </summary>
+        public static string NUMBER_OF_BOOK_LOANS_EXCEEDED {
+            get {
+                return ResourceManager.GetString("NUMBER_OF_BOOK_LOANS_EXCEEDED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Password is different then the current.
         /// </summary>
         public static string PASSWORD_DIFFEERENT_THEN_CURRENT {

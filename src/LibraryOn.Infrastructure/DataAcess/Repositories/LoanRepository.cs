@@ -1,4 +1,5 @@
 ﻿using LibraryOn.Domain.Entities;
+using LibraryOn.Domain.Enums;
 using LibraryOn.Domain.Repositories.Loans;
 using Microsoft.EntityFrameworkCore;
 
@@ -9,6 +10,16 @@ internal class LoanRepository : ILoanWriteOnlyRepository
     public LoanRepository(LibraryOnDbContext dbContext)
     {
         _dbContext = dbContext;
+    }
+
+    public async Task<int> CountActiveLoansByReader(long readerId) 
+    { 
+        return await _dbContext.Loans.CountAsync(l => l.Reader!.Id == readerId && l.Status == LoanStatus.Active); 
+    } 
+
+    public async Task<bool> HasActiveLoanForBook(long bookId) 
+    { 
+        return await _dbContext.Loans.AnyAsync(l => l.Book!.Id == bookId && l.Status == LoanStatus.Active); 
     }
 
     public async Task Add(Loan loan)

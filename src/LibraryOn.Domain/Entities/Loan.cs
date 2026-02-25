@@ -8,13 +8,13 @@ public class Loan
 {
     private const int DefaultLoanDays = 7;
 
-    public long Id  { get; private set; }
-    public Book? Book { get; private set; }
-    public Reader? Reader { get; private set; }
-    public DateTime DueDate { get; private set; }
-    public DateTime LoanDate { get; private set; }
-    public LoanStatus Status { get; private set; }
-    public DateTime? ReturnedAt { get; private set; }
+    public long Id  { get; set; }
+    public Book? Book { get; set; }
+    public Reader? Reader { get; set; }
+    public DateTime DueDate { get; set; }
+    public DateTime LoanDate { get; set; }
+    public LoanStatus Status { get; set; }
+    public DateTime? ReturnedAt { get; set; }
     public Employee Employee { get; set; }
 
     protected Loan() { }

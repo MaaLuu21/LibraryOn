@@ -168,6 +168,9 @@
   <data name="NAME_REQUIRED" xml:space="preserve">
     <value>Nome obrigdatório.</value>
   </data>
+  <data name="NUMBER_OF_BOOK_LOANS_EXCEEDED" xml:space="preserve">
+    <value>Número de emprestimos de livros excedido</value>
+  </data>
   <data name="PASSWORD_DIFFEERENT_THEN_CURRENT" xml:space="preserve">
     <value>A senha é diferente da senha atual</value>
   </data>

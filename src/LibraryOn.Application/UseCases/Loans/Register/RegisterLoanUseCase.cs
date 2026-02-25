@@ -21,6 +21,8 @@ public class RegisterLoanUseCase : IRegisterLoanUseCase
     private readonly IMapper _mapper;
     private readonly ILoggedEmployee _loggedEmployee;
 
+    private const int MaxLoan = 2;
+
     public RegisterLoanUseCase(ILoanWriteOnlyRepository repository,
                                IUnityOfWork unityOfWork,
                                IBookReadOnlyRepository bookRepository,
@@ -41,15 +43,21 @@ public class RegisterLoanUseCase : IRegisterLoanUseCase
         Validate(request);
 
         var book = await _bookRepository.GetById(request.BookId);
-        if(book == null)
+        if (book == null)
         {
             throw new NotFoundExecption(ResourceErrorMessages.BOOK_NOT_FOUND);
         }
 
         var reader = await _readerRepository.GetByCpf(request.Cpf);
-        if(reader == null)
+        if (reader == null)
         {
             throw new NotFoundExecption(ResourceErrorMessages.READER_NOT_FOUND);
+        }
+
+        var activeLoansCount = await _repository.CountActiveLoansByReader(reader.Id);
+        if (activeLoansCount >= MaxLoan)
+        {
+            throw new NotAvailableException(ResourceErrorMessages.NUMBER_OF_BOOK_LOANS_EXCEEDED);
         }
 
         var employee = await _loggedEmployee.Get();
@@ -58,7 +66,7 @@ public class RegisterLoanUseCase : IRegisterLoanUseCase
             throw new NotFoundExecption(ResourceErrorMessages.EMPLOYEE_NOT_FOUND);
         }
 
-        var hasActiveLoan = book.Loans.Any(l => l.Status == LoanStatus.Active);
+        var hasActiveLoan = await _repository.HasActiveLoanForBook(book.Id);
         if (hasActiveLoan)
         {
             throw new NotAvailableException(ResourceErrorMessages.BOOK_NOT_AVAILABLE);
