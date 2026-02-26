@@ -1,4 +1,5 @@
-﻿using LibraryOn.Communication.Enums.Loan;
+﻿using LibraryOn.Application.UseCases.Loans.Update;
+using LibraryOn.Communication.Enums.Loan;
 using LibraryOn.Communication.Requests.Loans;
 using LibraryOn.Domain.Repositories;
 using LibraryOn.Domain.Repositories.Loans;
@@ -23,7 +24,9 @@ public class UpdateLoanUseCase : IUpdateLoanUseCase
 
     public async  Task Execute(RequestLoanUpdateJson request)
     {
-        var loan = await _readRepository.GetActiveLoan(request.BookId, request.Cpf);
+        Validate(request);
+
+        var loan = await _readRepository.GetActiveLoan(request.LoanId, request.Cpf);
 
         if(loan == null)
         {
@@ -38,8 +41,17 @@ public class UpdateLoanUseCase : IUpdateLoanUseCase
         
     }
 
-    private void Validate()
+    private void Validate(RequestLoanUpdateJson request)
     {
-        //validar request
+        var validate = new UpdateLoanValidator();
+
+        var result = validate.Validate(request);
+
+        if(result.IsValid == false)
+        {
+            var errorMessages = result.Errors.Select(r => r.ErrorMessage).ToList();
+
+            throw new ErrorOnValidationException(errorMessages);
+        }
     }
 }

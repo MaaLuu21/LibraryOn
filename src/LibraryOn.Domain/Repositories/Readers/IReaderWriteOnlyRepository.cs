@@ -5,4 +5,5 @@ public interface IReaderWriteOnlyRepository
 {
     Task Add(Reader reader);
     void Delete(Reader reader);
+
 }

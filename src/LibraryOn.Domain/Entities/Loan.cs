@@ -30,18 +30,6 @@ public class Loan
         Status = LoanStatus.Active;
     }
 
-    public void ReturnBook(DateTime returnDate)
-    {
-        if(Status != LoanStatus.Active)
-        {
-            throw new DomainException(DomainErrorCodes.InvalidReturn);
-        }
-
-        ReturnedAt = returnDate;
-        Status = LoanStatus.Returned;
-
-    }
-
     public bool IsOverdue()
     {
         if(Status == LoanStatus.Active && DateTime.UtcNow > DueDate)

@@ -31,12 +31,12 @@ internal class LoanRepository : ILoanWriteOnlyRepository, ILoanReadOnlyRepositor
         await _dbContext.Loans.AddAsync(loan);
     }
 
-    public async Task<Loan?> GetActiveLoan(long bookId, string cpf)
+    public async Task<Loan?> GetActiveLoan(long loanId, string cpf)
     {
         return await _dbContext.Loans
             .Include(l =>  l.Book)
             .Include(l => l.Reader)
-            .FirstOrDefaultAsync(l => l.Book!.Id == bookId
+            .FirstOrDefaultAsync(l => l.Id == loanId
                                 && l.Reader!.Cpf.Value == cpf
                                 && l.Status == LoanStatus.Active);
     }

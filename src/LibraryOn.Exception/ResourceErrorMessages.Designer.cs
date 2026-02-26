@@ -106,6 +106,15 @@ namespace LibraryOn.Exception {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cpf already registered..
+        /// </summary>
+        public static string CPF_ALREADY_REGISTERED {
+            get {
+                return ResourceManager.GetString("CPF_ALREADY_REGISTERED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cpf invalid..
         /// </summary>
         public static string CPF_INVALID {
@@ -273,6 +282,15 @@ namespace LibraryOn.Exception {
         public static string READER_NOT_FOUND {
             get {
                 return ResourceManager.GetString("READER_NOT_FOUND", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Return date can not be in the future..
+        /// </summary>
+        public static string RETURN_DATE_CAN_NOT_BE_IN_THE_FUTURE {
+            get {
+                return ResourceManager.GetString("RETURN_DATE_CAN_NOT_BE_IN_THE_FUTURE", resourceCulture);
             }
         }
         

@@ -82,7 +82,7 @@ public class RegisterLoanUseCase : IRegisterLoanUseCase
 
     private void Validate(RequestLoanJson request)
     {
-        var validator = new LoanValidator();
+        var validator = new RegisterLoanValidator();
         var result = validator.Validate(request);
 
         if(result.IsValid == false)

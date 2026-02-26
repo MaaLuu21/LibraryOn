@@ -132,6 +132,9 @@
   <data name="BOOK_NOT_FOUND" xml:space="preserve">
     <value>Livro não encontrado.</value>
   </data>
+  <data name="CPF_ALREADY_REGISTERED" xml:space="preserve">
+    <value>Cpf já registrado.</value>
+  </data>
   <data name="CPF_INVALID" xml:space="preserve">
     <value>Cpf inválido.</value>
   </data>
@@ -188,6 +191,9 @@
   </data>
   <data name="READER_NOT_FOUND" xml:space="preserve">
     <value>Leitor não encontrado.</value>
+  </data>
+  <data name="RETURN_DATE_CAN_NOT_BE_IN_THE_FUTURE" xml:space="preserve">
+    <value>Data de devolução não pode ser futura.</value>
   </data>
   <data name="TITLE_REQUIRED" xml:space="preserve">
     <value>Título é obrigatório.</value>

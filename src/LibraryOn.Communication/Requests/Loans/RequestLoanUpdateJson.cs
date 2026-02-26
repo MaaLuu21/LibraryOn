@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace LibraryOn.Communication.Requests.Loans;
-internal class RequestLoanReturnJson
+﻿namespace LibraryOn.Communication.Requests.Loans;
+public class RequestLoanUpdateJson
 {
+    public long LoanId { get; set; }
+    public string Cpf { get; set; } = string.Empty;
+    public DateTime ReturnedAt { get; set; }
 }

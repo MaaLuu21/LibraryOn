@@ -57,6 +57,8 @@ public static class DependencyInjectionExtension
 
         //loan
         services.AddScoped<ILoanWriteOnlyRepository, LoanRepository>();
+        services.AddScoped<ILoanReadOnlyRepository, LoanRepository>();
+        services.AddScoped<ILoanUpdateOnlyRepository, LoanRepository>();
 
         //Employee
         services.AddScoped<IEmployeeWriteOnlyRepository, EmployeeRepository>();
