@@ -214,6 +214,15 @@ namespace LibraryOn.Exception {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Loan not found..
+        /// </summary>
+        public static string LOAN_NOT_FOUND {
+            get {
+                return ResourceManager.GetString("LOAN_NOT_FOUND", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Loan not found or already returned..
         /// </summary>
         public static string LOAN_NOT_FOUND_OR_ALREADY_RETURNED {
@@ -228,6 +237,15 @@ namespace LibraryOn.Exception {
         public static string NAME_REQUIRED {
             get {
                 return ResourceManager.GetString("NAME_REQUIRED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No overdue loan found..
+        /// </summary>
+        public static string NO_ORVERDUE_LOAN_FOUND {
+            get {
+                return ResourceManager.GetString("NO_ORVERDUE_LOAN_FOUND", resourceCulture);
             }
         }
         

@@ -41,4 +41,18 @@ public class Loan
             return false;
         }
     }
+
+    public int DaysOverdue
+    {
+        get
+        {
+            if (IsOverdue())
+            {
+                var diferenca = DateTime.UtcNow - DueDate;
+                return diferenca.Days;
+            }
+
+            return 0;
+        }
+    }
 }

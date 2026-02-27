@@ -33,7 +33,7 @@ public class UpdateReaderUseCase : IUpdateReaderUseCase
 
         if (reader == null)
         {
-            throw new NotFoundExecption(ResourceErrorMessages.READER_NOT_FOUND);
+            throw new NotFoundException(ResourceErrorMessages.READER_NOT_FOUND);
         }
         _repository.Update(reader);
 

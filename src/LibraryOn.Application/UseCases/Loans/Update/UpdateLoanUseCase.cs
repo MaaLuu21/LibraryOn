@@ -30,7 +30,7 @@ public class UpdateLoanUseCase : IUpdateLoanUseCase
 
         if(loan == null)
         {
-            throw new NotFoundExecption(ResourceErrorMessages.LOAN_NOT_FOUND_OR_ALREADY_RETURNED);
+            throw new NotFoundException(ResourceErrorMessages.LOAN_NOT_FOUND_OR_ALREADY_RETURNED);
         }
 
         loan.Status = Domain.Enums.LoanStatus.Returned;

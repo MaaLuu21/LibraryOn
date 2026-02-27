@@ -26,7 +26,7 @@ public class DeleteBookUseCase : IDeleteBookUseCase
 
         if(book == null)
         {
-            throw new NotFoundExecption(ResourceErrorMessages.BOOK_NOT_FOUND);
+            throw new NotFoundException(ResourceErrorMessages.BOOK_NOT_FOUND);
         }
 
         _writeRepository.Delete(book);

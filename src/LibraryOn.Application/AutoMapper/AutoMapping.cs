@@ -52,9 +52,15 @@ public class AutoMapping : Profile
 
         //employee
         CreateMap<Employee, ResponseShortEmployeeJson>();
+        CreateMap<Employee, ResponseEmployeeJson>();
 
         //loan
         CreateMap<Loan, ResponseRegisteredLoanJson>();
+        CreateMap<Loan, ResponseLoanJson>();
+        CreateMap<Loan, ResponseOverdueLoan>()
+            .ForMember(dest => dest.DueDate, opt => opt.MapFrom(src => DateOnly.FromDateTime(src.DueDate)))
+            .ForMember(dest => dest.BookTitle, opt => opt.MapFrom(src => src.Book!.Title))
+            .ForMember(dest => dest.ReaderName, opt => opt.MapFrom(src => src.Reader!.Name));
 
     }
 }

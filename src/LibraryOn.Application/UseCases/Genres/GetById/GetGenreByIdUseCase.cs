@@ -19,7 +19,7 @@ public class GetGenreByIdUseCase : IGetGenreByIdUseCase
 
         if(result == null)
         {
-            throw new NotFoundExecption(ResourceErrorMessages.GENRE_NOT_FOUND);
+            throw new NotFoundException(ResourceErrorMessages.GENRE_NOT_FOUND);
         }
 
         return new ResponseGenreJson

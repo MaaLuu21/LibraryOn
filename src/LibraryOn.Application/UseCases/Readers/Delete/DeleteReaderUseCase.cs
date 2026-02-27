@@ -26,7 +26,7 @@ public class DeleteReaderUseCase : IDeleteReaderUseCase
 
         if(reader == null)
         {
-            throw new NotFoundExecption(ResourceErrorMessages.READER_NOT_FOUND);
+            throw new NotFoundException(ResourceErrorMessages.READER_NOT_FOUND);
         }
 
         _writeRepository.Delete(reader);

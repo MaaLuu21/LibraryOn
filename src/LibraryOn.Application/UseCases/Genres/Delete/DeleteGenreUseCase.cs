@@ -26,7 +26,7 @@ public class DeleteGenreUseCase : IDeleteGenreUseCase
 
         if(genre == null)
         {
-            throw new NotFoundExecption(ResourceErrorMessages.GENRE_NOT_FOUND);
+            throw new NotFoundException(ResourceErrorMessages.GENRE_NOT_FOUND);
         }
 
         _writeRepository.Delete(genre);

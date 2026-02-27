@@ -28,7 +28,7 @@ public class UpdateGenreUseCase : IUpdateGenreUseCase
         var genre = await _repository.GetById(id);
         if(genre == null)
         {
-            throw new NotFoundExecption(ResourceErrorMessages.GENRE_NOT_FOUND);
+            throw new NotFoundException(ResourceErrorMessages.GENRE_NOT_FOUND);
         }
 
         _mapper.Map(request, genre);

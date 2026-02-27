@@ -33,7 +33,7 @@ public class UpdateBookUseCase : IUpdateBookUseCase
 
         if (book == null)
         {
-            throw new NotFoundExecption(ResourceErrorMessages.BOOK_NOT_FOUND);
+            throw new NotFoundException(ResourceErrorMessages.BOOK_NOT_FOUND);
         }
 
         _mapper.Map(request, book);

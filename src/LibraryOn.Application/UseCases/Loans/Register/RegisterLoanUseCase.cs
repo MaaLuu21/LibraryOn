@@ -45,13 +45,13 @@ public class RegisterLoanUseCase : IRegisterLoanUseCase
         var book = await _bookRepository.GetById(request.BookId);
         if (book == null)
         {
-            throw new NotFoundExecption(ResourceErrorMessages.BOOK_NOT_FOUND);
+            throw new NotFoundException(ResourceErrorMessages.BOOK_NOT_FOUND);
         }
 
         var reader = await _readerRepository.GetByCpf(request.Cpf);
         if (reader == null)
         {
-            throw new NotFoundExecption(ResourceErrorMessages.READER_NOT_FOUND);
+            throw new NotFoundException(ResourceErrorMessages.READER_NOT_FOUND);
         }
 
         var activeLoansCount = await _repository.CountActiveLoansByReader(reader.Id);
@@ -63,7 +63,7 @@ public class RegisterLoanUseCase : IRegisterLoanUseCase
         var employee = await _loggedEmployee.Get();
         if(employee == null)
         {
-            throw new NotFoundExecption(ResourceErrorMessages.EMPLOYEE_NOT_FOUND);
+            throw new NotFoundException(ResourceErrorMessages.EMPLOYEE_NOT_FOUND);
         }
 
         var hasActiveLoan = await _repository.HasActiveLoanForBook(book.Id);

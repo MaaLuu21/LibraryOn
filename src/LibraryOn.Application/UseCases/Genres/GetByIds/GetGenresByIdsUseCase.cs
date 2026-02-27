@@ -24,7 +24,7 @@ public class GetGenresByIdsUseCase : IGetGenresByIdsUseCase
 
         if (result == null || result.Count == 0)
         {
-            throw new NotFoundExecption(ResourceErrorMessages.GENRE_NOT_FOUND);
+            throw new NotFoundException(ResourceErrorMessages.GENRE_NOT_FOUND);
         }
 
         return new ResponseGenresJson

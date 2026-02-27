@@ -38,7 +38,7 @@ public class RegisterBookUseCase : IRegisterBookUseCase
 
         if (genres == null || genres.Count == 0)
         {
-            throw new NotFoundExecption(ResourceErrorMessages.GENRE_NOT_FOUND);
+            throw new NotFoundException(ResourceErrorMessages.GENRE_NOT_FOUND);
         }
 
         foreach (Genre genre in genres)

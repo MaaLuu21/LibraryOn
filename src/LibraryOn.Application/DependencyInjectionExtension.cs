@@ -16,6 +16,9 @@ using LibraryOn.Application.UseCases.Genres.GetById;
 using LibraryOn.Application.UseCases.Genres.GetByIds;
 using LibraryOn.Application.UseCases.Genres.Register;
 using LibraryOn.Application.UseCases.Genres.Update;
+using LibraryOn.Application.UseCases.Loans.GetAll;
+using LibraryOn.Application.UseCases.Loans.GetById;
+using LibraryOn.Application.UseCases.Loans.GetOverdue;
 using LibraryOn.Application.UseCases.Loans.Register;
 using LibraryOn.Application.UseCases.Loans.RegisterReturn;
 using LibraryOn.Application.UseCases.Login.DoLogin;
@@ -84,5 +87,7 @@ public static class DependencyInjectionExtension
         //loan
         services.AddScoped<IRegisterLoanUseCase, RegisterLoanUseCase>();
         services.AddScoped<IUpdateLoanUseCase, UpdateLoanUseCase>();
+        services.AddScoped<IGetLoanByIdUseCase, GetLoanByIdUseCase>();
+        services.AddScoped<IGetLoanOverdueUseCase, GetLoanOverdueUseCase>();
     }
 }

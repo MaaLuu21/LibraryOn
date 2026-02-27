@@ -24,7 +24,7 @@ public class GetReaderByIdUseCase : IGetReaderByIdUseCase
 
         if(result == null)
         {
-            throw new NotFoundExecption(ResourceErrorMessages.READER_NOT_FOUND);
+            throw new NotFoundException(ResourceErrorMessages.READER_NOT_FOUND);
         }
 
         return _mapper.Map<ResponseReaderJson>(result);

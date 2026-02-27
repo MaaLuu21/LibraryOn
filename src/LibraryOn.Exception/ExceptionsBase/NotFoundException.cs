@@ -1,9 +1,9 @@
 ﻿using System.Net;
 
 namespace LibraryOn.Exception.ExceptionsBase;
-public class NotFoundExecption : LibraryOnException
+public class NotFoundException : LibraryOnException
 {
-    public NotFoundExecption(string message) : base(message)
+    public NotFoundException(string message) : base(message)
     {
         
     }

@@ -23,7 +23,7 @@ public class GetBookByIdUseCase : IGetBookByIdUseCase
 
         if(result == null)
         {
-            throw new NotFoundExecption(ResourceErrorMessages.BOOK_NOT_FOUND);
+            throw new NotFoundException(ResourceErrorMessages.BOOK_NOT_FOUND);
         } 
 
         return _mapper.Map<ResponseBookJson>(result);

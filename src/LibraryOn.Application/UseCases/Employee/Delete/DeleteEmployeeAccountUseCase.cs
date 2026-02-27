@@ -27,7 +27,7 @@ public class DeleteEmployeeAccountUseCase : IDeleteEmployeeAccountUseCase
 
         if(employee == null)
         {
-            throw new NotFoundExecption(ResourceErrorMessages.EMPLOYEE_NOT_FOUND);
+            throw new NotFoundException(ResourceErrorMessages.EMPLOYEE_NOT_FOUND);
         }
 
         _writeRepository.Delete(employee);
