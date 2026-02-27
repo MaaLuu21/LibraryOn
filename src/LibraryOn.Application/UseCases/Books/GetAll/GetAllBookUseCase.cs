@@ -1,6 +1,9 @@
 ﻿using AutoMapper;
 using LibraryOn.Communication.Responses.Book;
+using LibraryOn.Domain.Entities;
 using LibraryOn.Domain.Repositories.Books;
+using LibraryOn.Exception;
+using LibraryOn.Exception.ExceptionsBase;
 
 namespace LibraryOn.Application.UseCases.Books.GetAll
 {
@@ -20,6 +23,11 @@ namespace LibraryOn.Application.UseCases.Books.GetAll
         public async Task<ResponseBooksJson> Execute()
         {
             var result = await _repository.GetAll();
+
+            if (result == null || result.Count == 0)
+            {
+                throw new NotFoundException(ResourceErrorMessages.BOOK_NOT_FOUND);
+            }
 
             return new ResponseBooksJson
             {

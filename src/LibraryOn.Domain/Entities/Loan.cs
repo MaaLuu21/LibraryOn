@@ -16,6 +16,7 @@ public class Loan
     public LoanStatus Status { get; set; }
     public DateTime? ReturnedAt { get; set; }
     public Employee Employee { get; set; }
+    public int DaysOverdue { get; set; }
 
     protected Loan() { }
 
@@ -32,7 +33,7 @@ public class Loan
 
     public bool IsOverdue()
     {
-        if(Status == LoanStatus.Active && DateTime.UtcNow > DueDate)
+        if(Status == LoanStatus.Active || Status == LoanStatus.Overdue && DateTime.UtcNow > DueDate)
         {
             return true;
         }
@@ -42,17 +43,16 @@ public class Loan
         }
     }
 
-    public int DaysOverdue
+    public void UpdateDaysOverdue()
     {
-        get
+        if (DateTime.UtcNow > DueDate)
         {
-            if (IsOverdue())
-            {
-                var diferenca = DateTime.UtcNow - DueDate;
-                return diferenca.Days;
-            }
-
-            return 0;
-        }
+            var diferenca = DateTime.UtcNow - DueDate;
+            DaysOverdue = diferenca.Days;
+        } 
+        else 
+        { 
+            DaysOverdue = 0; 
+        } 
     }
 }

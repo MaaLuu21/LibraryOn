@@ -89,5 +89,6 @@ public static class DependencyInjectionExtension
         services.AddScoped<IUpdateLoanUseCase, UpdateLoanUseCase>();
         services.AddScoped<IGetLoanByIdUseCase, GetLoanByIdUseCase>();
         services.AddScoped<IGetLoanOverdueUseCase, GetLoanOverdueUseCase>();
+        services.AddScoped<IGetAllLoanUseCase, GetAllLoanUseCase>();
     }
 }

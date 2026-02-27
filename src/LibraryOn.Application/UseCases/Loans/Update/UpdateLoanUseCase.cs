@@ -22,11 +22,11 @@ public class UpdateLoanUseCase : IUpdateLoanUseCase
         _unityOfWork = unityOfWork;
     }
 
-    public async  Task Execute(RequestLoanUpdateJson request)
+    public async Task Execute(RequestLoanUpdateJson request, long id)
     {
         Validate(request);
 
-        var loan = await _readRepository.GetActiveLoan(request.LoanId, request.Cpf);
+        var loan = await _readRepository.GetActiveLoan(id, request.Cpf);
 
         if(loan == null)
         {

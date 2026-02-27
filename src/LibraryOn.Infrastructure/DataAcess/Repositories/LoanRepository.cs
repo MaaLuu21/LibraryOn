@@ -33,12 +33,12 @@ internal class LoanRepository : ILoanWriteOnlyRepository, ILoanReadOnlyRepositor
         await _dbContext.Loans.AddAsync(loan);
     }
 
-    public async Task<Loan?> GetActiveLoan(long loanId, string cpf)
+    public async Task<Loan?> GetActiveLoan(long id, string cpf)
     {
         return await _dbContext.Loans
             .Include(l =>  l.Book)
             .Include(l => l.Reader)
-            .FirstOrDefaultAsync(l => l.Id == loanId
+            .FirstOrDefaultAsync(l => l.Id == id
                                 && l.Reader!.Cpf.Value == cpf
                                 && l.Status == LoanStatus.Active);
     }
@@ -82,8 +82,14 @@ internal class LoanRepository : ILoanWriteOnlyRepository, ILoanReadOnlyRepositor
             foreach(var loan in loanUpdate)
             {
                 loan.Status = LoanStatus.Overdue;
+                loan.UpdateDaysOverdue();
             }
             await _dbContext.SaveChangesAsync();
         }
+    }
+
+    public async Task<List<Loan>> GetAll()
+    {
+        return await _dbContext.Loans.AsNoTracking().ToListAsync();
     }
 }

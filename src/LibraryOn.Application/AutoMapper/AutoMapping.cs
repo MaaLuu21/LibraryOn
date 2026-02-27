@@ -57,6 +57,7 @@ public class AutoMapping : Profile
         //loan
         CreateMap<Loan, ResponseRegisteredLoanJson>();
         CreateMap<Loan, ResponseLoanJson>();
+        CreateMap<Loan, ResponseShortLoanJson>();
         CreateMap<Loan, ResponseOverdueLoan>()
             .ForMember(dest => dest.DueDate, opt => opt.MapFrom(src => DateOnly.FromDateTime(src.DueDate)))
             .ForMember(dest => dest.BookTitle, opt => opt.MapFrom(src => src.Book!.Title))
