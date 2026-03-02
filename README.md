@@ -23,49 +23,55 @@ A aplicação foi pensada para ser facilmente integrada a outros clientes (WPF, 
 
 ---
 
-## 📌 Visão geral da arquitetura
+## 🕹️ Demonstração
 
-A solução implementa uma arquitetura em camadas para uma Web API:
+Aqui está uma breve demonstração do fluxo de login e consulta de livros através do Swagger:
 
-- **API**  
-  Responsável por receber as requisições HTTP, aplicar filtros, autenticação e encaminhar para os casos de uso.
-
-- **Application**  
-  Contém os casos de uso da aplicação, validações (FluentValidation) e mapeamentos (AutoMapper).
-
-- **Domain**  
-  Contém as entidades, enums e contratos (interfaces de repositório e unidade de trabalho).
-
-- **Infrastructure**  
-  Contém a implementação de acesso a dados, DbContext, repositórios, migrações, seed e serviços de infraestrutura.
-
-- **Communication**  
-  Contém os DTOs de entrada e saída (requests e responses).
-
-- **Exception**  
-  Contém exceções e mensagens de erro centralizadas.
-
-A organização indica uma abordagem de arquitetura em camadas (clean-ish architecture).
+<p align="center">
+  <img src="assets/gifs/LoginAndIncludeBook.gif" alt="Demonstração do LibraryOn">
+</p>
 
 ---
 
-## 🚀 Fluxo principal da aplicação
+## 🏛️ Arquitetura e Fluxo
 
-1. A aplicação inicia em `Program.cs` (projeto `LibraryOn.Api`).
-2. As dependências são registradas através de:
-   - `AddInfrastructure(...)`
-   - `AddApplication()`
-3. O fluxo de uma requisição segue:
+A solução implementa uma abordagem de **Clean Architecture** simplificada, garantindo o desacoplamento entre a lógica de negócio e as implementações técnicas.
+
+<details>
+  <summary><b>📂 Detalhes da Organização em Camadas</b></summary>
+
+A solução está dividida nos seguintes projetos:
+- **API**: Porta de entrada. Gerencia requisições HTTP, middlewares, autenticação e filtros globais.
+- **Application**: Casos de uso, validações (**FluentValidation**) e mapeamentos (**AutoMapper**).
+- **Domain**: Entidades, Enums e os contratos (interfaces) de repositórios e Unit of Work.
+- **Infrastructure**: Implementação de acesso a dados (**DbContext**), Repositórios, Migrations e serviços de infraestrutura.
+- **Communication**: DTOs (Data Transfer Objects) para padronizar a entrada e saída de dados.
+- **Exception**: Centralização de mensagens de erro e exceções customizadas.
+</details>
+
+<details>
+  <summary><b>🔄 Ciclo de Vida e Fluxo da Aplicação</b></summary>
+
+O fluxo foi projetado para ser automatizado e seguir uma hierarquia clara, desde a inicialização até a execução das requisições:
+
+1. **Inicialização e DI**: A aplicação inicia em `Program.cs` (projeto `LibraryOn.Api`), onde as dependências são registradas via `AddInfrastructure()` e `AddApplication()`.
+2. **Startup Automatizado**: Ao subir a API, as **Migrations** são aplicadas automaticamente e um usuário **Administrador Inicial (Seed)** é criado para garantir o acesso imediato.
+3. **Fluxo de Requisição**:
+   - **API (Controller)** recebe a requisição.
+   - **Application (Use Case)** executa a regra de negócio e validações.
+   - **Domain (Interfaces)** define o contrato de dados.
+   - **Infrastructure (Repo)** persiste as informações no **MySQL** via **EF Core**.
+
+```mermaid
+graph LR
+    A[Program.cs / Startup] -->|Configura & Seed| B[DI / Containers]
+    B --> C[API / Controller]
+    C --> D[Application / Use Case]
+    D --> E[Domain / Interfaces]
+    E --> F[Infrastructure / Repo]
+    F --> G[(MySQL Database)]
 ```
-  Controller (API)
-  → Use Case (Application)
-  → Interfaces de Repositório (Domain)
-  → Implementações (Infrastructure)
-  → DbContext (EF Core)
-```
-4. No startup da aplicação:
-   - As migrations são aplicadas automaticamente.
-   - Um usuário administrador inicial é criado (seed).
+</details>
 
 ---
 
@@ -89,7 +95,7 @@ O projeto encontra-se em **fase final de desenvolvimento**.
 A arquitetura, os principais fluxos de negócio e a estrutura geral da aplicação já estão consolidados.  
 Neste momento, o objetivo do repositório é servir como **projeto de portfólio**, demonstrando domínio de organização de código, arquitetura em camadas, uso de padrões e integração com banco de dados.
 
-Novas funcionalidades não estão previstas, sendo realizados apenas eventuais ajustes ou correções finais.
+**Novas funcionalidades não estão previstas, sendo realizados apenas eventuais ajustes ou correções finais.**
 
 ---
 
@@ -113,13 +119,6 @@ Novas funcionalidades não estão previstas, sendo realizados apenas eventuais a
 
 Essas funcionalidades atendem ao escopo proposto inicialmente para o projeto e representam o conjunto final de entregas do LibraryOn.
 
----
-
-
-## 🔄 Em desenvolvimento / próximos passos
-
-Não há novos desenvolvimentos planejados.  
-O projeto encontra-se em fase de encerramento, mantendo-se apenas correções pontuais, caso necessárias.
 
 ---
 
@@ -262,7 +261,10 @@ Essas variáveis são utilizadas para criar automaticamente o usuário administr
 
 ---
 ## 🔑 Exemplo de Endpoint — Login **Endpoint**
-**Endpoint** 
+
+<details>
+<summary><b>Ver JSON de exemplo (Request/Response)</b></summary>
+
 ```
 http POST /api/Login
 ```
@@ -307,6 +309,8 @@ http://localhost:5068/api/Login
   ]
 }
 ```
+
+</details>
 
 ---
 
