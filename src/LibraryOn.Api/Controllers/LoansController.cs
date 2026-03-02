@@ -49,7 +49,7 @@ public class LoansController : ControllerBase
 
         return Ok(response);
     }
-
+    [Authorize]
     [HttpGet("overdue")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(ResponseErrorJson), StatusCodes.Status404NotFound)]
@@ -59,7 +59,7 @@ public class LoansController : ControllerBase
 
         return Ok(response);
     }
-
+    [Authorize]
     [HttpGet]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(ResponseErrorJson), StatusCodes.Status404NotFound)]
